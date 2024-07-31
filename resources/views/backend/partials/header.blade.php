@@ -17,9 +17,9 @@
         <div class="text-end">
           {{-- <button type="button" class="btn btn-outline-light me-2">Login</button>
           <button type="button" class="btn btn-warning">Sign-up</button> --}}
-          <button type="button" class="btn btn-warning">
-        <a href="{{route('logout')}}" style="color: rgb(2, 1, 0)">Logout</a>
-        </button>
+
+        <a  class="btn btn-warning" href="{{route('logout')}}" style="color: rgb(2, 1, 0)">Logout</a>
+
         </div>
       </div>
     </div>

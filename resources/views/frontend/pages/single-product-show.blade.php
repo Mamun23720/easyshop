@@ -55,8 +55,8 @@
     </div>
     <br>
     <div style="text-align: center">
-        <a href="#" style="width:300px;height:50px; text-align:center" class="btn btn-warning shadow-0" style="color: black"><b>Buy now</b></a>
-        <a href="#" style="width:300px;height:50px; text-align:center" class="btn btn-primary shadow-0"><b>Add to cart</b></a>
+        <a href="#" style="width:300px;height:50px; text-align:center; margin-right: 5px" class="btn btn-warning shadow-0" style="color: black"><b>Buy now</b></a>
+        <a href="#" style="width:300px;height:50px; text-align:center; margin-left: 5px" class="btn btn-primary shadow-0"><b>Add to cart</b></a>
         </div>
   </section>
 

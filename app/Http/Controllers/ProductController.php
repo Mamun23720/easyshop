@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function list()
     {
-        $allProduct=Product::paginate(10);
+        $allProduct=Product::paginate(20);
 
         return view ('backend.productlist', compact('allProduct'));
     }
@@ -36,7 +36,7 @@ class ProductController extends Controller
             'product_category'=>'required|min:2'
         ]);
 
-        // $fileName=null;
+        $fileName=null;
 
         //check file exist
 
