@@ -29,12 +29,13 @@
                   <div class="tab-pane fade show active" id="ex1-pills-1" role="tabpanel" aria-labelledby="ex1-tab-1">
                     <h2><b>Description:</b></h2>
                     <h4 style="text-align: justify">{{$singleProduct->description}}</h4>
-
                   </div>
                 </div>
-
               </div>
-{{--
+            <div style="text-align: center">
+              <a style="margin-right: 5px" class="btn btn-primary btn-lg mt-5" href="#" class="nav-link">Download</a></li>
+            </div>
+              {{--
             <div class="row">
               <dt class="col-3">Type:</dt>
               <dd class="col-9">Regular</dd>
@@ -56,7 +57,7 @@
     <br>
     <div style="text-align: center">
         <a href="#" style="width:300px;height:50px; text-align:center; margin-right: 5px" class="btn btn-warning shadow-0" style="color: black"><b>Buy now</b></a>
-        <a href="#" style="width:300px;height:50px; text-align:center; margin-left: 5px" class="btn btn-primary shadow-0"><b>Add to cart</b></a>
+        <a href="#" style="width:300px;height:50px; background-color: rgb(0, 61, 61); text-align:center; margin-left: 5px" class="btn btn-primary shadow-0"><b>Add to cart</b></a>
         </div>
   </section>
 
