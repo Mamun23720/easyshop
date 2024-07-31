@@ -43,5 +43,9 @@ $fileName=null;
             'image'=>$fileName,
             'password'=>$request->password,
         ]);
+        
+        return redirect()->back();
+
+
     }
 }

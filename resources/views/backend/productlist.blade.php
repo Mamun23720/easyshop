@@ -2,47 +2,49 @@
 
 @section('content')
 
-
-<h1 style="text-align: center"> This is Product Lists </h1>
-
+<br>
+<br>
+<h1 style="text-align: center"> This is my Product Lists </h1>
+<br>
 <div style="text-align: center">
-<button type="button" class="btn btn-primary">
-    <a href="{{route('backend.productform')}}" style="color: blanchedalmond">Add Product</a>
-</button>
+    <a href="{{route('backend.productform')}}" style="color: blanchedalmond" class="btn btn-primary">Add Product</a>
 <br>
 <br>
+
 </div>
 
 <table class="table table-dark table-hover">
-        <thead>
+        <thead style="border: white">
           <tr>
             <th scope="col">Serial</th>
             <th scope="col">Product Name</th>
-            <th scope="col">Price</th>
-            {{-- <th scope="col">Date of Birth</th>
-            <th scope="col">Mobile</th> --}}
-            <th scope="col">Image</th>
-            <th scope="col">Action</th>
+            <th scope="col" style="text-align: center">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col" style="text-align: center">Image</th>
+            <th scope="col">Category</th>
+            {{-- <th scope="col">Reviews</th> --}}
+            <th scope="col" style="text-align: center">Action</th>
           </tr>
         </thead>
         <tbody>
 
-            @foreach ($allProduct as $product)
+            @foreach ($allProduct as $key=>$product)
 
 
           <tr>
-            <th scope="row">{{$product->id}}</th>
+            <th scope="row">{{$key+1}}</th>
             <td>{{$product->name}}</td>
-            <td>{{$product->price}}</td>
-            {{-- <td>{{$customer->dateofbirth}}</td> --}}
-            {{-- <td>{{$customer->mobile}}</td> --}}
-            <td>
+            <td style="text-align: center">{{$product->price}}</td>
+            <td>{{$product->description}}</td>
+            <td style="text-align: center">
                 <img src="{{url('/uploads/product/'.$product->image)}}" width="50px" height="50px">
             </td>
-            <td>
-                <a class="btn btn-success" href="">View</a>
-                <a class="btn btn-info" href="">Edit</a>
-                <a class="btn btn-danger" href="">Delete</a>
+            <td>{{$product->category}}</td>
+            {{-- <td>{{$product->reviews}}</td> --}}
+            <td style="text-align: center">
+                <a class="btn btn-success" href="{{route('backend.viewProduct',$product->id)}}">View</a>
+                <a class="btn btn-info" href="{{route('backend.editProduct',$product->id)}}">Edit</a>
+                <a class="btn btn-danger" href="{{route('backend.deleteProduct',$product->id)}}">Delete</a>
               </td>
           </tr>
 

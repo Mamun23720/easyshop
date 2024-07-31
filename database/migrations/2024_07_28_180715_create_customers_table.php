@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email');
             // $table->string('date');
             // $table->string('mobile');
-            // $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

@@ -12,8 +12,6 @@ class HomeController extends Controller
     {
         $allProduct = Product::all();
 
-        $title = "Product Lists";
-
-        return view("frontend.home",compact('allProduct','title'));
+        return view("frontend.home",compact('allProduct'));
     }
 }

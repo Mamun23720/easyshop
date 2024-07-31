@@ -2,8 +2,10 @@
 
 @section('content')
 
-
+<br>
+<br>
 <h1 style="text-align: center"> This is my Customer Lists </h1>
+<br>
 
 
 
@@ -25,9 +27,9 @@
             <th scope="col">Serial</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
-            {{-- <th scope="col">Date of Birth</th>
-            <th scope="col">Mobile</th>
-            <th scope="col">Image</th> --}}
+            {{-- {{-- <th scope="col">Date of Birth</th>
+            <th scope="col">Mobile</th> --}}
+            <th scope="col">Image</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -42,7 +44,9 @@
             <td>{{$customer->email}}</td>
             {{-- <td>{{$customer->dateofbirth}}</td> --}}
             {{-- <td>{{$customer->mobile}}</td> --}}
-            {{-- <td>{{$customer->image}}</td> --}}
+            <td>
+                <img src="{{url('/uploads/customer/'.$customer->image)}}" width="50px" height="50px">
+            </td>
             <td>
                 <a class="btn btn-success" href="">View</a>
                 <a class="btn btn-info" href="">Edit</a>

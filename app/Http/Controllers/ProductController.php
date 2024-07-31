@@ -32,11 +32,16 @@ class ProductController extends Controller
             'product_name'=>'required',
             'product_price'=>'required|numeric|min:5',
             'product_image'=>'required|file',
+            'product_description'=>'min:5',
+            'product_category'=>'required|min:2'
         ]);
 
         // $fileName=null;
 
         //check file exist
+
+        //for image file upload
+
         if($request->hasFile('product_image'))
         {
 
@@ -50,17 +55,72 @@ class ProductController extends Controller
 
         }
 
+
+        //for image file upload
+
+
+
         Product::create([
             'name'=>$request->product_name,
             'price'=>$request->product_price,
-            // 'date'=>$request->customer_dob,
+            'description'=>$request->product_description,
             // 'mobile'=>$request->customer_number,
-            'image'=>$fileName
+            'image'=>$fileName,
+            'category'=>$request->product_category
         ]);
 
 
         // dd($request->all());
 
         return redirect()->route('backend.productlist');
+    }
+
+
+    //for view product
+
+    public function viewProduct($id)
+    {
+            $viewProduct=Product::find($id);
+
+            return view('backend.pages.view-product',compact('viewProduct'));
+    }
+
+    //for delete product
+
+    public function deleteProduct($id)
+    {
+        $deleteProduct=Product::find($id);
+        $deleteProduct->delete();
+
+        return redirect()->back();
+
+    }
+
+    //edit product form er jonno
+
+    public function editProduct($id)
+    {
+        $product=Product::find($id);
+        $allProduct=Product::all();
+
+        return view('backend.pages.edit-product', compact('product','allProduct'));
+    }
+
+    //update product er jonno
+
+    public function updateProduct(Request $request, $id)
+    {
+
+// dd($request->all());
+
+        $product=Product::find($id);
+        $product->update([
+            'name'=>$request->product_name,
+            'price'=>$request->product_price,
+            'description'=>$request->product_description,
+        ]);
+
+        return redirect()->route('backend.productlist');
+
     }
 }
