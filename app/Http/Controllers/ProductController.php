@@ -71,7 +71,7 @@ class ProductController extends Controller
 
 
         // dd($request->all());
-
+        notify()->success("Product added successfully");
         return redirect()->route('backend.productlist');
     }
 
@@ -92,6 +92,7 @@ class ProductController extends Controller
         $deleteProduct=Product::find($id);
         $deleteProduct->delete();
 
+        notify()->success("Product Deleted successfully");
         return redirect()->back();
 
     }
@@ -120,6 +121,7 @@ class ProductController extends Controller
             'description'=>$request->product_description,
         ]);
 
+        notify()->success("Product Updated successfully");
         return redirect()->route('backend.productlist');
 
     }

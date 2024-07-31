@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    @notifyCss
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
@@ -63,15 +64,23 @@
         .login-container .forgot-password a:hover {
             text-decoration: underline;
         }
+
     </style>
 </head>
 <body>
+    @include('notify::components.notify')
     <div class="login-container">
         <h2>Admin</h2>
         <form action="{{route('do.login')}}" method="post">
             @csrf
             <label for="username">Username</label>
             <input type="text" id="username" name="email" required>
+
+
+
+
+
+
 
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
@@ -82,5 +91,7 @@
             <a href="#">Forgot your password?</a>
         </div>
     </div>
+
+    @notifyJs
 </body>
 </html>

@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>
+    @notifyCss
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -98,6 +99,7 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+
     </style>
 
     <!-- Custom styles for this template -->
@@ -108,6 +110,7 @@
 
 
   <body style="background-color: rgb(184, 255, 231)">
+    @include('notify::components.notify')
 
 @include('backend.partials.header')
 
@@ -139,6 +142,7 @@
 
 <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
 <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"></script>
+@notifyJs
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js"></script>
 <script src="https://getbootstrap.com/docs/5.3/examples/dashboard/dashboard.js"></script>
 

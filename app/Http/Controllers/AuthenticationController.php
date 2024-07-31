@@ -25,6 +25,8 @@ class AuthenticationController extends Controller
 
         if($check)
         {
+
+            notify()->success("Login Successful");
             return redirect()->route('backend.dashboard');
 
         }else{
@@ -42,7 +44,7 @@ class AuthenticationController extends Controller
     public function logout()
     {
           Auth::logout();
-
+          notify()->success("Logout Succesful");
           return redirect()->route('login');
     }
 }
