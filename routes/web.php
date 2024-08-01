@@ -8,7 +8,7 @@ use App\Http\Controllers\Frontend\CustomerController as FrontendCustomerControll
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\ProductController as FrontendProductController;
-use App\Http\Controllers\Frontend\SignupController as FrontendSignupController;
+use App\Http\Controllers\Frontend\RegistrationController;
 
 // Route::get('/', function () {
 //     return view('backend.master');
@@ -18,7 +18,22 @@ use App\Http\Controllers\Frontend\SignupController as FrontendSignupController;
 
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
-Route::post('/signup',[FrontendSignupController::class, 'store'])->name('signup.store');
+//customer Register and login
+
+Route::get('/registration',[RegistrationController::class, 'registration'])->name('frontend.registration');
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -32,7 +47,7 @@ Route::get('/show-product{productId}',[FrontendProductController::class, 'show_p
 
 Route::get('/customer',[FrontendCustomerController::class, 'customer'])->name('frontend.customer');
 
-Route::post('/registration',[FrontendCustomerController::class, 'reg_store'])->name('reg.store');
+
 
 
 
