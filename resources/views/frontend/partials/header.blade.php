@@ -16,7 +16,7 @@
                       Login
                     </a>
                     <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasSignup" role="button" aria-controls="offcanvasExample">
-                      Sign up
+                      Register
                     </a>
               </div>
             </div>
@@ -85,25 +85,31 @@
 
 
 
-  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasLogin" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasLogin" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasExampleLabel">Login</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <div>
-        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-      </div>
-      <div class="dropdown mt-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
+        <form action="" method="post" enctype="multipart/form-data">
+            @csrf
+
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+
+
+
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+
     </div>
   </div>
 
@@ -113,12 +119,12 @@
 
   <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasSignup" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Signup</h5>
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Register</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
 
-        <form action="{{route('signup.store')}}" method="post" enctype="multipart/form-data">
+        <form action="" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Name</label>
@@ -143,7 +149,7 @@
                 <input type="file" name="reg_image" class="form-control" id="image">
               </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Register</button>
           </form>
 
     </div>

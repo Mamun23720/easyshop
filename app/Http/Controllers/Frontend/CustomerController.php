@@ -15,21 +15,4 @@ class CustomerController extends Controller
 
         return view("frontend.customer",compact('allCustomer','title'));
     }
-
-    public function reg_store(Request $request)
-    {
-        //vaditation
-
-
-        $fileName=null;
-
-        if($request->hasFile('reg_image'))
-        {
-            $file=$request->file('reg_image');
-
-            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
-
-            $file->storeAs('',$fileName);
-        }
-    }
 }
