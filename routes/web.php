@@ -39,6 +39,8 @@ Route::get('/cartItem',[OrderController::class,'cartItem'])->name('cart.Item');
 
 Route::get('/addToCart{productId}',[OrderController::class,'addToCart'])->name('add.to.cart');
 
+// Route::get('/',[OrderController::class,''])->name();
+
 
 
 //frontend product er kaj sob

@@ -9,7 +9,7 @@
   </head>
 
 
-<body style="background-color: rgb(150, 149, 149)">
+<body>
 {{-- <body background="{{url('/uploads/adminPhoto/sajibFull.jpg')}}"> --}}
 @include('notify::components.notify')
 

@@ -14,22 +14,26 @@
             <a href="#" class="btn btn-primary btn-lg">Primary button</a>
           </div> --}}
 
-        @foreach ($allProduct as $product)
-        <div style="text-align: center;" >
-            <div>
-              <a href="{{route('show.product', $product->id)}}" class="align-items-center text-white text-decoration-none">
-                <img style="height: 200px; width: 200px; border-radius: 20%; " src="{{url('/uploads/product/'.$product->image)}}" class="mt-2" alt="..." >
-                <h5>{{$product->name}}</h5>
-                <h3>{{$product->price}} BDT</h3>
-                <a href="{{route('add.to.cart',$product->id)}}" style="width:150px;height:50px; background-color:red; border-radius: 15%;" class="btn btn-primary shadow-0"><b>Add to cart</b></a>
-              </a>
-            </div>   
-        </div>
+      @foreach ($allProduct as $product)
+
+            <div style="align-items: center;" >
+                  <a href="{{route('show.product', $product->id)}}" class="align-items-center text-white text-decoration-none">
+                    <img style="height: 200px; width: 200px; border-radius: 5%; " src="{{url('/uploads/product/'.$product->image)}}" class="mt-2" alt="..." >
+                    <br>
+                    </a> 
+                    <h5 style="color: black;" ><b>Name: {{$product->name}}</b></h5>
+                    <br>
+                    <h3 style="color: black;" ><b>Price: {{$product->price}} BDT</b></h3>
+                    <br>
+                    <a href="{{route('add.to.cart',$product->id)}}" class="btn btn-warning"><b>Add to cart</b></a>
+                    <a href="{{route('show.product', $product->id)}}" class="btn btn-success"><b>View</b></a>
+            </div>
+        
       @endforeach
 
 
 
-        </div>
+    </div>
     </div>
     </div>
     <br>

@@ -56,8 +56,7 @@ class ProductController extends Controller
         }
 
 
-        //for image file upload
-
+            //query:
 
 
         Product::create([
@@ -67,6 +66,7 @@ class ProductController extends Controller
             // 'mobile'=>$request->customer_number,
             'image'=>$fileName,
             'category'=>$request->product_category
+            
         ]);
 
 

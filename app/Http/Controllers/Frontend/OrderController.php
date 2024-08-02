@@ -12,6 +12,7 @@ class OrderController extends Controller
     //Method for Cart Item Pages
     public function cartItem()
     {
+
         return view('frontend.cart');
     }
 
@@ -21,15 +22,30 @@ class OrderController extends Controller
 
         $product = Product::find($id);
 
-        //akta juri nilam basket name a 
+        //akta juri nilam cart name a 
 
-        $myCart=session()->get('basket');
+        $cart=session()->get('cart');
 
+
+        
         // dd($myCart);
 
        // step:1-> cart empty
 
-       if(empty($myCart)) 
+
+
+
+
+
+
+
+       if(empty($cart)) 
+
+
+
+
+
+
        
        {
         // step:1-> cart empty (add to cart)
@@ -37,24 +53,43 @@ class OrderController extends Controller
         //arrayname[key=>value]
 
         $cart[$product->id]=[
-            //     'key'=>value
-            'product_id'=>$product->id,
-            'product_name'=>$product->name,
-            'product_price'=>$product->price,
-            'product_quantity'=>1,
-            'subtotal'=>1 * $product->price
+             //     'key'=>value
+             'product_image'=>$product->image,
+             'product_name'=>$product->name,
+             'product_price'=>$product->price,
+             'product_qty'=>$product->qty,
         ];
+        // dd($cart);
+
+        // session()->forget('cart');
+
         // dd($cart);
 
         //jodi product ta thake session a rakhte hobe put kore... noile save hobe na...
 
-        session()->put('basket',$cart);
+
+
+
+
+
+        session()->put('cart',$cart);
 
         //step:1 -> complete return back
 
         notify()->success('Product Added to Cart');
         return redirect()->back();
        }
+
+
+
+
+
+
+
+
+
+
+
        
        // step:2 & 3 with a similar else
 
@@ -65,10 +100,20 @@ class OrderController extends Controller
 
                 //step:2 -> cart not empty but product exists->(Quantity and Price Update Hobe)
 
-                if(array_key_exists($id,$myCart))
+                if(array_key_exists($product->id,$cart))
                 {
                     dd('Product already exists update price and quantity');
                 }
+
+
+
+
+
+
+
+
+
+
 
                 //cart not empty product exists (but different product want to add cart) then ->
 
@@ -76,19 +121,19 @@ class OrderController extends Controller
 
                     else
                     {
-                        $myCart[$product->id]=[
+                        $cart[$product->id]=[
                             //     'key'=>value
-                            'product_id'=>$product->id,
+                            'product_image'=>$product->image,
                             'product_name'=>$product->name,
                             'product_price'=>$product->price,
-                            'product_quantity'=>1,
-                            'subtotal'=>1 * $product->price
+                            'product_qty'=>$product->qty,
                         ];
 
                         //again product gula session a rakha holo then update hobe just
                        
-                        // session()->forget('basket');
-                        session()->put('basket',$myCart);
+                        // session()->forget('cart');
+
+                        session()->put('cart',$cart);
                         notify()->success('Product Added to Cart');
                         return redirect()->back();
                     }

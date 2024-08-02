@@ -8,14 +8,13 @@
 
         <!-- <a style="margin-right: 5px; background-color: rgb(0, 61, 61)" class="btn btn-primary btn-lg" href="{{route('frontend.customer')}}" class="nav-link">Customers</a></li> -->
 
-        <div style="margin-left: 60%;" class="container">
-                    <a style="background-color: yellow; border-radius: 50px; color:black" class="btn btn-primary btn-lg" href="{{route('cart.Item')}}" role="button">
-                      <b>Cart Items</b>
+        <div style="margin-left: 75%;">
+                    <a style="color:black" class="btn btn-warning" href="{{route('cart.Item')}}">
+                      <b>Cart- ({{count(session()->get('basket'))}})</b>
                     </a>
                     <br>
                     <br>
-                    <h5 style="margin-left: 0%;" ><b>{{count(session()->get('basket')) }} item - 00 BDT</b></h5>
-                </div>
+        </div>
 
     </header>
   </div>
