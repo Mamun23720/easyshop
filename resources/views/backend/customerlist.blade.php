@@ -11,9 +11,7 @@
 
 
 <div style="text-align: center">
-    <button type="button" class="btn btn-primary">
-        <a href="{{route('backend.customerform')}}" style="color: blanchedalmond">Add Customer</a>
-    </button>
+        <a href="{{route('backend.customerform')}}" style="color: blanchedalmond" class="btn btn-primary">Add Customer</a>
     <br>
     <br>
     </div>
@@ -27,7 +25,7 @@
             <th scope="col">Serial</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
-            {{-- {{-- <th scope="col">Date of Birth</th>
+            {{-- <th scope="col">Date of Birth</th>
             <th scope="col">Mobile</th> --}}
             <th scope="col">Image</th>
             <th scope="col">Action</th>

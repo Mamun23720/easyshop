@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div style="text-align: center">
+<!-- <div style="text-align: center">
 <h1 class="btn btn-success btn-lg">Product List's</h1>
-</div>
+</div> -->
 <br>
 <br>
 <div class="container">
@@ -23,7 +23,7 @@
     <div class="">
         <div class="">
             <a href="{{route('show.product', $product->id)}}" class="align-items-center text-white text-decoration-none">
-        <img src="{{url('/uploads/product/'.$product->image)}}" class="" alt="..." style="border-radius: 5%" style="height: 500px; width: 350px">
+        <img style="height: 200px; width: 200px;" src="{{url('/uploads/product/'.$product->image)}}" class="" alt="..." style="border-radius: 5%">
           <h5 class="name" style="text-align: center">{{$product->name}}</h5>
           <p class="text" style="text-align: center">{{$product->price}} BDT</p>
           {{-- <a href="#" class="btn btn-primary">Buy</a>

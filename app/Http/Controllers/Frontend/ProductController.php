@@ -7,12 +7,20 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+    // all product show  ai method
+
+
     public function product()
     {
         $allProduct = Product::all();
 
         return view("frontend.product",compact('allProduct'));
     }
+
+
+    //single page a product show method
+    
 
     public function show_product($id)
     {

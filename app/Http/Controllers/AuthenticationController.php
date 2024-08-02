@@ -44,7 +44,7 @@ class AuthenticationController extends Controller
     public function logout()
     {
           Auth::logout();
-          notify()->success("Logout Succesful");
+          notify()->success("Logout Successful");
           return redirect()->route('login');
     }
 }

@@ -20,7 +20,7 @@
             <th scope="col">Product Name</th>
             <th scope="col" style="text-align: center">Price</th>
             <th scope="col">Description</th>
-            <th scope="col" style="text-align: center">Image</th>
+            <th scope="col">Image</th>
             <th scope="col">Category</th>
             {{-- <th scope="col">Reviews</th> --}}
             <th scope="col" style="text-align: center">Action</th>
@@ -37,7 +37,7 @@
             <td style="text-align: center">{{$product->price}}</td>
             <td>{{$product->description}}</td>
             <td style="text-align: center">
-                <img src="{{url('/uploads/product/'.$product->image)}}" width="50px" height="50px">
+                <img src="{{url('/uploads/product/'. $product->image)}}" width="50px" height="50px">
             </td>
             <td>{{$product->category}}</td>
             {{-- <td>{{$product->reviews}}</td> --}}

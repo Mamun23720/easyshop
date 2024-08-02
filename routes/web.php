@@ -7,6 +7,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Frontend\CustomerController as FrontendCustomerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
+use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\ProductController as FrontendProductController;
 use App\Http\Controllers\Frontend\RegistrationController;
 
@@ -29,18 +30,24 @@ Route::get('/registration',[RegistrationController::class, 'registration'])->nam
 
 
 
+//Order Controller
+
+
+//cart item er sob kaj
+
+Route::get('/cartItem',[OrderController::class,'cartItem'])->name('cart.Item');
+
+Route::get('/addToCart{productId}',[OrderController::class,'addToCart'])->name('add.to.cart');
 
 
 
-
-
-
-
-
+//frontend product er kaj sob
 
 Route::get('/product',[FrontendProductController::class, 'product'])->name('frontend.product');
 
 Route::get('/show-product{productId}',[FrontendProductController::class, 'show_product'])->name('show.product');
+
+
 
 
 
