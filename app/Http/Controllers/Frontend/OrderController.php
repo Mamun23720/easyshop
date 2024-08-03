@@ -10,136 +10,63 @@ class OrderController extends Controller
 {
 
     //Method for Cart Item Pages
-    public function cartItem()
+    public function viewCart()
     {
+        $myCart=session()->get('basket');
 
-        return view('frontend.cart');
+        return view('frontend.pages.cart', compact('myCart'));
     }
 
-    public function addToCart($id)
+    public function addToCart($pId)
     {
-        //akta variable diye model er maddhome sob prdouct k call korchi
+        $product = Product::find($pId);
+        $myCart=session()->get('basket');
+        // session()->forget('basket');
 
-        $product = Product::find($id);
-
-        //akta juri nilam cart name a 
-
-        $cart=session()->get('cart');
-
-
-        
-        // dd($myCart);
-
-       // step:1-> cart empty
-
-
-
-
-
-
-
-
-       if(empty($cart)) 
-
-
-
-
-
-
-       
+       if(empty($myCart)) 
        {
-        // step:1-> cart empty (add to cart)
-
-        //arrayname[key=>value]
-
         $cart[$product->id]=[
-             //     'key'=>value
-             'product_image'=>$product->image,
-             'product_name'=>$product->name,
-             'product_price'=>$product->price,
-             'product_qty'=>$product->qty,
+            'product_id'=>$product->id,
+            'product_image'=>$product->image,
+            'product_name'=>$product->name,
+            'product_price'=>$product->price,
+            'quantity'=>1,
+            'subtotal'=>1 * $product->price
         ];
-        // dd($cart);
-
-        // session()->forget('cart');
-
-        // dd($cart);
-
-        //jodi product ta thake session a rakhte hobe put kore... noile save hobe na...
-
-
-
-
-
-
-        session()->put('cart',$cart);
-
-        //step:1 -> complete return back
+        session()->put('basket',$cart);
 
         notify()->success('Product Added to Cart');
+
         return redirect()->back();
-       }
-
-
-
-
-
-
-
-
-
-
-
-       
-       // step:2 & 3 with a similar else
-
-            else
-            {
-                
-                //jodi cart empty na thake ba cart a oi product already thake tahole->
-
-                //step:2 -> cart not empty but product exists->(Quantity and Price Update Hobe)
-
-                if(array_key_exists($product->id,$cart))
+       }else{
+                if(array_key_exists($pId,$myCart))
                 {
-                    dd('Product already exists update price and quantity');
-                }
+                    $myCart[$pId]['quantity'] = $myCart[$pId]['quantity'] + 1;
 
+                    $myCart[$pId]['subtotal'] = $myCart[$pId]['quantity'] * $myCart[$pId]['product_price'];
+                    
+                    session()->put('basket',$myCart);
 
+                    // session()->forget('basket');
 
+                    notify()->success('Product Quantity Updated.');
 
-
-
-
-
-
-
-
-                //cart not empty product exists (but different product want to add cart) then ->
-
-                //step:3 -> again add to cart
-
-                    else
-                    {
-                        $cart[$product->id]=[
-                            //     'key'=>value
+                    return redirect()->back();
+                }else{
+                        $myCart[$product->id]=[
+                            'product_id'=>$product->id,
                             'product_image'=>$product->image,
                             'product_name'=>$product->name,
                             'product_price'=>$product->price,
-                            'product_qty'=>$product->qty,
+                            'quantity'=>1,
+                            'subtotal'=>1 * $product->price
                         ];
-
-                        //again product gula session a rakha holo then update hobe just
-                       
-                        // session()->forget('cart');
-
-                        session()->put('cart',$cart);
+                        session()->put('basket',$myCart);
+          
                         notify()->success('Product Added to Cart');
+
                         return redirect()->back();
                     }
-
             }
-
     }
-
 }

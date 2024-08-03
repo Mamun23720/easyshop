@@ -35,7 +35,7 @@ Route::get('/registration',[RegistrationController::class, 'registration'])->nam
 
 //cart item er sob kaj
 
-Route::get('/cartItem',[OrderController::class,'cartItem'])->name('cart.Item');
+Route::get('/viewCart',[OrderController::class,'viewCart'])->name('view.cart');
 
 Route::get('/addToCart{productId}',[OrderController::class,'addToCart'])->name('add.to.cart');
 
