@@ -47,7 +47,7 @@ class OrderController extends Controller
                     
                     session()->put('basket',$myCart);
 
-                    // session()->forget('basket');
+                    //session()->forget('basket');
 
                     notify()->success('Product Quantity Updated.');
 
