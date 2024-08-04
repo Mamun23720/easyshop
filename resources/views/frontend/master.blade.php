@@ -9,13 +9,13 @@
   </head>
 
 
-<body>
-{{-- <body background="{{url('/uploads/adminPhoto/sajibFull.jpg')}}"> --}}
+<body style="background-color: tomato ;" >
+<!-- <body background="{{url('/uploads/adminPhoto/background1.jpg')}}"> -->
 @include('notify::components.notify')
 
         @include('frontend.partials.header')
 
-        @include('frontend.partials.sidebar')
+        @include('frontend.partials.navbar')
 
                 @yield('content')
 

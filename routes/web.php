@@ -39,6 +39,14 @@ Route::get('/viewCart',[OrderController::class,'viewCart'])->name('view.cart');
 
 Route::get('/addToCart{productId}',[OrderController::class,'addToCart'])->name('add.to.cart');
 
+Route::get('removeAllCart',[OrderController::class,'removeAllCart'])->name('remove.all.cart');
+
+Route::get('removeSingleCart{productId}',[OrderController::class,'removeSingleCart'])->name('remove.single.cart');
+
+
+
+
+
 // Route::get('/',[OrderController::class,''])->name();
 
 

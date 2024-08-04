@@ -8,8 +8,9 @@
 <br>
 <br>
 <div class="container">
+<div><h1 class="mb-2" style="font-size: 200%; color:black;"><b>All Products</b></h1></div>
 <div class="row">
-<div class="row row-cols-1 row-cols-lg-5">
+<div class="row row-cols-1 row-cols-lg-6">
 
 
 
@@ -21,15 +22,15 @@
 
       @foreach ($allProduct as $product)
 
-<div style="align-items: center;" >
+<div>
       <a href="{{route('show.product', $product->id)}}" class="align-items-center text-white text-decoration-none">
         <img style="height: 200px; width: 200px; border-radius: 5%; " src="{{url('/uploads/product/'.$product->image)}}" class="mt-2" alt="..." >
         <br>
         </a> 
         <div>
-        <h5 style="color: black;" ><b>Name: {{$product->name}}</b></h5>
+        <h5 style="color: black; height: 10px; width: 150px;" ><b>{{$product->name}}</b></h5>
         <br>
-        <h3 style="color: black;" ><b>Price: {{$product->price}} BDT</b></h3>
+        <h3 style="color: black; height: 10px; width: 150px;" ><b>{{$product->price}} BDT</b></h3>
         </div>
         <br>
         <br>

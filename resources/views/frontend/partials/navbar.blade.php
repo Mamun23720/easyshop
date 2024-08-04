@@ -10,7 +10,8 @@
 
         <div style="margin-left: 75%;">
                     <a style="color:black" class="btn btn-warning" href="{{route('view.cart')}}">
-                      <b>Cartitems-{{session()->has('basket') ? count(session()->get('basket')) : 0}}
+                      <b>Cart item-
+                        {{session()->has('basket') ? count(session()->get('basket')) : 0}}
                       </b>
                     </a>
                     <br>

@@ -14,7 +14,9 @@ class OrderController extends Controller
     {
         $myCart=session()->get('basket');
 
-        return view('frontend.pages.cart', compact('myCart'));
+        // session()->forget('basket');
+
+        return view('frontend.pages.view-cart', compact('myCart'));
     }
 
     public function addToCart($pId)
@@ -31,14 +33,15 @@ class OrderController extends Controller
             'product_name'=>$product->name,
             'product_price'=>$product->price,
             'quantity'=>1,
-            'subtotal'=>1 * $product->price
+            'subtotal'=>1 * $product->price,
         ];
         session()->put('basket',$cart);
 
-        notify()->success('Product Added to Cart');
+        notify()->success('Product Added.');
 
         return redirect()->back();
-       }else{
+       }
+       else{
                 if(array_key_exists($pId,$myCart))
                 {
                     $myCart[$pId]['quantity'] = $myCart[$pId]['quantity'] + 1;
@@ -49,24 +52,57 @@ class OrderController extends Controller
 
                     //session()->forget('basket');
 
-                    notify()->success('Product Quantity Updated.');
+                    notify()->success('Product Added Again.');
 
                     return redirect()->back();
-                }else{
+                }
+                else{
                         $myCart[$product->id]=[
                             'product_id'=>$product->id,
                             'product_image'=>$product->image,
                             'product_name'=>$product->name,
                             'product_price'=>$product->price,
                             'quantity'=>1,
-                            'subtotal'=>1 * $product->price
+                            'subtotal'=>1 * $product->price,
                         ];
                         session()->put('basket',$myCart);
           
-                        notify()->success('Product Added to Cart');
+                        notify()->success('Product Added.');
 
                         return redirect()->back();
                     }
             }
+    }
+
+    //remove all cart product method
+    public function removeAllCart()
+    {
+        session()->forget('basket');
+
+        notify()->success('Clear Cut Successful');
+        
+        return view('frontend.pages.view-cart');
+    }
+
+    //remove single cart product method
+
+    public function removeSingleCart($pId)
+    {
+        // dd($pId);
+
+
+        $myCart=session()->get('basket');
+
+        unset($myCart[$pId]);
+
+        session()->put('basket',$myCart);
+
+        // dd($sajib);
+
+        // session()->forget('pId');
+
+        notify()->success('Product Removed Successfully');
+
+        return redirect()->back();
     }
 }

@@ -9,7 +9,10 @@
         <aside class="col-lg-6">
           <div style="text-align: center" class="mb-3 d-flex">
               <img style="height: 500px; width: 500px" class="border rounded-5 bg-white" src="{{url('/uploads/product/'.$singleProduct->image)}}" />
-          </div>
+            </div>
+          <div>
+              <a style="margin-left: 180px" class="btn btn-primary mt-1" href="#" class="nav-link">Download</a></li>
+            </div>
         </aside>
 
 
@@ -32,8 +35,9 @@
                   </div>
                 </div>
               </div>
-            <div style="text-align: center">
-              <a style="margin-right: 5px" class="btn btn-primary btn-lg mt-5" href="#" class="nav-link">Download</a></li>
+            <div>
+              <a style="margin-right: 5px" class="btn btn-success mt-5" href="#" class="nav-link">Buy Now</a>
+              <a style="margin-right: 5px" class="btn btn-warning mt-5" href="{{route('add.to.cart',$singleProduct->id)}}" class="nav-link">Add to Cart</a>
             </div>
               {{--
             <div class="row">
@@ -55,10 +59,9 @@
       </div>
     </div>
     <br>
-    <div style="text-align: center">
-        <a href="#" style="width:300px;height:50px; text-align:center; margin-right: 5px" class="btn btn-warning shadow-0" style="color: black"><b>Buy now</b></a>
-        <a href="#" style="width:300px;height:50px; background-color: rgb(0, 61, 61); text-align:center; margin-left: 5px" class="btn btn-primary shadow-0"><b>Add to cart</b></a>
-        </div>
+    <!-- <div style="text-align: center">
+    <a style="margin-right: 5px" class="btn btn-success btn-lg mt-2" href="#" class="nav-link">Buy Now</a>
+    </div> -->
   </section>
 
 
@@ -73,7 +76,7 @@
 
 <section class="">
     <div class="container">
-        <h2 class="fw-bolder mb-4">Related products</h2>
+        <h2 class="fw-bolder mb-5 mt-5">Related products</h2>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
 
