@@ -63,7 +63,7 @@
             </b>
         </h1><br><br><br>
 
-        <a class="btn btn-success mt-2 mb-3" href="#" class="nav-link">
+        <a class="btn btn-success mt-2 mb-3" href="{{route('checkout')}}" class="nav-link">
             Checkout
             </a>
 

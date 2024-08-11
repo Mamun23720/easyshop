@@ -105,4 +105,14 @@ class OrderController extends Controller
 
         return redirect()->back();
     }
+
+    public function checkout()
+    {
+        return view('frontend.pages.checkout');
+    }
+
+    public function viewInvoice()
+    {
+        return view('frontend.pages.invoice');
+    }
 }

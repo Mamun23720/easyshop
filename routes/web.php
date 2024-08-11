@@ -15,6 +15,10 @@ use App\Http\Controllers\Frontend\RegistrationController;
 //     return view('backend.master');
 // });
 
+
+
+
+
 //For Frontend
 
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
@@ -25,7 +29,14 @@ Route::post('/registration',[RegistrationController::class, 'registration'])->na
 
 Route::post('/customerLogin',[RegistrationController::class, 'customerLogin'])->name('frontend.login');
 
-Route::get('/customerLogout',[RegistrationController::class, 'customerLogout'])->name('frontend.logout');
+
+Route::group(['middleware'=>'customer_auth'], function () {
+    Route::get('/customerLogout',[RegistrationController::class, 'customerLogout'])->name('frontend.logout');
+    Route::get('/checkout',[OrderController::class,'checkout'])->name('checkout');
+    Route::post('/place-order',[OrderController::class, 'placeOrder'])->name('order.place');
+    Route::post('/view-invoice',[OrderController::class, 'viewInvoice'])->name('view.invoice');
+});
+
 
 
 
@@ -45,9 +56,9 @@ Route::get('/viewCart',[OrderController::class,'viewCart'])->name('view.cart');
 
 Route::get('/addToCart{productId}',[OrderController::class,'addToCart'])->name('add.to.cart');
 
-Route::get('removeAllCart',[OrderController::class,'removeAllCart'])->name('remove.all.cart');
+Route::get('/removeAllCart',[OrderController::class,'removeAllCart'])->name('remove.all.cart');
 
-Route::get('removeSingleCart{productId}',[OrderController::class,'removeSingleCart'])->name('remove.single.cart');
+Route::get('/remove//single/cart{productId}',[OrderController::class,'removeSingleCart'])->name('remove.single.cart');
 
 
 
@@ -63,29 +74,7 @@ Route::get('/product',[FrontendProductController::class, 'product'])->name('fron
 
 Route::get('/show-product{productId}',[FrontendProductController::class, 'show_product'])->name('show.product');
 
-
-
-
-
-
 Route::get('/customer',[FrontendCustomerController::class, 'customer'])->name('frontend.customer');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
