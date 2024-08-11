@@ -109,8 +109,11 @@
   </head>
 
 
-  <body style="background-color: rgb(184, 255, 231)">
-    @include('notify::components.notify')
+  <body>
+
+
+
+@include('notify::components.notify')
 
 @include('backend.partials.header')
 

@@ -16,9 +16,9 @@
 
         <div class="mt-5 ps-lg-5">
 
-            <h4 class="title text-dark" style=""><b>Product Name: {{$viewProduct->name}}</b></h4>
+            <h4 class="title text-dark" ><b>Product Name: {{$viewProduct->name}}</b></h4>
 
-            <div class="mb-3" style="">
+            <div class="mb-3">
 
               <span class="h5"><b>Product Price: {{$viewProduct->price}} Taka</b></span>
 
