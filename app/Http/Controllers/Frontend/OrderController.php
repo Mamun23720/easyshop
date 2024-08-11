@@ -25,7 +25,7 @@ class OrderController extends Controller
         $myCart=session()->get('basket');
         // session()->forget('basket');
 
-       if(empty($myCart)) 
+       if(empty($myCart))
        {
         $cart[$product->id]=[
             'product_id'=>$product->id,
@@ -47,7 +47,7 @@ class OrderController extends Controller
                     $myCart[$pId]['quantity'] = $myCart[$pId]['quantity'] + 1;
 
                     $myCart[$pId]['subtotal'] = $myCart[$pId]['quantity'] * $myCart[$pId]['product_price'];
-                    
+
                     session()->put('basket',$myCart);
 
                     //session()->forget('basket');
@@ -66,7 +66,7 @@ class OrderController extends Controller
                             'subtotal'=>1 * $product->price,
                         ];
                         session()->put('basket',$myCart);
-          
+
                         notify()->success('Product Added.');
 
                         return redirect()->back();
@@ -79,8 +79,8 @@ class OrderController extends Controller
     {
         session()->forget('basket');
 
-        notify()->success('Clear Cut Successful');
-        
+        notify()->success('Clear Cart Successful');
+
         return view('frontend.pages.view-cart');
     }
 

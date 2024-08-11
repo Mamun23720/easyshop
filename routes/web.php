@@ -21,7 +21,13 @@ Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
 //customer Register and login
 
-Route::get('/registration',[RegistrationController::class, 'registration'])->name('frontend.registration');
+Route::post('/registration',[RegistrationController::class, 'registration'])->name('frontend.registration');
+
+Route::post('/customerLogin',[RegistrationController::class, 'customerLogin'])->name('frontend.login');
+
+Route::get('/customerLogout',[RegistrationController::class, 'customerLogout'])->name('frontend.logout');
+
+
 
 
 

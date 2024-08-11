@@ -30,7 +30,7 @@
           <td style="text-align:center; font-size: 200%; border-color: black; border-width: 4px; background-color:burlywood;" class="col-1">...</td>
             <td style=" border-color: black; border-width: 4px; background-color:burlywood;" class="col-1 mt-0">
             <img style=" margin-left: 0.2px; height: 150px; width: 150px; border-radius: 5%;" src="{{url('/uploads/product/'.$cart['product_image'])}}" class="mt-0" alt="..." >
-            </td>  
+            </td>
             <td style=" font-size: 200%; border-color: black; border-width: 4px; background-color:burlywood;" class="col-1">{{$cart['product_name']}}</td>
             <td style="font-size: 200%; text-align: center; border-color: black; border-width: 4px; background-color:burlywood;" class="col-1" >{{$cart['product_price']}}</td>
             <td style="font-size: 200%; text-align: center; border-color: black; border-width: 4px; background-color:burlywood;" class="col-1" >{{$cart['quantity']}}</td>
@@ -54,7 +54,7 @@
 
 
 @if ($myCart=session()->get('basket'))
-  
+
         <h1 style="color:red; font-size: 300%; text-align: right; background-color:burlywood; border-color: black; border-width: 4px;">
             <b  >Total Price= {{array_sum(array_column(session()->get('basket'),'subtotal')) }}.00
             <a style="margin-left: 1140px; " class="btn btn-danger mt-0 mb-3" href="{{route('remove.all.cart')}}" class="nav-link">
@@ -62,6 +62,11 @@
             </a>
             </b>
         </h1><br><br><br>
+
+        <a class="btn btn-success mt-2 mb-3" href="#" class="nav-link">
+            Checkout
+            </a>
+
 
 @else
 <br><br><br>
@@ -71,7 +76,7 @@
         </h1>
 
 @endif
-        
+
 
 
 </div>

@@ -9,6 +9,10 @@
         <!-- <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
             <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
           </form> -->
+
+          @guest('customerGuard')
+
+
         <div class="text-end">
             <div class="container d-flex flex-wrap justify-content-center">
               <div class="text-end">
@@ -21,6 +25,39 @@
               </div>
             </div>
           </div>
+
+          @endguest
+
+
+          @auth('customerGuard')
+
+          <div class="text-end">
+            <div class="container d-flex flex-wrap justify-content-center">
+              <div class="text-end">
+                  <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasLogin" role="button" aria-controls="offcanvasExample">
+                      {{auth('customerGuard')->user()->name}}
+                    </a>
+                    <a class="btn btn-primary"  href="{{route('frontend.logout')}}">
+                      Logout
+                    </a>
+              </div>
+            </div>
+          </div>
+
+          @endauth
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -90,7 +127,7 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="{{route('frontend.login')}}" method="post" enctype="multipart/form-data">
             @csrf
 
 
@@ -114,7 +151,7 @@
 
 
 
-{{-- Signup form --}}
+{{-- Registration form --}}
 
   <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasSignup" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
@@ -123,7 +160,7 @@
     </div>
     <div class="offcanvas-body">
 
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="{{route('frontend.registration')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Name</label>

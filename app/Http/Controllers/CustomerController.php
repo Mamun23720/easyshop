@@ -53,5 +53,7 @@ class CustomerController extends Controller
         return redirect()->route('backend.customerlist');
     }
 
+    
+
 
 }
