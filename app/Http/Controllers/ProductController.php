@@ -66,7 +66,7 @@ class ProductController extends Controller
             // 'mobile'=>$request->customer_number,
             'image'=>$fileName,
             'category'=>$request->product_category
-            
+
         ]);
 
 
@@ -113,12 +113,32 @@ class ProductController extends Controller
     {
 
 // dd($request->all());
+$fileName=null;
+
+        //check file exist
+
+        //for image file upload
+
+        if($request->hasFile('product_image'))
+        {
+
+            $file=$request->file('product_image');
+
+            //file name generate
+            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+
+             //file store where i want to
+            $file->storeAs('product',$fileName);
+
+        }
+
 
         $product=Product::find($id);
         $product->update([
             'name'=>$request->product_name,
             'price'=>$request->product_price,
             'description'=>$request->product_description,
+            'image'=>$fileName,
         ]);
 
         notify()->success("Product Updated successfully");

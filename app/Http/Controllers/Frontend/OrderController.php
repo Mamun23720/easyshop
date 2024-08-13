@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -37,7 +39,7 @@ class OrderController extends Controller
         ];
         session()->put('basket',$cart);
 
-        notify()->success('Product Added.');
+        notify()->success('Product Added Successfully.');
 
         return redirect()->back();
        }
@@ -111,8 +113,53 @@ class OrderController extends Controller
         return view('frontend.pages.checkout');
     }
 
-    public function viewInvoice()
+    public function placeOrder(Request $request)
     {
-        return view('frontend.pages.invoice');
+        //  dd($request->all());
+        //validation
+
+        $myCart=session()->get('basket');
+
+         //quary for store data into Orders table
+       $order= Order::create([
+            'receiver_name'=>$request->receiver_name,
+            'receiver_email'=>$request->receiver_email,
+            'receiver_address'=>$request->receiver_location,
+            'receiver_mobile'=>$request->receiver_number,
+            'payment_method'=>$request->payment_method,
+            'customer_id'=>auth('customerGuard')->user()->id,
+            'total_amount'=>array_sum(array_column($myCart,'subtotal'))
+
+         ]);
+
+         foreach($myCart as $singleData)
+        {
+
+            OrderDetail::create([
+                'order_id'=>$order->id,
+                'product_id'=>$singleData['product_id'],
+                'product_unit_price'=>$singleData['product_price'],
+                'product_quantity'=>$singleData['quantity'],
+                'subtotal'=>$singleData['subtotal'],
+            ]);
+        }
+
+        //  dd($request->all());
+
+        notify()->success('Order place successfully.');
+        session()->forget('basket');
+        return redirect()->route('view.invoice',$order->id);
+
+    }
+
+    public function viewInvoice($pId)
+    {
+        //dd($pId);
+
+        $order=Order::with('orderDetails')->find($pId);
+
+       // dd($orderDetails);
+
+        return view('frontend.pages.invoice', compact('order'));
     }
 }

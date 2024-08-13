@@ -1,7 +1,7 @@
 @extends('frontend.master')
 
 @section('content')
-    
+
 <body>
 <style>
         .invoice-container {
@@ -30,7 +30,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
-            
+
 
         }
         .table th, .table td {
@@ -51,13 +51,20 @@
         .footer p {
             margin: 0;
             font-size: 0.9em;
-            
+
         }
     </style>
-    <div class="invoice-container">
+
+<a style="margin-left: 1000px" class="btn btn-success mb-3" onclick="printReport()" >Print</a>
+
+
+{{-- Start Print Area --}}
+
+
+<div class="invoice-container" id="printArea">
         <div class="header">
         <div><h1 class="mb-2" style="font-size: 200%; color:black;"><b>Invoice</b></h1></div>
-            <p>Order Date: August 12, 2024</p>
+            <p>Order Date: {{$order->created_at}}</p>
         </div>
 
         <div class="address">
@@ -70,10 +77,10 @@
             </div>
             <div>
                 <strong>Bill To:</strong><br>
-                Customer Name<br>
-                Customer Address<br>
-                Email: Customer email<br>
-                Phone: Customer mobile number
+                Customer Name: {{$order->receiver_name}}<br>
+                Customer Address: {{$order->receiver_address}}<br>
+                Email: Customer email: {{$order->receiver_email}}<br>
+                Phone: Customer mobile number: {{$order->receiver_mobile}}
             </div>
         </div>
 
@@ -83,32 +90,38 @@
                 <thead>
                     <tr>
                         <th>Item Description</th>
-                        <th>Quantity</th>
-                        <th>Unit Price</th>
-                        <th>Total</th>
+                        <th style="text-align:center" >Quantity</th>
+                        <th style="text-align:center" >Unit Price</th>
+                        <th style="text-align:center" >Total</th>
                     </tr>
                 </thead>
                 <tbody>
+
+                @foreach ($order->orderDetails as $item)
+
+
                     <tr>
-                        <td>Product Name</td>
-                        <td>0</td>
-                        <td>00.00 BDT</td>
-                        <td>00.00 BDT</td>
+                        <td>{{$item->product->name}}</td>
+                        <td style="text-align:center" >{{$item->product_quantity}}</td>
+                        <td style="text-align:center" >{{$item->product_unit_price}}.00</td>
+                        <td style="text-align:right" >{{$item->subtotal}}.00</td>
                     </tr>
-                    
+
+
+                @endforeach
                 </tbody>
                 <tfoot>
                     <tr>
                         <td colspan="3" class="total">Subtotal</td>
-                        <td>00.00 BDT</td>
+                        <td style="text-align:right" >00.00</td>
                     </tr>
                     <tr>
                         <td colspan="3" class="total">Tax (0%)</td>
-                        <td>00.00 BDT</td>
+                        <td style="text-align:right" >00.00</td>
                     </tr>
                     <tr>
                         <td colspan="3" class="total">Total</td>
-                        <td>00.00 BDT</td>
+                        <td style="text-align:right" >00.00</td>
                     </tr>
                 </tfoot>
             </table>
@@ -116,13 +129,28 @@
 
         <br><br>
         <div class="footer">
-            <p>Thank you for your business!</p>
+            <p>Thank you for your interest!</p>
             <p>If you have any questions, please contact us at sajibVaiya@gmail.com or 01627736636.</p>
         </div>
     </div>
 
-    
-    <a style="margin-left: 950px" class="btn btn-danger mt-3" href="#">Print</a>
+
+{{-- End Print Area --}}
+
+
+<script type="text/javascript">
+    function printReport()
+    {
+        var printContents = document.getElementById("printArea").innerHTML;
+			var originalContents = document.body.innerHTML;
+
+			document.body.innerHTML = printContents;
+
+			window.print();
+
+			document.body.innerHTML = originalContents;
+    }
+</script>
 
 </body>
 </html>

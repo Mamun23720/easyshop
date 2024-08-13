@@ -32,9 +32,12 @@ Route::post('/customerLogin',[RegistrationController::class, 'customerLogin'])->
 
 Route::group(['middleware'=>'customer_auth'], function () {
     Route::get('/customerLogout',[RegistrationController::class, 'customerLogout'])->name('frontend.logout');
+
     Route::get('/checkout',[OrderController::class,'checkout'])->name('checkout');
+
     Route::post('/place-order',[OrderController::class, 'placeOrder'])->name('order.place');
-    Route::post('/view-invoice',[OrderController::class, 'viewInvoice'])->name('view.invoice');
+
+    Route::get('/view-invoice/{productId}',[OrderController::class, 'viewInvoice'])->name('view.invoice');
 });
 
 

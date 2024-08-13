@@ -9,7 +9,7 @@
   </head>
 
 
-<body style="background-color: tomato ;" >
+<body>
 <!-- <body background="{{url('/uploads/adminPhoto/background1.jpg')}}"> -->
 @include('notify::components.notify')
 
