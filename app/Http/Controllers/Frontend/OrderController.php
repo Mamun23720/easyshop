@@ -11,6 +11,17 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
 
+    //Method for Buy now pages
+
+    public function buynow($pId)
+    {
+        $product = Product::find($pId);
+
+        return view('frontend.pages.checkout', compact('product'));
+
+    }
+
+
     //Method for Cart Item Pages
     public function viewCart()
     {
@@ -69,7 +80,7 @@ class OrderController extends Controller
                         ];
                         session()->put('basket',$myCart);
 
-                        notify()->success('Product Added.');
+                        notify()->success('Product Added Successfully.');
 
                         return redirect()->back();
                     }

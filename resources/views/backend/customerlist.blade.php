@@ -10,12 +10,6 @@
 
 
 
-<div style="text-align: center">
-        <a href="{{route('backend.customerform')}}" style="color: blanchedalmond" class="btn btn-primary">Add Customer</a>
-    <br>
-    <br>
-    </div>
-
 
 
 
@@ -43,7 +37,7 @@
             {{-- <td>{{$customer->dateofbirth}}</td> --}}
             {{-- <td>{{$customer->mobile}}</td> --}}
             <td>
-                <img src="{{url('/uploads/customer/'.$customer->image)}}" width="50px" height="50px">
+                <img src="{{url('/uploads/customerRegistration/'.$customer->image)}}" width="50px" height="50px">
             </td>
             <td>
                 <a class="btn btn-success" href="">View</a>

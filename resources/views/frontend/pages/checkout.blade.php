@@ -39,8 +39,8 @@
             </div>
 
             <div class="col-12">
-              <label for="email" class="form-label"><b>Delivery Location</b></label>
-              <input type="email" name="receiver_location" class="form-control" id="email" placeholder="Enter your delivery location" required>
+              <label for="text" class="form-label"><b>Delivery Location</b></label>
+              <input type="text" name="receiver_location" class="form-control" id="email" placeholder="Enter your delivery location" required>
             </div>
 
             <div class="col-12">

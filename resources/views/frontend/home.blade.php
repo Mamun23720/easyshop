@@ -19,16 +19,16 @@
                   <a href="{{route('show.product', $product->id)}}" class="align-items-center text-white text-decoration-none">
                     <img style="height: 200px; width: 200px; border-radius: 5%; " src="{{url('/uploads/product/'.$product->image)}}" class="mt-2" alt="..." >
                     <br>
-                    </a> 
-                    
-                    <h5 style="color: black;" ><b>Name: {{$product->name}}</b></h5>
+                    </a>
+
+                    <h5 style="color: black;" ><b>{{$product->name}}</b></h5>
                     <br>
                     <h3 style="color: black;" ><b>Price: {{$product->price}} BDT</b></h3>
                     <br>
                     <a href="{{route('add.to.cart',$product->id)}}" class="btn btn-warning"><b>Add to cart</b></a>
                     <a href="{{route('show.product', $product->id)}}" class="btn btn-success"><b>View</b></a>
             </div>
-        
+
       @endforeach
 
 
@@ -41,7 +41,7 @@
 
 
 
-    
+
 <div class="container">
 <div><h1 class="mb-2" style="font-size: 200%; color:black;"><b>New Products</b></h1></div>
 <div class="row">
@@ -59,8 +59,8 @@
                   <a href="{{route('show.product', $product->id)}}" class="align-items-center text-white text-decoration-none">
                     <img style="height: 200px; width: 200px; border-radius: 5%; " src="{{url('/uploads/product/'.$product->image)}}" class="mt-2" alt="..." >
                     <br>
-                    </a> 
-                    
+                    </a>
+
                     <h5 style="color: black;" ><b>Name: {{$product->name}}</b></h5>
                     <br>
                     <h3 style="color: black;" ><b>Price: {{$product->price}} BDT</b></h3>
@@ -68,7 +68,7 @@
                     <a href="{{route('add.to.cart',$product->id)}}" class="btn btn-warning"><b>Add to cart</b></a>
                     <a href="{{route('show.product', $product->id)}}" class="btn btn-success"><b>View</b></a>
             </div>
-        
+
       @endforeach
 
 
@@ -97,8 +97,8 @@
                   <a href="{{route('show.product', $product->id)}}" class="align-items-center text-white text-decoration-none">
                     <img style="height: 200px; width: 200px; border-radius: 5%; " src="{{url('/uploads/product/'.$product->image)}}" class="mt-2" alt="..." >
                     <br>
-                    </a> 
-                    
+                    </a>
+
                     <h5 style="color: black;" ><b>Name: {{$product->name}}</b></h5>
                     <br>
                     <h3 style="color: black;" ><b>Price: {{$product->price}} BDT</b></h3>
@@ -106,7 +106,7 @@
                     <a href="{{route('add.to.cart',$product->id)}}" class="btn btn-warning"><b>Add to cart</b></a>
                     <a href="{{route('show.product', $product->id)}}" class="btn btn-success"><b>View</b></a>
             </div>
-        
+
       @endforeach
 
 

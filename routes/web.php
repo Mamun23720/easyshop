@@ -25,19 +25,27 @@ Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
 //customer Register and login
 
-Route::post('/registration',[RegistrationController::class, 'registration'])->name('frontend.registration');
+Route::post('/registration',[CustomerController::class, 'registration'])->name('frontend.registration');
 
-Route::post('/customerLogin',[RegistrationController::class, 'customerLogin'])->name('frontend.login');
+Route::post('/customerLogin',[CustomerController::class, 'customerLogin'])->name('frontend.login');
 
 
 Route::group(['middleware'=>'customer_auth'], function () {
-    Route::get('/customerLogout',[RegistrationController::class, 'customerLogout'])->name('frontend.logout');
+
+
+    Route::get('/profile',[CustomerController::class, 'profile'])->name('view.profile');
+
+    Route::get('/buynow/{productID}',[OrderController::class,'buynow'])->name('buy.now');
+
+    Route::get('/customerLogout',[CustomerController::class, 'customerLogout'])->name('frontend.logout');
 
     Route::get('/checkout',[OrderController::class,'checkout'])->name('checkout');
 
     Route::post('/place-order',[OrderController::class, 'placeOrder'])->name('order.place');
 
     Route::get('/view-invoice/{productId}',[OrderController::class, 'viewInvoice'])->name('view.invoice');
+
+
 });
 
 
@@ -77,7 +85,6 @@ Route::get('/product',[FrontendProductController::class, 'product'])->name('fron
 
 Route::get('/show-product{productId}',[FrontendProductController::class, 'show_product'])->name('show.product');
 
-Route::get('/customer',[FrontendCustomerController::class, 'customer'])->name('frontend.customer');
 
 
 
@@ -111,24 +118,26 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-
 Route::get('/', [DashboardController::class, 'dashboard'])->name('backend.dashboard');
 
 //Customer Related
 
+
 Route::get('/customerlist', [CustomerController::class, 'list'])->name('backend.customerlist');
 
-Route::get('/customerform',[CustomerController::class, 'form'])->name('backend.customerform');
 
-Route::post('/submitcustomerform',[CustomerController::class, 'store'])->name('backend.storecustomer');
 
 //Product Related
+
+
 
 Route::get('/productlist',[ProductController::class, 'list'])->name('backend.productlist');
 
 Route::get('/productform',[ProductController::class, 'form'])->name('backend.productform');
 
 Route::post('/submitproductform',[ProductController::class, 'store'])->name('backend.storeproduct');
+
+
 
 
 //Product View, Delete & Edit Section

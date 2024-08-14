@@ -36,7 +36,7 @@
                 </div>
               </div>
             <div>
-              <a style="margin-right: 5px" class="btn btn-success mt-5" href="#" class="nav-link">Buy Now</a>
+              <a style="margin-right: 5px" class="btn btn-success mt-5" href="{{route('buy.now', $singleProduct->id)}}" class="nav-link">Buy Now</a>
               <a style="margin-right: 5px" class="btn btn-warning mt-5" href="{{route('add.to.cart',$singleProduct->id)}}" class="nav-link">Add to Cart</a>
             </div>
               {{--

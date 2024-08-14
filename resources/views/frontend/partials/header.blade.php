@@ -3,7 +3,7 @@
       <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-          
+
           <h1><b>Easy Shop</b></h1>
         </a>
         <!-- <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
@@ -16,7 +16,7 @@
         <div class="text-end">
             <div class="container d-flex flex-wrap justify-content-center">
               <div class="text-end">
-                
+
                   <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasLogin" role="button" aria-controls="offcanvasExample">
                       Login
                     </a>
@@ -36,8 +36,8 @@
             <div class="container d-flex flex-wrap justify-content-center">
               <div class="text-end">
               <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-              <img src="{{url('/uploads/customerRegistration/'). auth('customerGuard')->user()->image}}" alt="" width="50" height="50" class="rounded-circle me-2 ms-2">
-                  <a class="btn btn-primary me-2" data-bs-toggle="offcanvas" href="#offcanvasLogin" role="button" aria-controls="offcanvasExample">
+              <img src="{{url('/uploads/customerRegistration/'. auth('customerGuard')->user()->image)}}" alt="" width="50" height="50" class="rounded-circle me-2 ms-2">
+                  <a href="{{route('view.profile')}}" class="btn btn-primary me-2">
                       {{auth('customerGuard')->user()->name}}
                     </a>
                     <a class="btn btn-primary"  href="{{route('frontend.logout')}}">

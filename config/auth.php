@@ -71,7 +71,7 @@ return [
 
         'customer' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\Registration::class),
+            'model' => env('AUTH_MODEL', App\Models\Customer::class),
         ],
 
         // 'users' => [
