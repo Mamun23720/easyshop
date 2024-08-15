@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Customer;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -117,7 +118,11 @@ class CustomerController extends Controller
 
     public function profile()
     {
-        return view('frontend.pages.profile');
+        $myCart=session()->get('basket');
+
+       // dd($orderDetails);
+
+        return view('frontend.pages.profile', compact('myCart'));
     }
 
 }

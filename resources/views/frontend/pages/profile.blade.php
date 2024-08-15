@@ -28,28 +28,35 @@
                     <h4>Order History</h4>
                 </div>
                 <div class="card-body">
-                        <p class="text-center">You have no orders yet.</p>
+
+                    @if ($myCart=session()->has('basket'))
                         <table class="table table-bordered">
                             <thead>
+                                @foreach ($myCart=session()->get('basket') as $cart)
                                 <tr>
-                                    <th>Order ID</th>
-                                    <th>Date</th>
-                                    <th>Total</th>
-                                    <th>Status</th>
+                                    <th>Product Image</th>
+                                    <th>Product Name</th>
+                                    <th>Subtotal</th>
                                     <th>Details</th>
                                 </tr>
                             </thead>
                             <tbody>
-
-                                    <tr>
-                                        <td>1</td>
-                                        <td>01-02-2024</td>
-                                        <td>200</td>
-                                        <td>pending</td>
+                                <tr>
                                         <td>
-                                            <a href="" class="btn btn-info btn-sm">View</a>
+                                            <img style=" margin-left: 0.2px; height: 100px; width: 100px; border-radius: 5%;" src="{{url('/uploads/product/'.$cart['product_image'])}}" class="mt-0" alt="..." >
                                         </td>
-                                    </tr>
+                                        <td>{{$cart['product_name']}}</td>
+                                        <td>{{$cart['subtotal']}}.00</td>
+                                        <td>
+                                            <a href="" class="btn btn-warning btn-sm">View</a>
+                                            <a href="" class="btn btn-info btn-sm">Print</a>
+                                            <a href="" class="btn btn-danger btn-sm">Cancel</a>
+                                        </td>
+                                </tr>
+                            @endforeach
+                            @else
+                            <p class="text-center">You have no orders yet.</p>
+                            @endif
                             </tbody>
                         </table>
                 </div>
