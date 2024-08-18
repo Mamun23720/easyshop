@@ -27,18 +27,18 @@
         @foreach ($myCart as $cart)
 
           <tr>
-          <td style="text-align:center; font-size: 200%; border-color: black; border-width: 4px; background-color:;" class="col-1">...</td>
-            <td style=" border-color: black; border-width: 4px; background-color:;" class="col-1 mt-0">
+          <td style="text-align:center; font-size: 200%; border-color: black; border-width: 4px; " class="col-1">...</td>
+            <td style=" border-color: black; border-width: 4px;" class="col-1 mt-0">
             <img style=" margin-left: 0.2px; height: 150px; width: 150px; border-radius: 5%;" src="{{url('/uploads/product/'.$cart['product_image'])}}" class="mt-0" alt="..." >
             </td>
-            <td style=" font-size: 200%; border-color: black; border-width: 4px; background-color:;" class="col-1">{{$cart['product_name']}}</td>
-            <td style="font-size: 200%; text-align: center; border-color: black; border-width: 4px; background-color:;" class="col-1" >{{$cart['product_price']}}</td>
-            <td style="font-size: 200%; text-align: center; border-color: black; border-width: 4px; background-color:;" class="col-1" >{{$cart['quantity']}}</td>
+            <td style=" font-size: 200%; border-color: black; border-width: 4px; " class="col-1">{{$cart['product_name']}}</td>
+            <td style="font-size: 200%; text-align: center; border-color: black; border-width: 4px;" class="col-1" >{{$cart['product_price']}}</td>
+            <td style="font-size: 200%; text-align: center; border-color: black; border-width: 4px; " class="col-1" >{{$cart['quantity']}}</td>
 
-            <td  style="font-size: 200%; text-align: center; border-color: black; border-width: 4px; background-color:;" class="col-1" >
+            <td  style="font-size: 200%; text-align: center; border-color: black; border-width: 4px; " class="col-1" >
             <a href="{{route('remove.single.cart',$cart['product_id'])}}" class="btn btn-danger mt-5"><b>Remove</b></a>
             </td>
-            <td style="font-size: 200%; text-align: right; border-color: black; border-width: 4px; background-color:;" class="col-1" ><b>{{$cart['subtotal']}}.00</b></td>
+            <td style="font-size: 200%; text-align: right; border-color: black; border-width: 4px; " class="col-1" ><b>{{$cart['subtotal']}}.00</b></td>
 
           </tr>
 
@@ -55,7 +55,7 @@
 
 @if ($myCart=session()->get('basket'))
 
-        <h1 style="color:red; font-size: 300%; text-align: right; background-color:; border-color: black; border-width: 4px;">
+        <h1 style="color:red; font-size: 300%; text-align: right; border-color: black; border-width: 4px;">
             <b  >Total Price= {{array_sum(array_column(session()->get('basket'),'subtotal')) }}.00
             <a style="margin-left: 1140px; " class="btn btn-danger mt-0 mb-3" href="{{route('remove.all.cart')}}" class="nav-link">
             Remove All Item

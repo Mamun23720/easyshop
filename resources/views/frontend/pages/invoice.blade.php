@@ -54,8 +54,9 @@
 
         }
     </style>
-
-<a style="margin-left: 1000px" class="btn btn-success mb-3" onclick="printReport()" >Print</a>
+<div class="container d-flex">
+<a style="margin-left: 49%" class="btn btn-success mb-3" onclick="printReport()" >Print</a>
+</div>
 
 
 {{-- Start Print Area --}}
@@ -92,7 +93,7 @@
                         <th>Item Description</th>
                         <th style="text-align:center" >Quantity</th>
                         <th style="text-align:center" >Unit Price</th>
-                        <th style="text-align:center" >Total</th>
+                        <th style="text-align:center" >Subtotal</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -101,7 +102,7 @@
 
 
                     <tr>
-                        <td>{{$item->product->name}}</td>
+                        <td>{{$item->product_name}}</td>
                         <td style="text-align:center" >{{$item->product_quantity}}</td>
                         <td style="text-align:center" >{{$item->product_unit_price}}.00</td>
                         <td style="text-align:right" >{{$item->subtotal}}.00</td>
@@ -112,16 +113,12 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="3" class="total">Subtotal</td>
-                        <td style="text-align:right" >00.00</td>
-                    </tr>
-                    <tr>
                         <td colspan="3" class="total">Tax (0%)</td>
                         <td style="text-align:right" >00.00</td>
                     </tr>
                     <tr>
                         <td colspan="3" class="total">Total</td>
-                        <td style="text-align:right" >00.00</td>
+                        <td style="text-align:right" >{{$order->total_amount}}.00</td>
                     </tr>
                 </tfoot>
             </table>

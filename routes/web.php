@@ -35,6 +35,8 @@ Route::group(['middleware'=>'customer_auth'], function () {
 
     Route::get('/profile',[CustomerController::class, 'profile'])->name('view.profile');
 
+    Route::get('/delete/{singleOrder}',[CustomerController::class, 'deleteSingleOrder'])->name('delete.single.order');
+
     Route::get('/buynow/{productID}',[OrderController::class,'buynow'])->name('buy.now');
 
     Route::get('/customerLogout',[CustomerController::class, 'customerLogout'])->name('frontend.logout');
@@ -69,7 +71,7 @@ Route::get('/addToCart{productId}',[OrderController::class,'addToCart'])->name('
 
 Route::get('/removeAllCart',[OrderController::class,'removeAllCart'])->name('remove.all.cart');
 
-Route::get('/remove//single/cart{productId}',[OrderController::class,'removeSingleCart'])->name('remove.single.cart');
+Route::get('/remove/single/cart{productId}',[OrderController::class,'removeSingleCart'])->name('remove.single.cart');
 
 
 

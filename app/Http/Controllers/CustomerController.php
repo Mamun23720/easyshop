@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Models\Order;
+use App\Models\OrderDetail;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -118,11 +120,20 @@ class CustomerController extends Controller
 
     public function profile()
     {
-        $myCart=session()->get('basket');
+        $order=Order::where('customer_id', auth('customerGuard')->user()->id)->get();
 
-       // dd($orderDetails);
-
-        return view('frontend.pages.profile', compact('myCart'));
+        $orders=OrderDetail::with('product')->get();
+    //    dd($order);
+        return view('frontend.pages.profile', compact('order', 'orders'));
     }
 
+    public function deleteSingleOrder($id)
+    {
+        $deleteOrder=Order::find( $id );
+        $deleteOrder->delete();
+
+        notify()->success("Order Deleted successfully");
+        return redirect()->back();
+
+    }
 }

@@ -149,6 +149,8 @@ class OrderController extends Controller
             OrderDetail::create([
                 'order_id'=>$order->id,
                 'product_id'=>$singleData['product_id'],
+                'product_name'=>$singleData['product_name'],
+                'product_image'=> $singleData['product_image'],
                 'product_unit_price'=>$singleData['product_price'],
                 'product_quantity'=>$singleData['quantity'],
                 'subtotal'=>$singleData['subtotal'],
@@ -157,7 +159,7 @@ class OrderController extends Controller
 
         //  dd($request->all());
 
-        notify()->success('Order place successfully.');
+        notify()->success('Order places successfully.');
         session()->forget('basket');
         return redirect()->route('view.invoice',$order->id);
 

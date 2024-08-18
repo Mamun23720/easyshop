@@ -10,4 +10,6 @@ class Customer extends Authenticatable
 {
     use HasFactory;
     protected $guarded = [];
+
+
 }
