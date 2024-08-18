@@ -122,9 +122,8 @@ class CustomerController extends Controller
     {
         $order=Order::where('customer_id', auth('customerGuard')->user()->id)->get();
 
-        $orders=OrderDetail::with('product')->get();
     //    dd($order);
-        return view('frontend.pages.profile', compact('order', 'orders'));
+        return view('frontend.pages.profile', compact('order'));
     }
 
     public function deleteSingleOrder($id)

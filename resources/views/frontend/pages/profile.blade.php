@@ -36,7 +36,6 @@
                                 <tr>
                                     <th>Order</th>
                                     <th>Order Date</th>
-                                    <th>Product Name</th>
                                     <th>Receiver Name</th>
                                     <th style="text-align: right;" >Subtotal</th>
                                     <th style="text-align: center;" >Action</th>
@@ -47,7 +46,6 @@
                                 <tr>
                                         <td>{{$key+1}}</td>
                                         <td>{{$item->created_at->format('d-m-Y')}}</td>
-                                        <td></td>
                                         <td>{{$item->receiver_name}}</td>
                                         <td style="text-align: right;" >{{$item->total_amount}}.00</td>
                                         <td style="text-align: center;" >
