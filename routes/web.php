@@ -9,13 +9,7 @@ use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\ProductController as FrontendProductController;
 
-// Route::get('/', function () {
-//     return view('backend.master');
-// });
-
-
 //For Frontend
-
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 Route::post('/registration',[CustomerController::class, 'registration'])->name('frontend.registration');
 Route::post('/customer/login',[CustomerController::class, 'customerLogin'])->name('frontend.login');
@@ -37,10 +31,7 @@ Route::get('/add/to/cart{productId}',[OrderController::class,'addToCart'])->name
 Route::get('/remove/single/cart{productId}',[OrderController::class,'removeSingleCart'])->name('remove.single.cart');
 Route::get('/remove/all/cart',[OrderController::class,'removeAllCart'])->name('remove.all.cart');
 
-
-
 // For Backend
-
 Route::group(['prefix' => 'admin'], function () {
 
     Route::get('/login', [AuthenticationController::class, 'loginForm'])->name('login');
@@ -49,7 +40,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::group(['middleware' => 'auth'], function () {
             Route::get('/', [DashboardController::class, 'dashboard'])->name('backend.dashboard');
             Route::get('/customer/list', [CustomerController::class, 'list'])->name('backend.customerlist');
-//product (all)
             Route::get('/product/list',[ProductController::class, 'productlist'])->name('backend.productlist');
             Route::get('/product/form',[ProductController::class, 'productform'])->name('backend.productform');
             Route::post('/submit/product/form',[ProductController::class, 'productstore'])->name('backend.storeproduct');
@@ -58,7 +48,6 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/product/kids/fashion/list',[ProductController::class, 'kidsfashionlist'])->name('backend.product.kids.fashion.list');
             Route::get('/product/mens/fashion/list',[ProductController::class, 'mensfashionlist'])->name('backend.product.mens.fashion.list');
             Route::get('/product/womens/fashion/list',[ProductController::class, 'womensfashionlist'])->name('backend.product.womens.fashion.list');
-
             Route::get('/product/view{product}',[ProductController::class, 'viewProduct'])->name('backend.viewProduct');
             Route::get('/product/delete{product}',[ProductController::class, 'deleteProduct'])->name('backend.deleteProduct');
             Route::get('/product/edit{product}',[ProductController::class, 'editProduct'])->name('backend.editProduct');
