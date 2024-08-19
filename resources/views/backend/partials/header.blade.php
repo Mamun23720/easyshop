@@ -1,8 +1,8 @@
-<header class="p-3 text-bg-dark">
+<header class="p-1 text-bg-dark">
     <div class="container">
-      <div class="d-flex flex-wrap align-items-left justify-content-center justify-content-lg-start">
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2">
-            <h3><li><a href="#" class="nav-link px-2 text-white">EasyShop</a></li></h3>
+      <div class="d-flex  align-items-left justify-content-center justify-content-lg-start">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-0">
+            <h3><li><a href="{{route('backend.dashboard')}}" class="nav-link text-white">S-Shop</a></li></h3>
           {{-- <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
