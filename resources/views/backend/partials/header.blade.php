@@ -18,7 +18,7 @@
           {{-- <button type="button" class="btn btn-outline-light me-2">Login</button>
           <button type="button" class="btn btn-warning">Sign-up</button> --}}
 
-        <a  class="btn btn-warning" href="{{route('logout')}}" style="color: rgb(2, 1, 0)">Logout</a>
+        <a  class="btn btn-warning mt-2" href="{{route('logout')}}" style="color: rgb(2, 1, 0)">Logout</a>
 
         </div>
       </div>
