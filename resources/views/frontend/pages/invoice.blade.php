@@ -89,7 +89,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Item Description</th>
+                        <th>Item Name</th>
                         <th style="text-align:center" >Quantity</th>
                         <th style="text-align:center" >Unit Price</th>
                         <th style="text-align:center" >Total</th>

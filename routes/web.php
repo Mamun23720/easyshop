@@ -48,16 +48,6 @@ Route::group(['middleware'=>'customer_auth'], function () {
 
 });
 
-
-
-
-
-
-
-
-
-
-
 //Order Controller
 
 
