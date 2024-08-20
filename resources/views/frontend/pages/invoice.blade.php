@@ -102,7 +102,7 @@
 
 
                     <tr>
-                        <td>{{$item->product_name}}</td>
+                        <td>{{$item->product->name}}</td>
                         <td style="text-align:center" >{{$item->product_quantity}}</td>
                         <td style="text-align:center" >{{$item->product_unit_price}}.00</td>
                         <td style="text-align:right" >{{$item->subtotal}}.00</td>
@@ -110,6 +110,7 @@
 
 
                 @endforeach
+
                 </tbody>
                 <tfoot>
                     <tr>

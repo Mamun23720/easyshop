@@ -149,8 +149,6 @@ class OrderController extends Controller
             OrderDetail::create([
                 'order_id'=>$order->id,
                 'product_id'=>$singleData['product_id'],
-                'product_name'=>$singleData['product_name'],
-                'product_image'=> $singleData['product_image'],
                 'product_unit_price'=>$singleData['product_price'],
                 'product_quantity'=>$singleData['quantity'],
                 'subtotal'=>$singleData['subtotal'],

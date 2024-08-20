@@ -97,7 +97,7 @@ class ProductController extends Controller
     public function kidsfashionlist()
     {
         $allProduct=Product::paginate(10);
-        $kidsfashionProduct=Product::where('category','Kids Fashion')->get();
+        $kidsfashionProduct=Product::where('category','Kids Fashion')->latest()->get();
         return view('backend.kidsfashionProductlist', compact('kidsfashionProduct','allProduct'));
     }
     public function mensfashionlist()

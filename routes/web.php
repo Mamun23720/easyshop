@@ -13,50 +13,27 @@ use App\Http\Controllers\Frontend\ProductController as FrontendProductController
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 Route::post('/registration',[CustomerController::class, 'registration'])->name('frontend.registration');
 Route::post('/customer/login',[CustomerController::class, 'customerLogin'])->name('frontend.login');
-
-Route::group(['middleware'=>'customer_auth'], function () {
-    Route::get('/profile',[CustomerController::class, 'profile'])->name('view.profile');
-    Route::get('/delete/{singleOrder}',[CustomerController::class, 'deleteSingleOrder'])->name('delete.single.order');
-    Route::get('/buynow/{productID}',[OrderController::class,'buynow'])->name('buy.now');
-    Route::get('/customer/logout',[CustomerController::class, 'customerLogout'])->name('frontend.logout');
-    Route::get('/checkout',[OrderController::class,'checkout'])->name('checkout');
-
-    Route::post('/place-order',[OrderController::class, 'placeOrder'])->name('order.place');
-
-    Route::get('/view-invoice/{productId}',[OrderController::class, 'viewInvoice'])->name('view.invoice');
-
-
-});
-
-//Order Controller
-
-
-//cart item er sob kaj
-
-Route::get('/viewCart',[OrderController::class,'viewCart'])->name('view.cart');
-
-Route::get('/addToCart{productId}',[OrderController::class,'addToCart'])->name('add.to.cart');
-
-Route::get('/removeAllCart',[OrderController::class,'removeAllCart'])->name('remove.all.cart');
-
-Route::get('/remove//single/cart{productId}',[OrderController::class,'removeSingleCart'])->name('remove.single.cart');
-
-
-
-
-
-// Route::get('/',[OrderController::class,''])->name();
-
-
-
-//frontend product er kaj sob
-
 Route::get('/product',[FrontendProductController::class, 'product'])->name('frontend.product');
 Route::get('/show/product{productId}',[FrontendProductController::class, 'show_product'])->name('show.product');
+Route::get('/viewCart',[OrderController::class,'viewCart'])->name('view.cart');
+Route::get('/addToCart{productId}',[OrderController::class,'addToCart'])->name('add.to.cart');
+Route::get('/removeAllCart',[OrderController::class,'removeAllCart'])->name('remove.all.cart');
+Route::get('/remove//single/cart{productId}',[OrderController::class,'removeSingleCart'])->name('remove.single.cart');
 Route::get('/view/cart',[OrderController::class,'viewCart'])->name('view.cart');
 Route::get('/add/to/cart{productId}',[OrderController::class,'addToCart'])->name('add.to.cart');
 Route::get('/remove/single/cart{productId}',[OrderController::class,'removeSingleCart'])->name('remove.single.cart');
 Route::get('/remove/all/cart',[OrderController::class,'removeAllCart'])->name('remove.all.cart');
+
+    Route::group(['middleware'=>'customer_auth'], function () {
+            Route::get('/profile',[CustomerController::class, 'profile'])->name('view.profile');
+            Route::get('/delete/{singleOrder}',[CustomerController::class, 'deleteSingleOrder'])->name('delete.single.order');
+            Route::get('/buynow/{productID}',[OrderController::class,'buynow'])->name('buy.now');
+            Route::get('/customer/logout',[CustomerController::class, 'customerLogout'])->name('frontend.logout');
+            Route::get('/checkout',[OrderController::class,'checkout'])->name('checkout');
+            Route::post('/place-order',[OrderController::class, 'placeOrder'])->name('order.place');
+            Route::get('/view-invoice/{productId}',[OrderController::class, 'viewInvoice'])->name('view.invoice');
+    });
+
 
 // For Backend
 Route::group(['prefix' => 'admin'], function () {
