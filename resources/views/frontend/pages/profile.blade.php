@@ -7,10 +7,10 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
-                    <h4>User Profile</h4>
+                    <h2 style="text-align: center;" ><b>User Profile</b></h2>
                 </div>
                 <div class="card-body">
-                    <div class="text-center mb-4">
+                    <div style=" text-align:center" class="text-center mb-4">
                         <!-- Display user profile picture -->
                         <img src="{{url('/uploads/customerRegistration/'. auth('customerGuard')->user()->image)}}" alt="Profile Picture" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
                     </div>
@@ -25,38 +25,35 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h4>Order History</h4>
+                    <h4 style="text-align: center;" ><b>Order History</b></h4>
                 </div>
                 <div class="card-body">
 
-                    @if ($myCart=session()->has('basket'))
                         <table class="table table-bordered">
                             <thead>
-                                @foreach ($myCart=session()->get('basket') as $cart)
+
+
                                 <tr>
-                                    <th>Product Image</th>
-                                    <th>Product Name</th>
-                                    <th>Subtotal</th>
-                                    <th>Details</th>
+                                    <th>Order</th>
+                                    <th>Order Date</th>
+                                    <th>Receiver Name</th>
+                                    <th style="text-align: right;" >Subtotal</th>
+                                    <th style="text-align: center;" >Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            @foreach ($order as $key=>$item)
                                 <tr>
-                                        <td>
-                                            <img style=" margin-left: 0.2px; height: 100px; width: 100px; border-radius: 5%;" src="{{url('/uploads/product/'.$cart['product_image'])}}" class="mt-0" alt="..." >
-                                        </td>
-                                        <td>{{$cart['product_name']}}</td>
-                                        <td>{{$cart['subtotal']}}.00</td>
-                                        <td>
-                                            <a href="" class="btn btn-warning btn-sm">View</a>
-                                            <a href="" class="btn btn-info btn-sm">Print</a>
-                                            <a href="" class="btn btn-danger btn-sm">Cancel</a>
+                                        <td>{{$key+1}}</td>
+                                        <td>{{$item->created_at->format('d-m-Y')}}</td>
+                                        <td>{{$item->receiver_name}}</td>
+                                        <td style="text-align: right;" >{{$item->total_amount}}.00</td>
+                                        <td style="text-align: center;" >
+                                            <a href="{{route('view.invoice',$item->id)}}" class="btn btn-warning btn-sm">View</a>
+                                            <a href="{{route('delete.single.order',$item->id)}}" class="btn btn-danger btn-sm">Cancel</a>
                                         </td>
                                 </tr>
                             @endforeach
-                            @else
-                            <p class="text-center">You have no orders yet.</p>
-                            @endif
                             </tbody>
                         </table>
                 </div>

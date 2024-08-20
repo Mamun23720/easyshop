@@ -14,4 +14,9 @@ class HomeController extends Controller
 
         return view("frontend.home",compact('allProduct'));
     }
+
+    // public function home()
+    // {
+    //     return view('frontend.master2');
+    // }
 }

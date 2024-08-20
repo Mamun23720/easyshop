@@ -2,11 +2,6 @@
 
 @section('content')
 <br>
-<div style="text-align: center">
-    <a href="{{route('backend.productform')}}" class="btn btn-success">Add Product</a>
-<br>
-<br>
-</div>
 <table class="table table-dark table-hover">
         <thead style="border: white">
           <tr>
@@ -22,7 +17,7 @@
         </thead>
         <tbody>
 
-            @foreach ($allProduct as $key=>$product)
+            @foreach ($accessoriesProduct as $key=>$product)
 
 
           <tr>
