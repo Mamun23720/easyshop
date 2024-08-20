@@ -23,7 +23,7 @@
 
 
 
-<body class="container">
+<body style="position:absolute; padding: 50px;" >
 
 
 <div class="offcanvas-menu-overlay"></div>
@@ -56,58 +56,60 @@
 
 <!-- Header file End-->
 
-
-
-
+    <!-- <img src="{{url('/uploads/fashion/womensfashion.avif')}}" alt=""> -->
 
 <section class="categories">
 <div class="container-fluid">
 <div class="row">
 <div class="col-lg-6 p-0">
-<div class="categories__item categories__large__item set-bg" data-setbg="img/categories/category-1.jpg">
-<div class="categories__text">
-<h1>Women’s fashion</h1>
-<p>Sitamet, consectetur adipiscing elit, sed do eiusmod tempor incidid-unt labore
-edolore magna aliquapendisse ultrices gravida.</p>
-<a href="#">Shop now</a>
+<div style="width: 100%;" class="categories__item categories__large__item set-bg mt-50 ">
+<img src="{{url('/uploads/fashion/mensfashion.jpg')}}" alt="image">
+<div style="position: absolute; top:25%; padding: 20px; " class="categories__text">
+<h1 style="color:white;"><b>Women’s fashion</b></h1>
+<h5 style="color: white;" ><b>00 items</b></h5><br>
+<a href="#"><b style="color: white;" >Shop now</b></a>
 </div>
 </div>
 </div>
 <div class="col-lg-6">
 <div class="row">
 <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-<div class="categories__item set-bg" data-setbg="img/categories/category-2.jpg">
-<div class="categories__text">
-<h4>Men’s fashion</h4>
-<p>358 items</p>
-<a href="#">Shop now</a>
+<div style="width: 100%;"  class="categories__item set-bg">
+<img src="{{url('/uploads/fashion/mensfashion.jpg')}}" alt="image">
+<div style="position: absolute; top:25%; padding: 20px;" class="categories__text">
+<h1 style="color:white;"><b>Men’s fashion</b></h1>
+<h5 style="color: white;" ><b>00 items</b></h5><br>
+<a href="#"><b style="color: white;" >Shop now</b></a>
 </div>
 </div>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-<div class="categories__item set-bg" data-setbg="img/categories/category-3.jpg">
-<div class="categories__text">
-<h4>Kid’s fashion</h4>
-<p>273 items</p>
-<a href="#">Shop now</a>
+<div style="width: 100%;"  class="categories__item set-bg">
+<img src="{{url('/uploads/fashion/mensfashion.jpg')}}" alt="image">
+<div style="position: absolute; top:25%; padding: 20px;" class="categories__text">
+<h1 style="color:white;"><b>Kid’s fashion</b></h1>
+<h5 style="color: white;" ><b>00 items</b></h5><br>
+<a href="#"><b style="color: white;" >Shop now</b></a>
 </div>
 </div>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-<div class="categories__item set-bg" data-setbg="img/categories/category-4.jpg">
-<div class="categories__text">
-<h4>Cosmetics</h4>
-<p>159 items</p>
-<a href="#">Shop now</a>
+<div style="width: 100%;"  class="categories__item set-bg">
+<img src="{{url('/uploads/fashion/mensfashion.jpg')}}" alt="image">
+<div style="position: absolute; top:25%; padding: 20px;" class="categories__text">
+<h1 style="color:white;"><b>Cosmetics</b></h1>
+<h5 style="color: white;" ><b>00 items</b></h5><br>
+<a href="#"><b style="color: white;" >Shop now</b></a>
 </div>
 </div>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-<div class="categories__item set-bg" data-setbg="img/categories/category-5.jpg">
-<div class="categories__text">
-<h4>Accessories</h4>
-<p>792 items</p>
-<a href="#">Shop now</a>
+<div style="width: 100%;"  class="categories__item set-bg">
+<img src="{{url('/uploads/fashion/mensfashion.jpg')}}" alt="image">
+<div style="position: absolute; top:25%; padding: 20px;" class="categories__text">
+<h1 style="color:white;"><b>Accessories</b></h1>
+<h5 style="color: white;" ><b>00 items</b></h5><br>
+<a href="#"><b style="color: white;" >Shop now</b></a>
 </div>
 </div>
 </div>

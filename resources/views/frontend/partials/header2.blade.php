@@ -1,16 +1,16 @@
 <header class="header">
-<div class="container-fluid">
+<div class="container-fluid ">
 <div class="row">
 <div class="col-xl-3 col-lg-2">
-<div class="header__logo">
-<a href=""><img src="" alt="Logo" ></a>
+<div style="width: 30%;" class="header__logo">
+<a href="/"><h4><b>S-Shop</b></h4></a>
 </div>
 </div>
 <div class="col-xl-6 col-lg-7">
 <nav class="header__menu">
 <ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Pages</a>
+<li><a href="#"><b>Home</b></a></li>
+<li><a href="#"><b>Pages</b></a>
 <ul class="dropdown">
 <li><a href="#">All Products</a></li>
 <li><a href="#">Shopping Cart</a></li>
@@ -18,8 +18,8 @@
 <li><a href="#">Blog Details</a></li>
 </ul>
 </li>
-<li><a href="#">Blog</a></li>
-<li><a href="#">Contact</a></li>
+<li><a href="#"><b>Blog</b></a></li>
+<li><a href="#"><b>Contact</b></a></li>
 </ul>
 </nav>
 </div>
