@@ -82,34 +82,76 @@ class ProductController extends Controller
         notify()->success("Product Updated successfully");
         return redirect()->route('backend.productlist');
     }
-    public function cosmeticslist()
+    public function laptops()
     {
         $allProduct=Product::paginate(10);
-        $cosmeticsProduct=Product::where('category','Cosmetics')->get();
-        return view('backend.cosmeticsProductlist', compact('cosmeticsProduct','allProduct'));
+        $lproduct=Product::where('category','Laptops')->get();
+        return view('backend.laptops', compact('lproduct','allProduct'));
     }
-    public function accessorieslist()
+    public function cameras()
     {
         $allProduct=Product::paginate(10);
-        $accessoriesProduct=Product::where('category','Accessories')->get();
-        return view('backend.accessoriesProductlist', compact('accessoriesProduct','allProduct'));
+        $cproduct=Product::where('category','Cameras')->get();
+        return view('backend.cameras', compact('cproduct','allProduct'));
     }
-    public function kidsfashionlist()
+    public function smartphones()
     {
         $allProduct=Product::paginate(10);
-        $kidsfashionProduct=Product::where('category','Kids Fashion')->latest()->get();
-        return view('backend.kidsfashionProductlist', compact('kidsfashionProduct','allProduct'));
+        $sproduct=Product::where('category','Smartphones')->get();
+        return view('backend.smartphones', compact('sproduct','allProduct'));
     }
-    public function mensfashionlist()
+    public function gadgets()
     {
         $allProduct=Product::paginate(10);
-        $mensfashionProduct=Product::where('category','Mens Fashion')->get();
-        return view('backend.mensfashionProductlist', compact('mensfashionProduct','allProduct'));
+        $gproduct=Product::where('category','Gadgets')->get();
+        return view('backend.gadgets', compact('gproduct','allProduct'));
     }
-    public function womensfashionlist()
+    public function watches()
     {
         $allProduct=Product::paginate(10);
-        $womensfashionProduct=Product::where('category','Womens Fashion')->get();
-        return view('backend.womensfashionProductlist', compact('womensfashionProduct','allProduct'));
+        $wproduct=Product::where('category','Watches')->get();
+        return view('backend.watches', compact('wproduct','allProduct'));
+    }
+    public function jewelrys()
+    {
+        $allProduct=Product::paginate(10);
+        $jproduct=Product::where('category','Jewelrys')->get();
+        return view('backend.jewelrys', compact('jproduct','allProduct'));
+    }
+    public function helmets()
+    {
+        $allProduct=Product::paginate(10);
+        $hproduct=Product::where('category','Helmets')->get();
+        return view('backend.helmets', compact('hproduct','allProduct'));
+    }
+    public function cosmetics()
+    {
+        $allProduct=Product::paginate(10);
+        $cproduct=Product::where('category','Cosmetics')->get();
+        return view('backend.cosmetics', compact('cproduct','allProduct'));
+    }
+    public function accessories()
+    {
+        $allProduct=Product::paginate(10);
+        $aproduct=Product::where('category','Accessories')->get();
+        return view('backend.accessories', compact('aproduct','allProduct'));
+    }
+    public function kidsfashion()
+    {
+        $allProduct=Product::paginate(10);
+        $kproduct=Product::where('category','Kids Fashion')->latest()->get();
+        return view('backend.kidsfashion', compact('kproduct','allProduct'));
+    }
+    public function mensfashion()
+    {
+        $allProduct=Product::paginate(10);
+        $mproduct=Product::where('category','Mens Fashion')->get();
+        return view('backend.mensfashion', compact('mproduct','allProduct'));
+    }
+    public function womensfashion()
+    {
+        $allProduct=Product::paginate(10);
+        $wproduct=Product::where('category','Womens Fashion')->get();
+        return view('backend.womensfashion', compact('wproduct','allProduct'));
     }
 }
