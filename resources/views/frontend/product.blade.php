@@ -87,7 +87,7 @@
                     <div class="details">
                         <h2>{{$product->name}}</h2>
                         <p>{{ $product->description }}</p>
-                        <p class="price">${{ number_format($product->price, 2) }}</p>
+                        <p class="price">{{ number_format($product->price, 2) }}BDT</p>
                         <a href="{{ route('show.product', $product->id) }}" class="btn">View Details</a>
                     </div>
                 </div>

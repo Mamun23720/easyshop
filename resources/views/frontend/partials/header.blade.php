@@ -4,7 +4,7 @@
 <!-- Top Bar -->
 
 <div class="top_bar">
-<div class="container">
+<div style="padding: 0px;" class="container">
 <div class="row">
 <div class="col d-flex flex-row">
 <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="https://preview.colorlib.com/theme/onetech/images/phone.png" alt=""></div>01627736636</div>
