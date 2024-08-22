@@ -12,18 +12,18 @@ use App\Http\Controllers\SslCommerzPaymentController;
 
 //For Frontend
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
+Route::get('/search',[FrontendProductController::class,'search'])->name('search');
+Route::get('/user/registration',[CustomerController::class, 'userRegistration'])->name('frontend.user.registration');
 Route::post('/registration',[CustomerController::class, 'registration'])->name('frontend.registration');
+Route::get('/customer/login',[CustomerController::class, 'userLogin'])->name('frontend.user.login');
 Route::post('/customer/login',[CustomerController::class, 'customerLogin'])->name('frontend.login');
-Route::get('/product',[FrontendProductController::class, 'product'])->name('frontend.product');
+Route::get('/all/product',[FrontendProductController::class, 'product'])->name('frontend.product');
 Route::get('/show/product{productId}',[FrontendProductController::class, 'show_product'])->name('show.product');
 Route::get('/viewCart',[OrderController::class,'viewCart'])->name('view.cart');
 Route::get('/addToCart{productId}',[OrderController::class,'addToCart'])->name('add.to.cart');
 Route::get('/removeAllCart',[OrderController::class,'removeAllCart'])->name('remove.all.cart');
 Route::get('/remove//single/cart{productId}',[OrderController::class,'removeSingleCart'])->name('remove.single.cart');
 Route::get('/view/cart',[OrderController::class,'viewCart'])->name('view.cart');
-Route::get('/add/to/cart{productId}',[OrderController::class,'addToCart'])->name('add.to.cart');
-Route::get('/remove/single/cart{productId}',[OrderController::class,'removeSingleCart'])->name('remove.single.cart');
-Route::get('/remove/all/cart',[OrderController::class,'removeAllCart'])->name('remove.all.cart');
 
     Route::group(['middleware'=>'customer_auth'], function () {
             Route::get('/profile',[CustomerController::class, 'profile'])->name('view.profile');
@@ -59,18 +59,19 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/product/list',[ProductController::class, 'productlist'])->name('backend.productlist');
             Route::get('/product/form',[ProductController::class, 'productform'])->name('backend.productform');
             Route::post('/submit/product/form',[ProductController::class, 'productstore'])->name('backend.storeproduct');
-            Route::get('/product/laptop/list',[ProductController::class, 'laptops'])->name('backend.product.laptop.list');
-            Route::get('/product/camera/list',[ProductController::class, 'cameras'])->name('backend.product.camera.list');
-            Route::get('/product/smartphone/list',[ProductController::class, 'smartphones'])->name('backend.product.smartphone.list');
-            Route::get('/product/gadget/list',[ProductController::class, 'gadgets'])->name('backend.product.gadget.list');
-            Route::get('/product/watch/list',[ProductController::class, 'watchs'])->name('backend.product.watch.list');
-            Route::get('/product/jewelry/list',[ProductController::class, 'jewelrys'])->name('backend.product.jewelry.list');
-            Route::get('/product/helmet/list',[ProductController::class, 'helmets'])->name('backend.product.helmet.list');
+            Route::get('/product/laptops/list',[ProductController::class, 'laptops'])->name('backend.product.laptops.list');
+            Route::get('/product/cameras/list',[ProductController::class, 'cameras'])->name('backend.product.cameras.list');
+            Route::get('/product/smartphones/list',[ProductController::class, 'smartphones'])->name('backend.product.smartphones.list');
+            Route::get('/product/gadgets/list',[ProductController::class, 'gadgets'])->name('backend.product.gadgets.list');
+            Route::get('/product/watches/list',[ProductController::class, 'watches'])->name('backend.product.watches.list');
+            Route::get('/product/jewellerys/list',[ProductController::class, 'jewellerys'])->name('backend.product.jewellerys.list');
+            Route::get('/product/helmet/list',[ProductController::class, 'helmets'])->name('backend.product.helmets.list');
             Route::get('/product/cosmetics/list',[ProductController::class, 'cosmetics'])->name('backend.product.cosmetics.list');
             Route::get('/product/accessories/list',[ProductController::class, 'accessories'])->name('backend.product.accessories.list');
             Route::get('/product/kids/fashion/list',[ProductController::class, 'kidsfashion'])->name('backend.product.kids.fashion.list');
             Route::get('/product/mens/fashion/list',[ProductController::class, 'mensfashion'])->name('backend.product.mens.fashion.list');
             Route::get('/product/womens/fashion/list',[ProductController::class, 'womensfashion'])->name('backend.product.womens.fashion.list');
+            Route::get('/product/others/list',[ProductController::class, 'others'])->name('backend.product.others.list');
             Route::get('/product/view{product}',[ProductController::class, 'viewProduct'])->name('backend.viewProduct');
             Route::get('/product/delete{product}',[ProductController::class, 'deleteProduct'])->name('backend.deleteProduct');
             Route::get('/product/edit{product}',[ProductController::class, 'editProduct'])->name('backend.editProduct');

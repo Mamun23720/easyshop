@@ -1,54 +1,69 @@
+<footer class="footer">
 <div class="container">
-    <footer class="py-5">
-      <div class="row">
-        <div class="col-6 col-md-2 mb-3">
-          <h5>Section</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-          </ul>
-        </div>
-
-        <div class="col-6 col-md-2 mb-3">
-          <h5>Section</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-          </ul>
-        </div>
-
-        <div class="col-6 col-md-2 mb-3">
-          <h5>Section</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-5 offset-md-1 mb-3">
-          <form>
-            <h5>Subscribe to our newsletter</h5>
-            <p>Monthly digest of what's new and exciting from us.</p>
-            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-              <label for="newsletter1" class="visually-hidden">Email address</label>
-              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-              <button class="btn btn-primary" type="button">Subscribe</button>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-        <p>© 2024 Company, Inc. All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
+<div class="row">
+<div class="col-lg-3 footer_col">
+<div class="footer_column footer_contact">
+<div class="logo_container">
+<div class="logo"><a href="#">OneTech</a></div>
+</div>
+<div class="footer_title">Got Question? Call Us 24/7</div>
+<div class="footer_phone">+38 068 005 3570</div>
+<div class="footer_contact_text">
+<p>17 Princess Road, London</p>
+<p>Grester London NW18JR, UK</p>
+</div>
+<div class="footer_social">
+<ul>
+<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+<li><a href="#"><i class="fab fa-google"></i></a></li>
+<li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-2 offset-lg-2">
+<div class="footer_column">
+<div class="footer_title">Find it Fast</div>
+<ul class="footer_list">
+<li><a href="#">Computers & Laptops</a></li>
+<li><a href="#">Cameras & Photos</a></li>
+<li><a href="#">Hardware</a></li>
+<li><a href="#">Smartphones & Tablets</a></li>
+<li><a href="#">TV & Audio</a></li>
+</ul>
+<div class="footer_subtitle">Gadgets</div>
+<ul class="footer_list">
+<li><a href="#">Car Electronics</a></li>
+</ul>
+</div>
+</div>
+<div class="col-lg-2">
+<div class="footer_column">
+<ul class="footer_list footer_list_2">
+<li><a href="#">Video Games & Consoles</a></li>
+<li><a href="#">Accessories</a></li>
+<li><a href="#">Cameras & Photos</a></li>
+<li><a href="#">Hardware</a></li>
+<li><a href="#">Computers & Laptops</a></li>
+</ul>
+</div>
+</div>
+<div class="col-lg-2">
+<div class="footer_column">
+<div class="footer_title">Customer Care</div>
+<ul class="footer_list">
+<li><a href="#">My Account</a></li>
+<li><a href="#">Order Tracking</a></li>
+<li><a href="#">Wish List</a></li>
+<li><a href="#">Customer Services</a></li>
+<li><a href="#">Returns / Exchange</a></li>
+<li><a href="#">FAQs</a></li>
+<li><a href="#">Product Support</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</footer>

@@ -12,11 +12,11 @@ class HomeController extends Controller
     {
         $allProduct = Product::all();
 
-        return view("frontend.home",compact('allProduct'));
+        return view("frontend.product",compact('allProduct'));
     }
 
     // public function home()
     // {
-    //     return view('frontend.master2');
+    //     return view('frontend.product');
     // }
 }

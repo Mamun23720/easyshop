@@ -19,6 +19,11 @@ class CustomerController extends Controller
         return view ('backend.customerlist', compact('allCustomer'));
     }
 
+    public function userRegistration()
+    {
+        return view('frontend.registration');
+    }
+
     public function registration(Request $request){
 
         // validation
@@ -85,6 +90,11 @@ class CustomerController extends Controller
         ]);
         // dd($fileNames);
         return redirect()->back();
+    }
+
+    public function userLogin()
+    {
+        return view('frontend.login');
     }
 
     public function customerLogin(Request $request){

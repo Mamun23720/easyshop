@@ -1,50 +1,98 @@
-@extends('frontend.master')
+@extends('frontend.master2')
 
 @section('content')
 
-<!-- <div style="text-align: center">
-<h1 class="btn btn-success btn-lg">Product List's</h1>
-</div> -->
-<br>
-<br>
-<div class="container">
-<div><h1 class="mb-2" style="font-size: 200%; color:black;"><b>All Products</b></h1></div>
-<div class="row">
-<div class="row row-cols-1 row-cols-lg-6">
 
 
-
-    {{-- <div class="col d-flex flex-column align-items-start gap-2">
-        <h2 class="fw-bold text-body-emphasis">Left-aligned title explaining these awesome features</h2>
-        <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-        <a href="#" class="btn btn-primary btn-lg">Primary button</a>
-      </div> --}}
-
-      @foreach ($allProduct as $product)
-
-<div>
-      <a href="{{route('show.product', $product->id)}}" class="align-items-center text-white text-decoration-none">
-        <img style="height: 200px; width: 200px; border-radius: 5%; " src="{{url('/uploads/product/'.$product->image)}}" class="mt-2" alt="..." >
-        <br>
-        </a> 
-        <div>
-        <h5 style="color: black; height: 10px; width: 150px;" ><b>{{$product->name}}</b></h5>
-        <br>
-        <h3 style="color: black; height: 10px; width: 150px;" ><b>{{$product->price}} BDT</b></h3>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: calc(33.333% - 1.5rem);
+            box-sizing: border-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-card .details {
+            padding: 1rem;
+        }
+        .product-card h2 {
+            font-size: 1.25rem;
+            margin: 0;
+            color: #333;
+        }
+        .product-card p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+        .product-card .price {
+            font-size: 1.5rem;
+            color: #e94e77;
+            font-weight: bold;
+        }
+        .product-card .btn {
+            display: block;
+            width: calc(100% - 2rem);
+            margin: 1rem auto;
+            padding: 0.75rem;
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .product-card .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <div class="container">
+        <h1>All Products</h1>
+        <div class="product-grid">
+            @foreach($allProduct as $product)
+                <div class="product-card">
+                    <img src="{{url('/uploads/product/'.$product->image)}}" alt="{{$product->name}}">
+                    <div class="details">
+                        <h2>{{$product->name}}</h2>
+                        <p>{{ $product->description }}</p>
+                        <p class="price">${{ number_format($product->price, 2) }}</p>
+                        <a href="{{ route('show.product', $product->id) }}" class="btn">View Details</a>
+                    </div>
+                </div>
+            @endforeach
         </div>
-        <br>
-        <br>
-        <br>
-        <!-- <a href="{{route('add.to.cart',$product->id)}}" class="btn btn-danger"><b>Add to cart</b></a> -->
-</div>
-
-@endforeach
-
-
-
     </div>
-</div>
-</div>
-<br>
-<br>
+
 @endsection

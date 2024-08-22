@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function productlist()
     {
-        $allProduct=Product::paginate(10);
+        $allProduct=Product::paginate(20);
         return view ('backend.productlist', compact('allProduct'));
     }
     public function productform()
@@ -84,74 +84,80 @@ class ProductController extends Controller
     }
     public function laptops()
     {
-        $allProduct=Product::paginate(10);
+        $allProduct=Product::paginate(20);
         $lproduct=Product::where('category','Laptops')->get();
         return view('backend.laptops', compact('lproduct','allProduct'));
     }
     public function cameras()
     {
-        $allProduct=Product::paginate(10);
+        $allProduct=Product::paginate(20);
         $cproduct=Product::where('category','Cameras')->get();
         return view('backend.cameras', compact('cproduct','allProduct'));
     }
     public function smartphones()
     {
-        $allProduct=Product::paginate(10);
+        $allProduct=Product::paginate(20);
         $sproduct=Product::where('category','Smartphones')->get();
         return view('backend.smartphones', compact('sproduct','allProduct'));
     }
     public function gadgets()
     {
-        $allProduct=Product::paginate(10);
+        $allProduct=Product::paginate(20);
         $gproduct=Product::where('category','Gadgets')->get();
         return view('backend.gadgets', compact('gproduct','allProduct'));
     }
     public function watches()
     {
-        $allProduct=Product::paginate(10);
+        $allProduct=Product::paginate(20);
         $wproduct=Product::where('category','Watches')->get();
         return view('backend.watches', compact('wproduct','allProduct'));
     }
-    public function jewelrys()
+    public function jewellerys()
     {
-        $allProduct=Product::paginate(10);
-        $jproduct=Product::where('category','Jewelrys')->get();
-        return view('backend.jewelrys', compact('jproduct','allProduct'));
+        $allProduct=Product::paginate(20);
+        $jproduct=Product::where('category','Jewellerys')->get();
+        return view('backend.jewellerys', compact('jproduct','allProduct'));
     }
     public function helmets()
     {
-        $allProduct=Product::paginate(10);
+        $allProduct=Product::paginate(20);
         $hproduct=Product::where('category','Helmets')->get();
         return view('backend.helmets', compact('hproduct','allProduct'));
     }
     public function cosmetics()
     {
-        $allProduct=Product::paginate(10);
+        $allProduct=Product::paginate(20);
         $cproduct=Product::where('category','Cosmetics')->get();
         return view('backend.cosmetics', compact('cproduct','allProduct'));
     }
     public function accessories()
     {
-        $allProduct=Product::paginate(10);
+        $allProduct=Product::paginate(20);
         $aproduct=Product::where('category','Accessories')->get();
         return view('backend.accessories', compact('aproduct','allProduct'));
     }
     public function kidsfashion()
     {
-        $allProduct=Product::paginate(10);
+        $allProduct=Product::paginate(20);
         $kproduct=Product::where('category','Kids Fashion')->latest()->get();
         return view('backend.kidsfashion', compact('kproduct','allProduct'));
     }
     public function mensfashion()
     {
-        $allProduct=Product::paginate(10);
+        $allProduct=Product::paginate(20);
         $mproduct=Product::where('category','Mens Fashion')->get();
         return view('backend.mensfashion', compact('mproduct','allProduct'));
     }
     public function womensfashion()
     {
-        $allProduct=Product::paginate(10);
+        $allProduct=Product::paginate(20);
         $wproduct=Product::where('category','Womens Fashion')->get();
         return view('backend.womensfashion', compact('wproduct','allProduct'));
+    }
+    public function others()
+    {
+        $allProduct=Product::paginate(20);
+        $oproduct=Product::where('category','Others')->get();
+        return view('backend.others', compact('oproduct','allProduct'));
     }
 }

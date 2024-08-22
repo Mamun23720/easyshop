@@ -32,4 +32,18 @@ class ProductController extends Controller
                                 ->get();
         return view('frontend.pages.single-product-show', compact('singleProduct','multipleProduct'));
     }
+
+    public function search()
+    {
+      // dd(request()->all());
+      // dd($request->all());
+
+      $products=Product::where('name','LIKE','%'.request()->search_key.'%')->get();
+
+      //where('column name','condition','%value%')
+
+      return view('frontend.pages.search',compact('products'));
+
+
+    }
 }

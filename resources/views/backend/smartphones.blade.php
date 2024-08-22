@@ -17,7 +17,7 @@
         </thead>
         <tbody>
 
-            @foreach ($mproduct as $key=>$product)
+            @foreach ($sproduct as $key=>$product)
 
 
           <tr>

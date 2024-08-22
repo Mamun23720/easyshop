@@ -14,13 +14,19 @@
           <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
         </form> -->
 
-        <div class="text-end">
-          {{-- <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button> --}}
 
-        <a  class="btn btn-warning mt-2" href="{{route('logout')}}" style="color: rgb(2, 1, 0)">Logout</a>
-
-        </div>
+        <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="{{url('/uploads/adminPhoto/sajibVaiya.jpeg')}}" alt="" width="45" height="45" class="rounded-circle me-2">
+        <strong>Sajib Vaiya</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="{{route('logout')}}">Log-out</a></li>
+      </ul>
+    </div>
       </div>
     </div>
 </header>
