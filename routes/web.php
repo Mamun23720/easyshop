@@ -8,7 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\ProductController as FrontendProductController;
-use App\Http\Controllers\SslCommerzPaymentController;
+use App\Http\Controllers\Frontend\SslCommerzPaymentController;
 
 //For Frontend
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
@@ -21,11 +21,10 @@ Route::get('/all/product',[FrontendProductController::class, 'product'])->name('
 Route::get('/show/product{productId}',[FrontendProductController::class, 'show_product'])->name('show.product');
 Route::get('/viewCart',[OrderController::class,'viewCart'])->name('view.cart');
 Route::get('/addToCart{productId}',[OrderController::class,'addToCart'])->name('add.to.cart');
-Route::get('/removeAllCart',[OrderController::class,'removeAllCart'])->name('remove.all.cart');
 Route::get('/remove//single/cart{productId}',[OrderController::class,'removeSingleCart'])->name('remove.single.cart');
-Route::get('/view/cart',[OrderController::class,'viewCart'])->name('view.cart');
 
     Route::group(['middleware'=>'customer_auth'], function () {
+        
             Route::get('/profile',[CustomerController::class, 'profile'])->name('view.profile');
             Route::get('/delete/{singleOrder}',[CustomerController::class, 'deleteSingleOrder'])->name('delete.single.order');
             Route::get('/buynow/{productID}',[OrderController::class,'buynow'])->name('buy.now');

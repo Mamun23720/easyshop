@@ -2,8 +2,8 @@
 
 
 namespace App\Http\Controllers\Frontend;
-namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;

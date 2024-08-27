@@ -2,13 +2,13 @@
 
 @section('content')
 
-<div class="container">
+    <div class="container">
         <div>
         <h1>All Products({{$allProduct ? count($allProduct) : 0}})</h1>
         </div>
         <div class="product-grid">
             @foreach($allProduct as $product)
-                <div style="height: 300px; width: 200px; border-radius:10%" class="product-card">
+                <div style="height: 300px; width: 200px; margin-bottom: 20px;" class="product-card">
                     <img src="{{url('/uploads/product/'.$product->image)}}" alt="{{$product->name}}">
                     <div class="details">
                         <h2>{{$product->name}}</h2>

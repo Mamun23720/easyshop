@@ -14,36 +14,20 @@ class ProductController extends Controller
     public function product()
     {
         $allProduct = Product::all();
-
         return view("frontend.product",compact('allProduct'));
     }
-
-
-    //single page a product show method
-    
-
     public function show_product($id)
     {
         $singleProduct=Product::find($id);
-
         $multipleProduct=Product::where('id','!=',$singleProduct->id)
                                 ->where('category',$singleProduct->category)
                                 ->limit(4)
                                 ->get();
         return view('frontend.pages.single-product-show', compact('singleProduct','multipleProduct'));
     }
-
     public function search()
     {
-      // dd(request()->all());
-      // dd($request->all());
-
       $products=Product::where('name','LIKE','%'.request()->search_key.'%')->get();
-
-      //where('column name','condition','%value%')
-
       return view('frontend.pages.search',compact('products'));
-
-
     }
 }

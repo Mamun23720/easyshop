@@ -1,90 +1,83 @@
-@extends('frontend.master')
+@extends('frontend.master2')
 
 @section('content')
 
+<body>
+    <div class="container">
 
-<div class="container">
+        <h1>Shopping Cart</h1>
 
-<div class="row d-flex" >
-
-<table class="table mb-0" >
-  <thead>
-    <tr>
-    <th style="font-size: 200%; text-align: center; border-color: black; border-width: 4px;" scope="col-1">Serial</th>
-      <th style="font-size: 200%; text-align: center; border-color: black; border-width: 4px;" scope="col-1">Image</th>
-      <th style="font-size: 200%; border-color: black; border-width: 4px;" scope="col-1">ProductName</th>
-      <th style="font-size: 200%; text-align: center; border-color: black; border-width: 4px;" scope="col-1">Price</th>
-      <th style="font-size: 200%; text-align: center; border-color: black; border-width: 4px;" scope="col-1">Quantity</th>
-      <th style="font-size: 200%; text-align: center; border-color: black; border-width: 4px;" scope="col-1">Action</th>
-      <th style="font-size: 200%; text-align: right; border-color: black; border-width: 4px;" scope="col-1">Subtotal</th>
-    </tr>
-  </thead>
-  <br><br><br><br><br><br><br><br><br><br><br><br>
-      <tbody >
-
-@if ($myCart=session()->get('basket'))
-
-        @foreach ($myCart as $cart)
-
-          <tr>
-          <td style="text-align:center; font-size: 200%; border-color: black; border-width: 4px; " class="col-1">...</td>
-            <td style=" border-color: black; border-width: 4px;" class="col-1 mt-0">
-            <img style=" margin-left: 0.2px; height: 150px; width: 150px; border-radius: 5%;" src="{{url('/uploads/product/'.$cart['product_image'])}}" class="mt-0" alt="..." >
-            </td>
-            <td style=" font-size: 200%; border-color: black; border-width: 4px; " class="col-1">{{$cart['product_name']}}</td>
-            <td style="font-size: 200%; text-align: center; border-color: black; border-width: 4px;" class="col-1" >{{$cart['product_price']}}</td>
-            <td style="font-size: 200%; text-align: center; border-color: black; border-width: 4px; " class="col-1" >{{$cart['quantity']}}</td>
-
-            <td  style="font-size: 200%; text-align: center; border-color: black; border-width: 4px; " class="col-1" >
-            <a href="{{route('remove.single.cart',$cart['product_id'])}}" class="btn btn-danger mt-5"><b>Remove</b></a>
-            </td>
-            <td style="font-size: 200%; text-align: right; border-color: black; border-width: 4px; " class="col-1" ><b>{{$cart['subtotal']}}.00</b></td>
-
-          </tr>
-
-        @endforeach
-
-@else
-
+        @if($myCart=session()->get('basket'))
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($myCart as $cart)
+                        <tr>
+                            <td><img src="{{url('/uploads/product/'.$cart['product_image'])}}" alt="{{$cart['product_name']}}"></td>
+                            <td>{{$cart['product_name']}}</td>
+                            <td>{{ number_format($cart['product_price'], 2) }} BDT</td>
+                            <td style="text-align: center;" >
+                                <input value="{{$cart['quantity']}}" id="quantity" name="quantity" type="number" style="height: 30px; width: 50px; background:wheat ; border-radius:5px; text-align:center;" >
+                                <br>
+                                <a href="#">
+                                <button style="background-color: aqua;" type="submit " class="btn btn-warning mt-1 bg-black text-sm text-black rounded-md"><b>Update Cart</b></button>
+                                </a>
+                            </td>
+                            <td>{{ number_format($cart['subtotal'], 2) }} BDT</td>
+                            <td>
+                            <a href="{{route('remove.single.cart',$cart['product_id'])}}" class="btn btn-danger"><b>Remove</b></a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            <div class="total-section">
+                <h2><b>Total: {{number_format(array_sum(array_column(session()->get('basket'),'subtotal')),2) }} BDT </b></h2>
+                <a class="btn btn-success btn-lg" href="{{ route('checkout') }}"><b>Checkout</b></a>
+            </div>
 
 
-@endif
-</tbody>
-</table>
+        @else
+        <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+        </table>
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
 
+        <h3 style="text-align: center;" >Your cart is currently empty!!</h3>
+        <div style="text-align: center;" class="mt-5">
+        <a style="background-color: tomato ;" href="{{route('frontend.product')}}" class="btn btn-warning btn-lg"><b>Continue Shopping...</b></a>        
+        </div>
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
 
-@if ($myCart=session()->get('basket'))
-
-        <h1 style="color:red; font-size: 300%; text-align: right; border-color: black; border-width: 4px;">
-            <b  >Total Price= {{array_sum(array_column(session()->get('basket'),'subtotal')) }}.00
-            <a style="margin-left: 1140px; " class="btn btn-danger mt-0 mb-3" href="{{route('remove.all.cart')}}" class="nav-link">
-            Remove All Item
-            </a>
-            </b>
-        </h1><br><br><br>
-
-        <a class="btn btn-success mt-2 mb-3" href="{{route('checkout')}}" class="nav-link">
-            Checkout
-            </a>
-
-
-@else
-<br><br><br>
-        <h1 style="color:black; font-size: 300%; text-align: center; ">
-            <b>Your Cart is empty right now!
-            </b>
-        </h1>
-
-@endif
-
-
-
-</div>
-
-
-</div>
-<br>
-<br>
-<br>
-<br><br><br><br><br><br>
+        @endif
+    </div>
+</body>
+</html>
 @endsection
