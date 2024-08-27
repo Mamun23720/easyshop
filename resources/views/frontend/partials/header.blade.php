@@ -7,8 +7,8 @@
 <div style="padding: 0px;" class="container">
 <div class="row">
 <div class="col d-flex flex-row">
-<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="https://preview.colorlib.com/theme/onetech/images/phone.png" alt=""></div>01627736636</div>
-<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="https://preview.colorlib.com/theme/onetech/images/mail.png" alt=""></div><a href="#">sajib@gmail.com</a></div>
+<div class="top_bar_contact_item"><div class="top_bar_icon"></div>Helpline: 01627736636</div>
+<div class="top_bar_contact_item"><div class="top_bar_icon"></div><a href="#">E-mail: sajib@gmail.com</a></div>
 <div class="top_bar_content ml-auto">
 <div class="top_bar_menu">
 <ul class="standard_dropdown top_bar_dropdown">
@@ -31,9 +31,9 @@
 @guest('customerGuard')
 
 <div class="top_bar_user">
-<div class="user_icon"><img src="https://preview.colorlib.com/theme/onetech/images/user.svg" alt=""></div>
-<div><a href="{{route('frontend.user.registration')}}">Register</a></div>
-<div><a href="{{route('frontend.user.login')}}">Sign in</a></div>
+<div class="user_icon"></div>
+<div><a href="{{route('frontend.user.registration')}}"><b>Register</b></a></div>
+<div><a href="{{route('frontend.user.login')}}"><b>Sign in</b></a></div>
 </div>
 
 @endguest
@@ -41,7 +41,7 @@
 @auth('customerGuard')
 
 <div class="top_bar_user">
-<div ><a href="{{route('view.profile')}}"><img src="{{url('/uploads/customerRegistration/'. auth('customerGuard')->user()->image)}}" alt="" width="40" height="40" class="rounded-circle me-5"></a></div>
+<div class="user_icon"></div>
 <div><a href="{{route('view.profile')}}"><b>{{auth('customerGuard')->user()->name}}</b></a></div>
 <div><a href="{{route('frontend.logout')}}">Sign Out</a></div>
 </div>
@@ -61,12 +61,12 @@
 <!-- Middle Bar -->
 
 <div class="header_main">
-<div class="container">
+<div style="padding: 0px; height: 150px;"  class="container">
 <div class="row">
 
 <div class="col-lg-2 col-sm-3 col-3 order-1">
 <div class="logo_container">
-<div class="logo"><a href="/">S-Shop</a></div>
+<div class="logo"><a href="/"><b>S-Shop</b></a></div>
 </div>
 </div>
 
@@ -87,12 +87,12 @@
 <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
 <div class="wishlist d-flex flex-row align-items-center justify-content-end">
 <div class="wishlist_icon">
-    <svg width="20px" height="18px" class="mt-[3px]" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4.97214 0.0251923C3.71435 0.183434 2.6616 0.701674 1.7705 1.60365C0.970091 2.41068 0.489057 3.26519 0.213053 4.37683C-0.275867 6.30342 0.0789948 8.20232 1.25398 9.98649C2.00708 11.1298 2.98097 12.1781 4.76711 13.7764C5.90266 14.7931 9.36848 17.7601 9.53802 17.859C9.69574 17.954 9.75488 17.9658 10.09 17.9658C10.4252 17.9658 10.4843 17.954 10.642 17.859C10.8116 17.7601 14.2853 14.7891 15.413 13.7764C17.207 12.1702 18.173 11.1258 18.9261 9.98649C20.1011 8.20232 20.4559 6.30342 19.967 4.37683C19.691 3.26519 19.21 2.41068 18.4096 1.60365C17.6131 0.800575 16.7614 0.337719 15.6456 0.100357C15.0857 -0.0183239 14.0526 -0.0301933 13.5637 0.0805759C12.1995 0.377279 11.1546 1.06167 10.2004 2.28013L10.09 2.41859L9.98357 2.28013C9.04122 1.08541 8.01212 0.401016 6.69913 0.100357C6.30878 0.00936699 5.4098 -0.0301933 4.97214 0.0251923ZM6.28907 1.23178C7.40885 1.42958 8.37487 2.07837 9.13979 3.15046C9.26991 3.3364 9.43156 3.55793 9.49465 3.64892C9.78643 4.06035 10.3936 4.06035 10.6854 3.64892C10.7485 3.55793 10.9102 3.3364 11.0403 3.15046C12.0851 1.68673 13.5401 0.998377 15.1251 1.21596C16.8837 1.45728 18.2558 2.69156 18.7802 4.50738C19.1942 5.94342 19.0128 7.45067 18.2597 8.80759C17.6289 9.94298 16.5761 11.1337 14.7427 12.7834C13.8555 13.5786 10.1255 16.7988 10.09 16.7988C10.0506 16.7988 6.33638 13.5904 5.4374 12.7834C2.61823 10.2476 1.50633 8.66518 1.23821 6.8098C1.06472 5.61112 1.31312 4.32145 1.91639 3.30475C2.82326 1.77376 4.58968 0.935081 6.28907 1.23178Z" fill="black"></path>
-    </svg>
+    <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+</svg></a>
 </div>
 <div class="wishlist_content">
-<div class="wishlist_text"><a href="#">Wishlist</a></div>
+<div class="wishlist_text"><a href="#"><b>Wishlist</b></a></div>
 <div class="wishlist_count">0 item</div>
 </div>
 </div>
@@ -100,13 +100,13 @@
 <div class="cart">
 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
 <div class="cart_icon">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="" stroke="currentColor" class="w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z">
-        </path>
-    </svg>
+<a href="{{route('view.cart')}}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+</svg></a>
+<div class="cart_count"><a href=""><span>{{session()->has('basket') ? count(session()->get('basket')) : 0}}</span></a></div>
 </div>
 <div class="cart_content">
-<div class="cart_text"><a href="{{route('view.cart')}}">Cart</a></div>
+<div class="cart_text"><a href="{{route('view.cart')}}"><b>Cart</b></a></div>
 <div class="cart_price">
 
 @if ($myCart=session()->get('basket'))
@@ -134,22 +134,34 @@
 
 <!-- Nav Bar -->
 
-<nav class="main_nav">
-<div class="container">
+
+
+<nav style="background-image:url(/uploads/important/navbar.jpg)" class="main_nav">
+<div style="padding: 5px;" class="container">
 <div class="row">
 <div class="col">
 <div class="main_nav_content d-flex flex-row">
 <div>
 <ul class="standard_dropdown main_nav_dropdown">
-<li><a href="/"><b style="color: black; " >Home</b><i class="fas fa-chevron-down"></i></a></li>
-<li><a href="#"><b style="color: black;" >Hot Offers</b><i class="fas fa-chevron-down"></i></a></li>
-<li><a href="{{route('frontend.product')}}"><b style="color: black;" >All Products</b><i class="fas fa-chevron-down"></i></a></li>
-<li><a href="#"><b style="color: black;" >All Categories</b><i class="fas fa-chevron-down"></i></a></li>
-<li><a href="#"><b style="color: black;" >New Products</b><i class="fas fa-chevron-down"></i></a></li>
-<li><a href="#"><b style="color: black;" >Super Deals</b><i class="fas fa-chevron-down"></i></a></li>
-<li><a href="#"><b style="color: black;" >Pages</b><i class="fas fa-chevron-down"></i></a></li>
-<li><a href="#"><b style="color: black;" >Blog</b><i class="fas fa-chevron-down"></i></a></li>
-<li><a href="#"><b style="color: black;" >Contact</b><i class="fas fa-chevron-down"></i></a></li>
+<li>
+<button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<b style="color: white;" >All-Categories</b>
+</button>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#"><b>Fashion</b></a>
+    <a class="dropdown-item" href="#"><b>Cosmetics</b></a>
+    <a class="dropdown-item" href="#"><b>Smartphones</b></a>
+    <a class="dropdown-item" href="#"><b>Show more...</b></a>
+</div>
+</li>
+<li><a href="/"><b style="color: white; " >Home</b><i class="fas fa-chevron-down"></i></a></li>
+<li><a href="#"><b style="color: white;" >Hot Offers</b><i class="fas fa-chevron-down"></i></a></li>
+<li><a href="{{route('frontend.product')}}"><b style="color: white;" >All Products</b><i class="fas fa-chevron-down"></i></a></li>
+<li><a href="#"><b style="color: white;" >New Products</b><i class="fas fa-chevron-down"></i></a></li>
+<li><a href="#"><b style="color: white;" >Super Deals</b><i class="fas fa-chevron-down"></i></a></li>
+<li><a href="#"><b style="color: white;" >Pages</b><i class="fas fa-chevron-down"></i></a></li>
+<li><a href="#"><b style="color: white;" >Blog</b><i class="fas fa-chevron-down"></i></a></li>
+<li><a href="#"><b style="color: white;" >Contact</b><i class="fas fa-chevron-down"></i></a></li>
 </ul>
 </div>
 

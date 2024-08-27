@@ -24,9 +24,7 @@
       <label for="text" class="form-label"><b>Product Category</b></label>
       <div class="">
         <select class="form-select" aria-label="Default select example" name="product_category">
-
-          <option selected><b>Product Category</b></option>
-
+            <option selected><b>Product Category</b></option>
                 <option value="Laptops">Laptops</option>
                 <option value="Cameras">Cameras</option>
                 <option value="Smartphones">Smartphones</option>
