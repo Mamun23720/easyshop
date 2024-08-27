@@ -1,14 +1,17 @@
+@extends('frontend.master2')
+
+@section('content')
 
 <div class="banner">
-<div class="banner_background" style="background-image:url(images/banner_background.jpg)"></div>
+<div class="banner_background" style="background-image:url(https://www.shutterstock.com/image-vector/beautiful-wallpaper-hd-splash-watercolor-600nw-1731530425.jpg)"></div>
 <div class="container fill_height">
 <div class="row fill_height">
-<div class="banner_product_image"><img src="images/banner_product.png" alt></div>
+<div class="banner_product_image"><img src="https://preview.colorlib.com/theme/onetech/images/banner_product.png" alt></div>
 <div class="col-lg-5 offset-lg-4 fill_height">
 <div class="banner_content">
-<h1 class="banner_text">new released smartphones</h1>
+<h1 style="color: #000000" class="banner_text">new released smartphones</h1>
 <div class="banner_price"><span>25,999 Taka</span>19,999 Taka</div>
-<div class="banner_product_name">Samsung Galaxy</div>
+<div  style="color: #000000" class="banner_product_name">Apple Iphone 6s</div>
 <div class="button banner_button"><a href="#">Shop Now</a></div>
 </div>
 </div>
@@ -3853,3 +3856,5 @@ Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/clou
 </div>
 </div>
 </div>
+
+@endsection
