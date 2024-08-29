@@ -6,25 +6,25 @@
 
 
 
-
 <div class="banner">
-<div class="banner_background" style="background-image:url(/uploads/important/banner.jpeg)"></div>
-<div class="container fill_height">
-<div class="row fill_height">
-<div class="col-lg-5 offset-lg-4 fill_height">
-<div style="text-align: center;" class="banner_content">
-<h1 class="banner_text"><b>we are always up to date</b></h1>
-<a class="btn btn-warning btn-lg" href="{{route('frontend.product')}}"><b>Shop Now</b></a>
-</div>
-</div>
-</div>
-</div>
+    <div id="banner-background" class="banner_background" style="background-image:url(/uploads/important/banner.jpeg)"></div>
+    <div class="container fill_height">
+        <div class="row fill_height">
+            <div class="col-lg-5 offset-lg-4 fill_height">
+                <div style="text-align: center" class="banner_content">
+                    <h1 class="banner_text">We are always up to date</h1>
+                    <a class="btn btn-warning btn-lg" href="{{route('frontend.product')}}"><b>Shop Now</b></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
 
 
-<h1 class="mt-5 mb-2" ><b>Popular Categories</b></h1><br>
+
+<h1 class="mt-2 mb-2" ><b>Popular Categories</b></h1><br>
 
 <div style="padding: 0px; " class="characteristics">
 <div class="container">

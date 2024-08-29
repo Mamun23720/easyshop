@@ -1,4 +1,4 @@
-@extends('frontend.master')
+@extends('frontend.master2')
 
 @section('content')
 
@@ -55,7 +55,7 @@
         }
     </style>
 <div class="container d-flex">
-<a style="margin-left: 49%" class="btn btn-success mb-3" onclick="printReport()" >Print</a>
+<a style="margin-left: 49%" class="btn btn-success mb-3 mt-3" onclick="printReport()" >Print</a>
 </div>
 
 
@@ -90,10 +90,10 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Item Name</th>
-                        <th style="text-align:center" >Quantity</th>
-                        <th style="text-align:center" >Unit Price</th>
-                        <th style="text-align:center" >Subtotal</th>
+                        <th style=" color:black; ">Item Name</th>
+                        <th style=" color:black; text-align:center" >Quantity</th>
+                        <th style=" color:black; text-align:center" >Unit Price</th>
+                        <th style=" color:black; text-align:center" >Subtotal</th>
                     </tr>
                 </thead>
                 <tbody>

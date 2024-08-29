@@ -19,9 +19,9 @@ class CustomerAuth
         {
             return $next($request);
         }else{
-            notify()->error('Please Login First');
+            notify()->error('Please sign in first');
             return redirect()->back();
         }
-        
+
     }
 }

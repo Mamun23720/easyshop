@@ -1,4 +1,4 @@
-@extends('frontend.master')
+@extends('frontend.master2')
 
 @section('content')
 
@@ -53,7 +53,7 @@
 
 
           <hr class="my-4">
-          <h1 style="color:black; font-size: 300%; text-align: right;" class="mb-3">
+          <h1 style="color:black; font-size: 200%;" class="mb-3">
           <b  >Total Price=
             @if (session()->get('basket'))
             {{array_sum(array_column(session()->get('basket'),'subtotal')) }}.00 Taka
@@ -62,7 +62,7 @@
             @endif
 
           </h1>
-          <button style="color: black;" class="w-100 btn btn-success btn-lg" type="submit"><b>Continue to checkout</b></button>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<button style="color: black;" class="w-100 btn btn-success btn-lg mt-2 ml-5" type="submit"><b>Continue to checkout</b></button>
         </form>
       </div>
   </div>

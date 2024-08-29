@@ -53,7 +53,7 @@ class CustomerController extends Controller
         ]);
 
         notify()->success('Registration Complete Successfully');
-        return redirect()->back();
+        return redirect()->route('home');
     }
 
 
