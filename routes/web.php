@@ -50,12 +50,14 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::group(['middleware' => 'auth'], function () {
             Route::get('/', [DashboardController::class, 'dashboard'])->name('backend.dashboard');
-            
             Route::get('/banner/list',[DashboardController::class, 'bannerlist'])->name('backend.bannerlist');
             Route::get('/banner/form',[DashboardController::class, 'bannerform'])->name('backend.bannerform');
             Route::post('/submit/banner/form',[DashboardController::class, 'bannerstore'])->name('backend.storebanner');
             Route::get('/banner/delete{product}',[DashboardController::class, 'deletebanner'])->name('backend.deleteBanner');
 
+
+
+            
             Route::get('/customer/list', [CustomerController::class, 'list'])->name('backend.customerlist');
             Route::get('/product/list',[ProductController::class, 'productlist'])->name('backend.productlist');
             Route::get('/product/form',[ProductController::class, 'productform'])->name('backend.productform');

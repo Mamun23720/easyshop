@@ -14,7 +14,8 @@ class HomeController extends Controller
     {
         $allProduct=Product::all();
         $allBanner=Banner::all();
-        return view('frontend.home', compact('allProduct','allBanner'));
+        $allCategory=Category::all();
+        return view('frontend.home', compact('allProduct','allBanner','allCategory'));
     }
     // public function home()
     // {

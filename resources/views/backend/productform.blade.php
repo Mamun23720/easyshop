@@ -27,7 +27,7 @@
             <option selected><b>Product Category</b></option>
             @foreach ($allCategory as $category)
 
-                <option value="{{$category->id}}">{{$category->name}}</option>
+                <option value="{{$category->id}}">{{$category->cat_name}}</option>
 
             @endforeach
 

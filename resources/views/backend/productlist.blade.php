@@ -33,7 +33,7 @@
             <td style="text-align: center">
                 <img src="{{url('/uploads/product/'. $product->image)}}" width="50px" height="50px">
             </td>
-            <td>{{$product->category->name}}</td>
+            <td>{{$product->category->cat_name}}</td>
             <td style="text-align: center">
                 <a class="btn btn-success" href="{{route('backend.viewProduct',$product->id)}}">View</a>
                 <a class="btn btn-info" href="{{route('backend.editProduct',$product->id)}}">Edit</a>

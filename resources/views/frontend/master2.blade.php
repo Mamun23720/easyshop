@@ -23,22 +23,17 @@
     <link rel="stylesheet" type="text/css" href="https://preview.colorlib.com/theme/onetech/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="https://preview.colorlib.com/theme/onetech/styles/responsive.css">
 
+    
     <!-- For product  -->
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
         }
-
-        .container {
-            padding: 0px;
-        }
-
         h1 {
-            text-align: center;
+            text-align: start;
             margin-bottom: 2rem;
             margin-top: 2rem;
+            margin-left: 3rem;
             color: #333;
         }
 
@@ -224,6 +219,50 @@
         .dot.active {
             background-color: #3300ff;
         }
+        .category-box {
+            background-color: #4160ff;
+            height: 200px;
+            width: 200px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-image {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Overlay text */
+        .category-name-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black overlay */
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .category-box:hover .category-name-overlay {
+            opacity: 1; /* Shows overlay on hover */
+        }
+
+        .category-name-overlay h5 {
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
 
     </style>
     <!-- For View-Cart Page  -->
