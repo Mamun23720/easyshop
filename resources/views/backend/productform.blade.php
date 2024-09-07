@@ -25,23 +25,16 @@
       <div class="">
         <select class="form-select" aria-label="Default select example" name="product_category">
             <option selected><b>Product Category</b></option>
-                <option value="Laptops">Laptops</option>
-                <option value="Cameras">Cameras</option>
-                <option value="Smartphones">Smartphones</option>
-                <option value="Gadgets">Gadgets</option>
-                <option value="Watches">Watches</option>
-                <option value="Jewellerys">Jewellerys</option>
-                <option value="Helmets">Helmets</option>
-                <option value="Cosmetics">Cosmetics</option>
-                <option value="Accessories">Accessories</option>
-                <option value="Mens Fashion">Mens Fashion</option>
-                <option value="Womens Fashion">Womens Fashion</option>
-                <option value="Kids Fashion">Kids Fashion</option>
-                <option value="Others">Others</option>
+            @foreach ($allCategory as $category)
+
+                <option value="{{$category->id}}">{{$category->name}}</option>
+
+            @endforeach
+
         </select>
       </div>
     <div class="mt-3 mb-3">
-    <button type="submit" class="btn btn-info">Add Product</button>
+    <button type="submit" class="btn btn-success">Add Product</button>
     </div>
   </form>
 

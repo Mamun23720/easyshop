@@ -2,8 +2,8 @@
 
 @section('content')
 <br>
-<div style="text-align: center">
-    <a href="{{route('backend.productform')}}" class="btn btn-success">Add Product</a>
+<div>
+    <a href="{{route('backend.productform')}}" class="btn btn-success btn-lg">Add Product</a>
 <br>
 <br>
 </div>
@@ -33,8 +33,7 @@
             <td style="text-align: center">
                 <img src="{{url('/uploads/product/'. $product->image)}}" width="50px" height="50px">
             </td>
-            <td>{{$product->category}}</td>
-            {{-- <td>{{$product->reviews}}</td> --}}
+            <td>{{$product->category->name}}</td>
             <td style="text-align: center">
                 <a class="btn btn-success" href="{{route('backend.viewProduct',$product->id)}}">View</a>
                 <a class="btn btn-info" href="{{route('backend.editProduct',$product->id)}}">Edit</a>

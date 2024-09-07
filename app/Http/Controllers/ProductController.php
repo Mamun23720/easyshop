@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -10,12 +12,13 @@ class ProductController extends Controller
 {
     public function productlist()
     {
-        $allProduct=Product::paginate(20);
+        $allProduct=Product::with('category')->paginate(20);
         return view ('backend.productlist', compact('allProduct'));
     }
     public function productform()
     {
-        return view ('backend.productform');
+        $allCategory=Category::all();
+        return view ('backend.productform', compact('allCategory'));
     }
     public function productstore(Request $request)
     {
@@ -39,7 +42,7 @@ class ProductController extends Controller
             'description'=>$request->product_description,
             // 'mobile'=>$request->customer_number,
             'image'=>$fileName,
-            'category'=>$request->product_category
+            'category_id'=>$request->product_category
     ]);
         notify()->success("Product added successfully");
         return redirect()->route('backend.productlist');
@@ -82,82 +85,35 @@ class ProductController extends Controller
         notify()->success("Product Updated successfully");
         return redirect()->route('backend.productlist');
     }
-    public function laptops()
+
+
+    public function categorylist()
     {
-        $allProduct=Product::paginate(20);
-        $lproduct=Product::where('category','Laptops')->get();
-        return view('backend.laptops', compact('lproduct','allProduct'));
+        $allCategory=Category::paginate(20);
+        return view ('backend.categorylist', compact('allCategory'));
     }
-    public function cameras()
+    public function deleteCategory($id)
     {
-        $allProduct=Product::paginate(20);
-        $cproduct=Product::where('category','Cameras')->get();
-        return view('backend.cameras', compact('cproduct','allProduct'));
+        $deleteCategory=Category::find($id);
+        $deleteCategory->delete();
+        notify()->success("Category Deleted successfully");
+        return redirect()->back();
     }
-    public function smartphones()
+    public function categoryform()
     {
-        $allProduct=Product::paginate(20);
-        $sproduct=Product::where('category','Smartphones')->get();
-        return view('backend.smartphones', compact('sproduct','allProduct'));
+        return view ('backend.categoryform');
     }
-    public function gadgets()
+    public function categorystore(Request $request)
     {
-        $allProduct=Product::paginate(20);
-        $gproduct=Product::where('category','Gadgets')->get();
-        return view('backend.gadgets', compact('gproduct','allProduct'));
-    }
-    public function watches()
-    {
-        $allProduct=Product::paginate(20);
-        $wproduct=Product::where('category','Watches')->get();
-        return view('backend.watches', compact('wproduct','allProduct'));
-    }
-    public function jewellerys()
-    {
-        $allProduct=Product::paginate(20);
-        $jproduct=Product::where('category','Jewellerys')->get();
-        return view('backend.jewellerys', compact('jproduct','allProduct'));
-    }
-    public function helmets()
-    {
-        $allProduct=Product::paginate(20);
-        $hproduct=Product::where('category','Helmets')->get();
-        return view('backend.helmets', compact('hproduct','allProduct'));
-    }
-    public function cosmetics()
-    {
-        $allProduct=Product::paginate(20);
-        $cproduct=Product::where('category','Cosmetics')->get();
-        return view('backend.cosmetics', compact('cproduct','allProduct'));
-    }
-    public function accessories()
-    {
-        $allProduct=Product::paginate(20);
-        $aproduct=Product::where('category','Accessories')->get();
-        return view('backend.accessories', compact('aproduct','allProduct'));
-    }
-    public function kidsfashion()
-    {
-        $allProduct=Product::paginate(20);
-        $kproduct=Product::where('category','Kids Fashion')->latest()->get();
-        return view('backend.kidsfashion', compact('kproduct','allProduct'));
-    }
-    public function mensfashion()
-    {
-        $allProduct=Product::paginate(20);
-        $mproduct=Product::where('category','Mens Fashion')->get();
-        return view('backend.mensfashion', compact('mproduct','allProduct'));
-    }
-    public function womensfashion()
-    {
-        $allProduct=Product::paginate(20);
-        $wproduct=Product::where('category','Womens Fashion')->get();
-        return view('backend.womensfashion', compact('wproduct','allProduct'));
-    }
-    public function others()
-    {
-        $allProduct=Product::paginate(20);
-        $oproduct=Product::where('category','Others')->get();
-        return view('backend.others', compact('oproduct','allProduct'));
+       $validation=Validator::make($request->all(),[
+                'category_name'=>'required',
+                'category_description'=>'min:2',
+        ]);
+        Category::create([
+            'name'=>$request->category_name,
+            'description'=>$request->category_description,
+    ]);
+        notify()->success("Category added successfully");
+        return redirect()->route('backend.categorylist');
     }
 }

@@ -59,7 +59,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                 </tbody>
         </table>
         <br><br><br>
@@ -68,7 +68,7 @@
 
         <h3 style="text-align: center;" >Your cart is currently empty!!</h3>
         <div style="text-align: center;" class="mt-5">
-        <a style="background-color: tomato ;" href="{{route('frontend.product')}}" class="btn btn-warning btn-lg"><b>Continue Shopping...</b></a>        
+        <a style="color:white ;background-color: rgb(91, 120, 248) ;" href="{{route('frontend.product')}}" class="btn btn-lg"><b>Continue Shopping...</b></a>
         </div>
         <br><br><br>
         <br><br><br>
