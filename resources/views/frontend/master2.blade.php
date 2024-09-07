@@ -150,19 +150,20 @@
             border-radius: 50px;
             position: relative;
             max-width: 100%;
+            max-height: 100%;
             overflow: hidden;
         }
 
         /* Slides */
         .slider {
-            height: 580px;
+            height: 700px;
             display: flex;
             width: 100%; /* Adjust this based on the number of slides */
             transition: transform 15s ease-in-out;
         }
 
         .slide {
-            height: 580px;
+            height: 700px;
             min-width: 100%;
             position: relative;
         }
@@ -279,6 +280,44 @@
     @yield('content')
 
     @include('frontend.partials.footer')
+
+
+    
+<!-- Include your slider JS code -->
+
+
+<script>
+    let slideIndex = 0;
+    showSlidesAuto();
+
+    function showSlidesAuto() {
+        let slides = document.getElementsByClassName("slide");
+        let dots = document.getElementsByClassName("dot");
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+
+        setTimeout(showSlidesAuto, 2000); // Auto-slide every 2 seconds
+    }
+
+    function currentSlide(n) {
+        slideIndex = n - 1; // Adjust for zero-based indexing
+        showSlidesAuto();
+    }
+</script>
 
 @notifyJs
 

@@ -24,10 +24,10 @@
 
           <tr>
             <th scope="row">{{$key+1}}</th>
-            <td>{{$category->cat_name}}</td>
-            <td>{{$category->cat_description}}</td>
+            <td>{{$category->name}}</td>
+            <td>{{$category->description}}</td>
             <td style="text-align: center">
-                <img src="{{url('/uploads/category/'. $category->cat_image)}}" width="50px" height="50px">
+                <img src="{{url('/uploads/category/'. $category->image)}}" width="50px" height="50px">
             </td>
             <td style="text-align: center">
                 <a class="btn btn-danger" href="{{route('backend.deleteCategory',$category->id)}}">Delete</a>

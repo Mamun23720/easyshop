@@ -2,22 +2,6 @@
 
 @section('content')
 
-
-{{-- <div class="banner">
-        <div id="banner-background" class="banner_background" style="background-image:url(/uploads/important/banner.jpeg)">
-        </div>
-        <div class="container fill_height">
-            <div class="row fill_height">
-                <div class="col-lg-5 offset-lg-4 fill_height">
-                    <div style="text-align: center" class="banner_content">
-                        <h1 class="banner_text" style="color: white"><b>We are always up to date</b></h1>
-                        <a class="btn btn-info btn-lg" href="{{ route('frontend.product') }}">
-<b style="color: white;">Shop Now</b></a>
-</div>
-</div>
-</div>
-</div>
-</div> --}}
 <div class="slider-container">
     <div class="slider">
         @foreach($allBanner as $index => $banner)
@@ -38,46 +22,11 @@
     <div class="dots">
         @foreach($allBanner as $index => $banner)
         <span class="dot {{ $loop->first ? 'active' : '' }}" onclick="currentSlide($index + 1)"></span>
-
         @endforeach
     </div>
 </div>
 
-<!-- Include your slider JS code -->
-<script>
-    let slideIndex = 0;
-    showSlidesAuto();
-
-    function showSlidesAuto() {
-        let slides = document.getElementsByClassName("slide");
-        let dots = document.getElementsByClassName("dot");
-
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1;
-        }
-
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-
-        setTimeout(showSlidesAuto, 5000); // Auto-slide every 5 seconds
-    }
-
-    function currentSlide(n) {
-        slideIndex = n - 1; // Adjust for zero-based indexing
-        showSlidesAuto();
-    }
-</script>
-
-
+<br><br>
 <div class="container-fluid mt-5">
     <div class="row">
 
@@ -85,10 +34,10 @@
 
         <div class="col">
             <a href="#">
-                <div style="background: #4160ff; height: 200px; width: 200px;" class="category-box d-flex align-items-center justify-content-center">
-                    <img class="category-image" style="height: 195px; width: 195px; border-radius: 10px; " src="{{ url('/uploads/category/' . $category->cat_image) }}" alt="{{$category->cat_name}}">
+                <div style="background: #4160ff; height: 300px; width: 200px;" class="category-box d-flex align-items-center justify-content-center">
+                    <img class="category-image" style="height: 295px; width: 195px; border-radius: 10px; " src="{{ url('/uploads/category/' . $category->image) }}" alt="{{$category->name}}">
                     <div class="category-name-overlay">
-                        <h5>{{ $category->cat_name }}</h5>
+                        <h5>{{ $category->name }}</h5>
                     </div>
                 </div>
             </a>
@@ -114,7 +63,6 @@
             <img src="{{ url('/uploads/product/' . $product->image) }}" alt="{{ $product->name }}">
             <div class="details">
                 <h2>{{ $product->name }}</h2>
-                <p>{{ $product->category->name }}</p>
                 <p class="price">{{ number_format($product->price, 2) }}BDT</p>
                 <div style="text-align: center;">
                     <a style="border: none; background-color: transparent; " class="btn btn-warning"

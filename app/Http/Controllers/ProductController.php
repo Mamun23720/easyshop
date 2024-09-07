@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function productlist()
     {
-        $allProduct=Product::paginate(20);
+        $allProduct=Product::with('category')->paginate(20);
         return view ('backend.productlist', compact('allProduct'));
     }
     public function productform()
@@ -119,9 +119,9 @@ class ProductController extends Controller
             $file->storeAs('category',$fileName);
         }
         Category::create([
-            'cat_name'=>$request->category_name,
-            'cat_description'=>$request->category_description,
-            'cat_image'=>$fileName,
+            'name'=>$request->category_name,
+            'description'=>$request->category_description,
+            'image'=>$fileName,
     ]);
         notify()->success("Category added successfully");
         return redirect()->route('backend.categorylist');
