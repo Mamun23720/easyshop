@@ -1,4 +1,4 @@
-@extends('frontend.master')
+@extends('frontend.master2')
 
 @section('content')
     {{-- Single Product Section --}}
@@ -29,7 +29,7 @@
                         </div>
                         <div class="mb-3">
 
-                            <span class="h5"><b>Product Category: {{ $singleProduct->category->name }} Taka</b></span>
+                            <span class="h5"><b>Product Category: {{ $singleProduct->category->name }}</b></span>
 
                         </div>
                         <div class="border rounded-2 px-3 py-2 bg-white">

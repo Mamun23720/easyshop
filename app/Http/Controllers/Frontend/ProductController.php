@@ -21,7 +21,7 @@ class ProductController extends Controller
     {
         $singleProduct=Product::with('category')->find($id);
         $multipleProduct=Product::where('id','!=',$singleProduct->id)
-                                ->where('category',$singleProduct->category)
+                                ->where('category_id',$singleProduct->category)
                                 ->limit(4)
                                 ->get();
         return view('frontend.pages.single-product-show', compact('singleProduct','multipleProduct'));

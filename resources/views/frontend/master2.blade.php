@@ -7,6 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="OneTech shop project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="font.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+      <link href="/static/css/style.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    </head>
     <link rel="stylesheet" type="text/css"
         href="https://preview.colorlib.com/theme/onetech/styles/bootstrap4/bootstrap.min.css">
     <link href="https://preview.colorlib.com/theme/onetech/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css"
@@ -25,7 +31,7 @@
 
     
     <!-- For product  -->
-    <style>
+<style>
         body {
             font-family: Arial, sans-serif;
         }
@@ -33,30 +39,66 @@
             text-align: start;
             margin-bottom: 2rem;
             margin-top: 2rem;
-            margin-left: 3rem;
             color: #333;
         }
 
         .product-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.75rem;
+            gap: 1.5rem;
         }
 
         .product-card {
-            background: #1387d9;
-            height: 300px;
-            width: 200px;
+            /* background: #2695e3; */
+            margin-top: 2px;
+            margin-bottom: 10px;
+            margin-left: 2px;
+            margin-right: 10px;
+            height: 250px;
+            width: 150px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             width: calc(33.333% - 1.5rem);
             box-sizing: border-box;
+            border: 2px solid #4160ff;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .button {
+        border: none;
+        color: white;
+        padding: 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        }
+        .button2 {
+        background-color: #1733c32e; 
+        color: black; 
+        border: 2px yellow;
+        }
+
+        .button2:hover {
+        background-color: #002affe3;
+        color: white;
+        }
+
+        .button3 {
+        background-color: #0093ff00; 
+        color: white; 
+        border: 2px groove #0e8ce4;
+        }
+
+        .button3:hover {
+        background-color: #0e8ce4;
+        color: white;
         }
 
         .product-card img {
@@ -70,18 +112,20 @@
         .product-card h2 {
             text-align: center;
             font-size: 20px;
-            color: #ffffff;
-            margin-top: 10px;
+            color: black;
+            margin-top: 5px;
+            font-weight: bold;
+
         }
 
         .product-card p {
             text-align: center;
-            color: #ffffff;
+            color: black;
             font-size: larger;
         }
 
         .product-card .price {
-            color: #ffffff;
+            color:red;
             font-weight: bold;
         }
 
@@ -147,7 +191,7 @@
             margin-top: 10px;
             margin-left: 50px;
             margin-right: 50px;
-            border-radius: 50px;
+            border-radius: 20px;
             position: relative;
             max-width: 100%;
             max-height: 100%;
@@ -156,7 +200,7 @@
 
         /* Slides */
         .slider {
-            height: 700px;
+            height: 500px;
             display: flex;
             width: 100%; /* Adjust this based on the number of slides */
             transition: transform 15s ease-in-out;
@@ -166,6 +210,22 @@
             height: 700px;
             min-width: 100%;
             position: relative;
+            transition: opacity 15s ease-in-out;
+            opacity: 0;
+            opacity: 50;
+            visibility: visible;
+            animation: fadeInUp 1s forwards;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .slide img {
@@ -176,7 +236,7 @@
         /* Slider Content */
         .slider-content {
             position: absolute;
-            top: 50%;
+            top: 35%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
@@ -186,8 +246,7 @@
     
 
         .shop-now-btn {
-            background-color: #2e3cf9;
-            border: none;
+            border: solid;
             padding: 10px 20px;
             color: white;
             cursor: pointer;
@@ -195,7 +254,7 @@
         }
 
         .shop-now-btn:hover {
-            background-color: #4733fe;
+            background-color: #0e8ce4;
         }
 
         /* Navigation Dots */
@@ -224,7 +283,7 @@
             background-color: #4160ff;
             height: 200px;
             width: 200px;
-            border-radius: 10px;
+            border-radius: 50%;
             position: relative;
             overflow: hidden;
         }
@@ -253,7 +312,8 @@
         }
 
         .category-box:hover .category-name-overlay {
-            opacity: 1; /* Shows overlay on hover */
+
+            opacity: 100; /* Shows overlay on hover */
         }
 
         .category-name-overlay h5 {
@@ -263,11 +323,9 @@
             padding: 0;
             margin: 0;
         }
+</style>
 
-
-    </style>
     <!-- For View-Cart Page  -->
-
 
 </head>
 
@@ -277,7 +335,7 @@
 
     @include('notify::components.notify')
 
-    @yield('content')
+  <div class="container-fluid">  @yield('content') </div>
 
     @include('frontend.partials.footer')
 
@@ -310,7 +368,7 @@
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
 
-        setTimeout(showSlidesAuto, 2000); // Auto-slide every 2 seconds
+        setTimeout(showSlidesAuto, 5000); // Auto-slide every 2 seconds
     }
 
     function currentSlide(n) {
@@ -320,7 +378,8 @@
 </script>
 
 @notifyJs
-
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </body>
 

@@ -3,15 +3,15 @@
 
     <!-- Top Bar -->
 
-    <div style="background: rgb(90, 90, 255)" class="top_bar">
+    <div class="top_bar">
         <div style="padding: 0px;" class="flex-container">
             <div  class="row">
-                <div style="color: white" class="col d-flex flex-row">
+                <div style="color: black" class="col d-flex flex-row">
                     <div style="font-size:20px;" class="top_bar_contact_item ml-5">
                         <div  class="top_bar_icon"></div>Helpline: 01627736636
                     </div>
                     <div  class="top_bar_contact_item">
-                        <div class="top_bar_icon"></div><a style="font-size:20px; color:white;" href="#">E-mail: sajib@gmail.com</a>
+                        <div class="top_bar_icon"></div><a style="font-size:20px; color:black;" href="#">E-mail: sajib@gmail.com</a>
                     </div>
                     <div class="top_bar_content ml-auto">
 
@@ -19,18 +19,18 @@
                         @guest('customerGuard')
                             <div class="top_bar_user mr-5">
                                 <div class="user_icon"></div>
-                                <div><a style="font-size:20px; color:white;" href="{{ route('frontend.user.registration') }}"><b>Register</b></a></div>
-                                <div><a style="font-size:20px; color:white;" href="{{ route('frontend.user.login') }}"><b>Sign in</b></a></div>
+                                <div><a style="font-size:20px; color:black;" href="{{ route('frontend.user.registration') }}"><b>Register</b></a></div>
+                                <div><a style="font-size:20px; color:black;" href="{{ route('frontend.user.login') }}"><b>Sign in</b></a></div>
                             </div>
                         @endguest
 
                         @auth('customerGuard')
                             <div class="top_bar_user mr-5">
                                 <div class="user_icon"></div>
-                                <div><a style="font-size:20px; color:white;"
+                                <div><a style="font-size:20px; color:black;"
                                         href="{{ route('view.profile') }}"><b>{{ auth('customerGuard')->user()->name }}</b></a>
                                 </div>
-                                <div><a style="font-size:20px; color:white;" href="{{ route('frontend.logout') }}">Sign Out</a></div>
+                                <div><a style="font-size:20px; color:black;" href="{{ route('frontend.logout') }}">Sign Out</a></div>
                             </div>
                         @endauth
 
@@ -38,16 +38,16 @@
                         <div class="top_bar_menu ml-5 mr-5">
                             <ul class="standard_dropdown top_bar_dropdown">
                                 <li>
-                                    <a style="font-size:20px; color:white;" href="#">English<i class="fas fa-chevron-down"></i></a>
+                                    <a style="font-size:20px; color:black;" href="#">English<i class="fas fa-chevron-down"></i></a>
                                     <ul>
-                                        <li><a style="font-size:20px; color:white;" href="#">Bangla</a></li>
+                                        <li><a style="font-size:20px; color:black;" href="#">Bangla</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a style="font-size:20px; color:white;" href="#">BDT<i class="fas fa-chevron-down"></i></a>
+                                    <a style="font-size:20px; color:black;" href="#">BDT<i class="fas fa-chevron-down"></i></a>
                                     <ul>
-                                        <li><a style="font-size:20px; color:white;" href="#">USD</a></li>
-                                        <li><a style="font-size:20px; color:white;" href="#">EUR</a></li>
+                                        <li><a style="font-size:20px; color:black;" href="#">USD</a></li>
+                                        <li><a style="font-size:20px; color:black;" href="#">EUR</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -65,12 +65,16 @@
     <!-- Middle Bar -->
 
     <div class="header_main">
-        <div style=" height: 150px;" class="flex-container ml-5 mr-5">
+        <div style=" height: 170px;" class="flex-container ml-5 mr-5">
             <div class="row">
 
                 <div class="col-md-4">
                     <div class="logo_container">
-                        <div style="text-align: center"  class="logo"><a href="/"><b>S-Shop</b></a></div>
+                        <div class="logo">
+                            <a href="/">
+                                <img style="height: 100px; width: 300px; border-radius: 10%; margin-left: 25%;" src="{{url('/uploads/important/Logo.JPG')}}" alt="S-Shop">
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -146,7 +150,7 @@
 
 
 
-    <nav style="background: rgb(79, 79, 255) " class="main_nav">
+    <nav class="main_nav">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -154,23 +158,21 @@
                         <div>
                             <ul class="standard_dropdown main_nav_dropdown">
 
-                                <li><a href="#"><b style="color: white; font-size: 24px">All Categories</b><i
+                                <li><a href="/"><b style="color: black; font-size: 24px">Home</b><i
                                             class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="/"><b style="color: white; font-size: 24px">Home</b><i
+                                <li><a href="#"><b style="color: black;font-size: 24px">Hot Offers</b><i
                                             class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="#"><b style="color: white;font-size: 24px">Hot Offers</b><i
+                                <li><a href="{{ route('frontend.product') }}"><b style="color: black;font-size: 24px">Products</b><i 
                                             class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="{{ route('frontend.product') }}"><b style="color: white;font-size: 24px">Products</b><i 
+                                <li><a href="#"><b style="color: black;font-size: 24px">New Products</b><i
                                             class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="#"><b style="color: white;font-size: 24px">New Products</b><i
+                                <li><a href="#"><b style="color: black;font-size: 24px">Super Deals</b><i
                                             class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="#"><b style="color: white;font-size: 24px">Super Deals</b><i
+                                <li><a href="#"><b style="color: black;font-size: 24px">Pages</b><i
                                             class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="#"><b style="color: white;font-size: 24px">Pages</b><i
+                                <li><a href="#"><b style="color: black;font-size: 24px">Blog</b><i
                                             class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="#"><b style="color: white;font-size: 24px">Blog</b><i
-                                            class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="#"><b style="color: white;font-size: 24px">Contact</b><i
+                                <li><a href="#"><b style="color: black;font-size: 24px">Contact</b><i
                                             class="fas fa-chevron-down"></i></a></li>
                             </ul>
                         </div>
@@ -184,3 +186,4 @@
 
 
 </header>
+<br><br>

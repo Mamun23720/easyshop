@@ -3,10 +3,10 @@
 @section('content')
 <br>
 <div>
-    <a href="{{route('backend.productform')}}" class="btn btn-success btn-lg">Add Product</a>
-<br>
+    <a href="{{route('backend.productform')}}" class="btn btn-success btn-lg">Add Product </a>
 <br>
 </div>
+<h1 style="text-align: center;" >Total Products  ({{ $allProduct ? count($allProduct) : 0 }})</h1>
 <table class="table table-dark table-hover">
         <thead style="border: white">
           <tr>
@@ -27,7 +27,7 @@
             <th scope="row">{{$key+1}}</th>
             <td>{{$product->name}}</td>
             <td style="text-align: center">{{$product->price}}</td>
-            <td>{{$product->description}}</td>
+            <td style="text-align: justify; width: 500px; font-size:small;" >{{$product->description}}</td>
             <td style="text-align: center">
                 <img src="{{url('/uploads/product/'. $product->image)}}" width="50px" height="50px">
             </td>
