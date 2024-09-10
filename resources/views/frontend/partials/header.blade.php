@@ -5,13 +5,14 @@
 
     <div class="top_bar">
         <div style="padding: 0px;" class="flex-container">
-            <div  class="row">
+            <div class="row">
                 <div style="color: black" class="col d-flex flex-row">
                     <div style="font-size:20px;" class="top_bar_contact_item ml-5">
-                        <div  class="top_bar_icon"></div>Helpline: 01627736636
+                        <div class="top_bar_icon"></div>Helpline: 01627736636
                     </div>
-                    <div  class="top_bar_contact_item">
-                        <div class="top_bar_icon"></div><a style="font-size:20px; color:black;" href="#">E-mail: sajib@gmail.com</a>
+                    <div class="top_bar_contact_item">
+                        <div class="top_bar_icon"></div><a style="font-size:20px; color:black;" href="#">E-mail:
+                            sajib@gmail.com</a>
                     </div>
                     <div class="top_bar_content ml-auto">
 
@@ -19,8 +20,10 @@
                         @guest('customerGuard')
                             <div class="top_bar_user mr-5">
                                 <div class="user_icon"></div>
-                                <div><a style="font-size:20px; color:black;" href="{{ route('frontend.user.registration') }}"><b>Register</b></a></div>
-                                <div><a style="font-size:20px; color:black;" href="{{ route('frontend.user.login') }}"><b>Sign in</b></a></div>
+                                <div><a style="font-size:20px; color:black;"
+                                        href="{{ route('frontend.user.registration') }}"><b>Register</b></a></div>
+                                <div><a style="font-size:20px; color:black;"
+                                        href="{{ route('frontend.user.login') }}"><b>Sign in</b></a></div>
                             </div>
                         @endguest
 
@@ -30,7 +33,8 @@
                                 <div><a style="font-size:20px; color:black;"
                                         href="{{ route('view.profile') }}"><b>{{ auth('customerGuard')->user()->name }}</b></a>
                                 </div>
-                                <div><a style="font-size:20px; color:black;" href="{{ route('frontend.logout') }}">Sign Out</a></div>
+                                <div><a style="font-size:20px; color:black;" href="{{ route('frontend.logout') }}">Sign
+                                        Out</a></div>
                             </div>
                         @endauth
 
@@ -38,13 +42,15 @@
                         <div class="top_bar_menu ml-5 mr-5">
                             <ul class="standard_dropdown top_bar_dropdown">
                                 <li>
-                                    <a style="font-size:20px; color:black;" href="#">English<i class="fas fa-chevron-down"></i></a>
+                                    <a style="font-size:20px; color:black;" href="#">English<i
+                                            class="fas fa-chevron-down"></i></a>
                                     <ul>
                                         <li><a style="font-size:20px; color:black;" href="#">Bangla</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a style="font-size:20px; color:black;" href="#">BDT<i class="fas fa-chevron-down"></i></a>
+                                    <a style="font-size:20px; color:black;" href="#">BDT<i
+                                            class="fas fa-chevron-down"></i></a>
                                     <ul>
                                         <li><a style="font-size:20px; color:black;" href="#">USD</a></li>
                                         <li><a style="font-size:20px; color:black;" href="#">EUR</a></li>
@@ -72,7 +78,8 @@
                     <div class="logo_container">
                         <div class="logo">
                             <a href="/">
-                                <img style="height: 100px; width: 300px; border-radius: 10%; margin-left: 25%;" src="{{url('/uploads/important/Logo.JPG')}}" alt="S-Shop">
+                                <img style="height: 100px; width: 300px; border-radius: 10%; margin-left: 25%;"
+                                    src="{{ url('/uploads/important/Logo.JPG') }}" alt="S-Shop">
                             </a>
                         </div>
                     </div>
@@ -86,8 +93,9 @@
                                     <input name="search_key" style="width: 100%; height: 100%"
                                         value="{{ request()->search_key }}" type="text" class="header_search_input"
                                         placeholder="Search here...">
-                                    <button style="width: 100px; height: 48px; " type="submit" class="header_search_button trans_300" value="Submit">
-                                        <b style="color: white; font-size:20px; " >Search</b>
+                                    <button style="width: 100px; height: 48px; " type="submit"
+                                        class="header_search_button trans_300" value="Submit">
+                                        <b style="color: white; font-size:20px; ">Search</b>
                                     </button>
                                 </form>
                             </div>
@@ -162,7 +170,8 @@
                                             class="fas fa-chevron-down"></i></a></li>
                                 <li><a href="#"><b style="color: black;font-size: 24px">Hot Offers</b><i
                                             class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="{{ route('frontend.product') }}"><b style="color: black;font-size: 24px">Products</b><i 
+                                <li><a href="{{ route('frontend.product') }}"><b
+                                            style="color: black;font-size: 24px">Products</b><i
                                             class="fas fa-chevron-down"></i></a></li>
                                 <li><a href="#"><b style="color: black;font-size: 24px">New Products</b><i
                                             class="fas fa-chevron-down"></i></a></li>

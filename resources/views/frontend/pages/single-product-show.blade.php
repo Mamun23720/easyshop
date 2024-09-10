@@ -15,7 +15,7 @@
                             class="nav-link">Download</a></li>
                     </div>
                 </aside>
-                
+
                 <main class="col-lg-6">
 
                     <div class="ps-lg-3">
@@ -68,8 +68,8 @@
         </div>
         <br>
         <!-- <div style="text-align: center">
-        <a style="margin-right: 5px" class="btn btn-success btn-lg mt-2" href="#" class="nav-link">Buy Now</a>
-        </div> -->
+                <a style="margin-right: 5px" class="btn btn-success btn-lg mt-2" href="#" class="nav-link">Buy Now</a>
+                </div> -->
     </section>
 
 
