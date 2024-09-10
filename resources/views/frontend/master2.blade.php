@@ -71,6 +71,43 @@
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
+    .image-container {
+        position: relative;
+        height: 230px;
+        width: 100%;
+        border-radius: 6%
+    }
+
+    .image-container img {
+        height: 230px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 6%;
+    }
+
+    .overlay {
+        position: absolute;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        /* Ensure overlay does not block image interaction */
+    }
+
+    .image-container:hover .overlay {
+        opacity: 1;
+    }
+
     .button {
         border: none;
         color: white;

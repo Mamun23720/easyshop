@@ -2,58 +2,60 @@
 
 
 @section('content')
-    <section style="background-color: #eee;">
-        <div class="container py-5">
-            <div class="row">
 
-                <h3>
-                    {{ $products->count() }} items found for "{{ request()->search_key }}"
-                </h3>
 
-                @foreach ($products as $prod)
-                    <a href="{{ route('show.product', $prod->id) }}">
-                        <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
-                            <div class="card text-black">
-                                <img src="{{ url('/uploads/product/' . $prod->image) }}" class="card-img-top" alt="iPhone"
-                                    style="width: 200px; height:200px;" />
-                                <div class="card-body">
-                                    <div class="text-center mt-1">
-                                        <h4 class="card-title">{{ $prod->name }}</h4>
+    <!-- Products -->
 
-                                    </div>
+    <div class="container mt-2">
+        <div>
+            <h3>{{ $products->count() }} items found for "{{ request()->search_key }}"</h3><br>
+        </div>
+        <div class="product-grid">
 
-                                    <div class="text-center">
-                                        <div class="p-3 mx-n3 mb-4" style="background-color: #eff1f2;">
-                                            <h5 class="mb-0">{{ $prod->category->name }}</h5>
-                                        </div>
 
-                                        <div class="d-flex flex-column mb-4 lead">
-                                            <span class="mb-2">{{ $prod->price }} BDT</span>
+            @foreach ($allProduct as $product)
+                <div style="height: 350px; width: 250px;  border-radius:5%" class="product-card">
+                    <div class="image-container">
 
-                                            <span style="color: transparent;">0</span>
-                                        </div>
-                                    </div>
 
-                                    <div class="d-flex flex-row">
-                                        <a href="{{ route('add.to.cart', $prod->id) }}" data-mdb-button-init
-                                            data-mdb-ripple-init class="btn btn-primary flex-fill mr-2"
-                                            data-mdb-ripple-color="dark">
-                                            Add to cart
-                                        </a>
-                                        <a href="{{ route('buy.now', $prod->id) }}" data-mdb-button-init data-mdb-ripple-init
-                                            class="btn btn-primary flex-fill ml-2" data-mdb-ripple-color="dark">
-                                            Buy Now
-                                        </a>
-                                    </div>
 
-                                </div>
+                        <a href="{{ route('show.product', $product->id) }}">
+                            <img style="height: 230px; width: 100%;" src="{{ url('/uploads/product/' . $product->image) }}"
+                                alt="{{ $product->name }}" />
+                            <div class="overlay">
+                                <i style="font-size:48px" class="bi bi-eye"></i>
+                            </div>
+                        </a>
+
+
+
+
+                        <div class="details">
+                            <h2>{{ $product->name }}</h2>
+                            <p class="price">Price: {{ number_format($product->price, 2) }} BDT</p>
+                            <div style="text-align: center;">
+
+                                <!-- <a style="border: none; background-color: transparent; " class="btn btn-warning" href="{{ route('show.product', $product->id) }}"><b><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" /><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" /></svg></b></a>
+
+            <a style="margin-right: 5px;" class="button button3 mt-3" href=""><b>Buy Now</b></a> -->
+
+                                <a style="margin-left: 5px;" class="button button2 mt-0"
+                                    href="{{ route('add.to.cart', $product->id) }}"><b><i class="bi bi-cart4 mr-2"></i>Add
+                                        to
+                                        Cart</b></a>
+
                             </div>
                         </div>
+                    </div>
+                </div>
+            @endforeach
 
-                    </a>
-                @endforeach
-
-            </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Products -->
+
+
+
+
 @endsection
