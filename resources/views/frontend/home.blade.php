@@ -98,10 +98,11 @@
 
             <a style="margin-right: 5px;" class="button button3 mt-3" href=""><b>Buy Now</b></a> -->
 
-                                <a style="margin-left: 5px;" class="button button2 mt-0"
-                                    href="{{ route('add.to.cart', $product->id) }}"><b><i class="bi bi-cart4 mr-2"></i>Add
-                                        to
-                                        Cart</b></a>
+
+            {{-- <a style="margin-right: 0px; font-size:28px " class="button button3" href="#"><b><i class="bi bi-heart"></i></b></a> --}}
+
+
+            <a style="margin-left: 5px;" class="button button2 mt-0" href="{{ route('add.to.cart', $product->id) }}"><b><i class="bi bi-cart4 mr-2"></i>Add to Cart</b></a>
 
                             </div>
                         </div>

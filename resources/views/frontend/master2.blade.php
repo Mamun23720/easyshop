@@ -132,14 +132,14 @@
     }
 
     .button3 {
-        background-color: #0093ff00;
-        color: white;
-        border: 2px groove #0e8ce4;
+        background-color: #ff000000;
+        color: black;
+        border: 2px red;
     }
 
     .button3:hover {
-        background-color: #0e8ce4;
-        color: white;
+        background-color: #e40e0e;
+        color: black;
     }
 
     .product-card img {
