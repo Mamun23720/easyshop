@@ -62,7 +62,7 @@
         overflow: hidden;
         width: calc(33.333% - 1.5rem);
         box-sizing: border-box;
-        border: 2px solid #4160ff;
+        border: solid #4160ff;
         transition: transform 0.3s, box-shadow 0.3s;
     }
 
@@ -284,9 +284,6 @@
         text-align: center;
         color: white;
     }
-
-
-
     .shop-now-btn {
         border: solid;
         padding: 10px 20px;
@@ -294,7 +291,6 @@
         cursor: pointer;
         transition: background-color 0.3s;
     }
-
     .shop-now-btn:hover {
         background-color: #0e8ce4;
     }

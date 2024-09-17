@@ -1,6 +1,8 @@
 @extends('frontend.master2')
 
 @section('content')
+
+
     <!-- Banner -->
 
 
@@ -13,7 +15,7 @@
                     <div class="slider-content">
                         <h1 style="color: white; font-size:48px; ">{{ $banner->banner_name }}</h1>
                         <h5 style="color: white; font-size : 36px ;">{{ $banner->banner_description }}</h5>
-                        <a class="button button3 btn-lg mt-5" href="{{ route('frontend.product') }}"><b>Shop Now</b></a>
+                        <a style="color: white; background-color: #0e8ce4" class="button button3 btn-lg mt-5" href="{{ route('frontend.product') }}"><b>Shop Now</b></a>
                     </div>
                 </div>
             @endforeach
@@ -74,7 +76,7 @@
         <div class="product-grid">
 
             @foreach ($allProduct as $product)
-                <div style="height: 350px; width: 250px;  border-radius:5%" class="product-card">
+                <div style="height: 350px; width: 250px;" class="product-card">
                     <div class="image-container">
 
 

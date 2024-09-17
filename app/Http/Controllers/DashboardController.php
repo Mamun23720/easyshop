@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function dashboard()
     {
-        return view ('backend.dashboard');
+        $allProduct=Product::all();
+        return view ('backend.dashboard', compact('allProduct'));
     }
     public function bannerlist()
     {

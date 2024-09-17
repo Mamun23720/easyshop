@@ -158,7 +158,7 @@
 
 
 
-    <nav class="main_nav">
+    <nav style="background: rgb(59 113 202);" class="main_nav">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -166,22 +166,22 @@
                         <div>
                             <ul class="standard_dropdown main_nav_dropdown">
 
-                                <li><a href="/"><b style="color: black; font-size: 24px">Home</b><i
+                                <li><a href="/"><b style="color: white; font-size: 24px">Home</b><i
                                             class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="#"><b style="color: black;font-size: 24px">Hot Offers</b><i
+                                <li><a href="#"><b style="color: white;font-size: 24px">Hot Offers</b><i
                                             class="fas fa-chevron-down"></i></a></li>
                                 <li><a href="{{ route('frontend.product') }}"><b
-                                            style="color: black;font-size: 24px">Products</b><i
+                                            style="color: white;font-size: 24px">Products</b><i
                                             class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="#"><b style="color: black;font-size: 24px">New Products</b><i
+                                <li><a href="#"><b style="color: white;font-size: 24px">New Products</b><i
                                             class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="#"><b style="color: black;font-size: 24px">Super Deals</b><i
+                                <li><a href="#"><b style="color: white;font-size: 24px">Super Deals</b><i
                                             class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="#"><b style="color: black;font-size: 24px">Pages</b><i
+                                <li><a href="#"><b style="color: white;font-size: 24px">Pages</b><i
                                             class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="#"><b style="color: black;font-size: 24px">Blog</b><i
+                                <li><a href="#"><b style="color: white;font-size: 24px">Blog</b><i
                                             class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="#"><b style="color: black;font-size: 24px">Contact</b><i
+                                <li><a href="#"><b style="color: white;font-size: 24px">Contact</b><i
                                             class="fas fa-chevron-down"></i></a></li>
                             </ul>
                         </div>

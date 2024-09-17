@@ -5,15 +5,15 @@
 
     <!-- Products -->
 
-    <div class="container mt-5">
+    <div class="container mt-2">
         <div>
-            <h1>All Products ({{ $allProduct ? count($allProduct) : 0 }})</h1>
+            <h1>All Products</h1>
         </div>
         <div class="product-grid">
 
 
             @foreach ($allProduct as $product)
-                <div style="height: 350px; width: 250px;  border-radius:5%" class="product-card">
+                <div style="height: 350px; width: 250px;" class="product-card">
                     <div class="image-container">
 
 

@@ -15,20 +15,21 @@ class ProductController extends Controller
     public function product()
     {
         $allProduct = Product::all();
-        return view("frontend.product",compact('allProduct'));
+        return view('frontend.product',compact('allProduct'));
     }
     public function show_product($id)
     {
         $singleProduct=Product::with('category')->find($id);
         $multipleProduct=Product::where('id','!=',$singleProduct->id)
-                                ->where('category_id',$singleProduct->category)
+                                ->where('category_id','=',$singleProduct->category_id)
                                 ->limit(4)
                                 ->get();
         return view('frontend.pages.single-product-show', compact('singleProduct','multipleProduct'));
     }
     public function search()
     {
-      $products=Product::where('name','LIKE','%'.request()->search_key.'%')->get();
+      $products=Product::where('name','LIKE','%'.request()->search_key.'%')
+                        ->get();
       $allCategory=Category::all();
       return view('frontend.pages.search',compact('products', 'allCategory'));
     }

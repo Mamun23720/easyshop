@@ -76,7 +76,7 @@
                             <p class="card-title text-md-center text-xl-left"><b>Total Products</b></p>
                             <div
                                 class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">00</h3>
+                                <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">{{ $allProduct ? count($allProduct) : 0 }} item</h3>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-file-earmark-check" viewBox="0 0 16 16">
                                     <path
