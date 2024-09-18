@@ -27,10 +27,7 @@
               </div> --}}
 
 
-            <p>
-              Modern look and quality demo item is a streetwear-inspired collection that continues to break away from the conventions of mainstream fashion. Made in Italy, these black and brown clothing low-top shirts for
-              men.
-            </p><br>
+            <p><b>Product Description: </b>{{ $singleProduct->description }}</p><br>
 
             <div class="row">
               <dt class="col-3">Type:</dt>
@@ -65,7 +62,7 @@
                   <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon1" data-mdb-ripple-color="dark">
                     <i class="fas fa-minus"></i>
                   </button>
-                  <input type="text" class="form-control text-center border border-secondary" placeholder="14" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                  <input type="text" class="form-control text-center border border-secondary" placeholder="1" aria-label="Example text with button addon" aria-describedby="button-addon1">
                   <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon2" data-mdb-ripple-color="dark">
                     <i class="fas fa-plus"></i>
                   </button>

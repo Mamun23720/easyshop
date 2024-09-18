@@ -11,119 +11,186 @@ use Illuminate\Support\Facades\Validator;
 class ProductController extends Controller
 {
     public function productlist()
+
     {
-        $allProduct=Product::with('category')->paginate(20);
-        return view ('backend.productlist', compact('allProduct'));
+
+        $allProduct = Product::with('category')->paginate(20);
+
+        return view('backend.productlist', compact('allProduct'));
     }
+
     public function productform()
+
     {
-        $allCategory=Category::all();
-        return view ('backend.productform', compact('allCategory'));
+
+        $allCategory = Category::all();
+
+        return view('backend.productform', compact('allCategory'));
     }
+
     public function productstore(Request $request)
-    {
-        $validation=Validator::make($request->all(),[
-            'product_name'=>'required',
-            'product_price'=>'required|numeric|min:5',
-            'product_image'=>'required|file',
-            'product_description'=>'min:5',
-            'product_category'=>'required|min:2'
-    ]);
-        $fileName=null;
-        if($request->hasFile('product_image'))
-        {
-            $file=$request->file('product_image');
-            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
-            $file->storeAs('product',$fileName);
-        }
-        Product::create([
-            'name'=>$request->product_name,
-            'price'=>$request->product_price,
-            'description'=>$request->product_description,
-            // 'mobile'=>$request->customer_number,
-            'image'=>$fileName,
-            'category_id'=>$request->product_category
-    ]);
-        notify()->success("Product added successfully");
-        return redirect()->route('backend.productlist');
-    }
-    public function viewProduct($id)
-    {
-            $viewProduct=Product::find($id);
-            return view('backend.pages.view-product',compact('viewProduct'));
-    }
-    public function deleteProduct($id)
-    {
-        $deleteProduct=Product::find($id);
-        $deleteProduct->delete();
-        notify()->success("Product Deleted successfully");
-        return redirect()->back();
 
-    }
-    public function editProduct($id)
     {
-        $product=Product::find($id);
-        $allProduct=Product::all();
-        return view('backend.pages.edit-product', compact('product','allProduct'));
-    }
-    public function updateProduct(Request $request, $id)
-    {
-        $fileName=null;
-        if($request->hasFile('product_image'))
-        {
-            $file=$request->file('product_image');
-            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
-            $file->storeAs('product',$fileName);
-        }
-        $product=Product::find($id);
-        $product->update([
-            'name'=>$request->product_name,
-            'price'=>$request->product_price,
-            'description'=>$request->product_description,
-            'image'=>$fileName,
-    ]);
-        notify()->success("Product Updated successfully");
-        return redirect()->route('backend.productlist');
-    }
 
+        $validation = Validator::make($request->all(), [
 
-    public function categorylist()
-    {
-        $allCategory=Category::paginate(20);
-        return view ('backend.categorylist', compact('allCategory'));
-    }
-    public function deleteCategory($id)
-    {
-        $deleteCategory=Category::find($id);
-        $deleteCategory->delete();
-        notify()->success("Category Deleted successfully");
-        return redirect()->back();
-    }
-    public function categoryform()
-    {
-        return view ('backend.categoryform');
-    }
-    public function categorystore(Request $request)
-    {
-       $validation=Validator::make($request->all(),[
-                'category_name'=>'required',
-                'category_description'=>'min:2',
-                'category_image'=>'required',
+            'product_name' => 'required',
+            'product_price' => 'required|numeric|min:5',
+            'product_image' => 'required|file',
+            'product_description' => 'min:5',
+            'product_category' => 'required|min:2'
+
         ]);
 
-        $fileName=null;
-        if($request->hasFile('category_image'))
-        {
-            $file=$request->file('category_image');
-            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
-            $file->storeAs('category',$fileName);
+        $fileName = null;
+
+        if ($request->hasFile('product_image')) {
+
+            $file = $request->file('product_image');
+            $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('product', $fileName);
         }
+
+        Product::create([
+
+            'name' => $request->product_name,
+            'price' => $request->product_price,
+            'description' => $request->product_description,
+            // 'mobile'=>$request->customer_number,
+            'image' => $fileName,
+            'category_id' => $request->product_category
+
+        ]);
+
+        notify()->success("Product added successfully");
+
+        return redirect()->route('backend.productlist');
+    }
+
+    public function viewProduct($id)
+
+    {
+
+        $viewProduct = Product::find($id);
+
+        return view('backend.pages.view-product', compact('viewProduct'));
+    }
+
+    public function deleteProduct($id)
+
+    {
+
+        $deleteProduct = Product::find($id);
+
+        $deleteProduct->delete();
+
+        notify()->success("Product Deleted successfully");
+
+        return redirect()->back();
+    }
+
+    public function editProduct($id)
+
+    {
+
+        $product = Product::find($id);
+
+        $allProduct = Product::all();
+
+        return view('backend.pages.edit-product', compact('product', 'allProduct'));
+    }
+
+    public function updateProduct(Request $request, $id)
+
+    {
+
+        $fileName = null;
+
+        if ($request->hasFile('product_image')) {
+            $file = $request->file('product_image');
+
+            $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
+
+            $file->storeAs('product', $fileName);
+        }
+
+        $product = Product::find($id);
+
+        $product->update([
+
+            'name' => $request->product_name,
+            'price' => $request->product_price,
+            'description' => $request->product_description,
+            'image' => $fileName,
+
+        ]);
+
+        notify()->success("Product Updated successfully");
+
+        return redirect()->route('backend.productlist');
+    }
+
+    public function categorylist()
+
+    {
+
+        $allCategory = Category::paginate(20);
+
+        return view('backend.categorylist', compact('allCategory'));
+    }
+
+    public function deleteCategory($id)
+
+    {
+
+        $deleteCategory = Category::find($id);
+
+        $deleteCategory->delete();
+
+        notify()->success("Category Deleted successfully");
+
+        return redirect()->back();
+    }
+
+    public function categoryform()
+
+    {
+
+        return view('backend.categoryform');
+    }
+
+    public function categorystore(Request $request)
+
+    {
+
+        $validation = Validator::make($request->all(), [
+
+            'category_name' => 'required',
+            'category_description' => 'min:2',
+            'category_image' => 'required',
+        ]);
+
+        $fileName = null;
+
+        if ($request->hasFile('category_image')) {
+
+            $file = $request->file('category_image');
+
+            $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
+
+            $file->storeAs('category', $fileName);
+        }
+
         Category::create([
-            'name'=>$request->category_name,
-            'description'=>$request->category_description,
-            'image'=>$fileName,
-    ]);
+
+            'name' => $request->category_name,
+            'description' => $request->category_description,
+            'image' => $fileName,
+
+        ]);
+
         notify()->success("Category added successfully");
+
         return redirect()->route('backend.categorylist');
     }
 }

@@ -12,12 +12,18 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home()
+
     {
-        $allProduct=Product::all();
-        $allBanner=Banner::all();
+
+        $allProduct = Product::all();
+
+        $allBanner = Banner::all();
+
         $allCategory=Category::all();
-        return view('frontend.home', compact('allProduct','allBanner','allCategory'));
+
+        return view('frontend.home', compact('allProduct', 'allBanner', 'allCategory'));
     }
+
     // public function home()
     // {
     //     return view('frontend.product');

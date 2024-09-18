@@ -47,7 +47,7 @@
 
             @foreach ($allCategory as $category)
                 <div class="col">
-                    <a href="#">
+                    <a href="{{ route('show.category', $category->id) }}">
                         <div style="background: #4160ff; height: 200px; width: 200px; gap: 5px; "
                             class="category-box d-flex align-items-center justify-content-center">
                             <img class="category-image" style="height: 190px; width: 190px; border-radius: 50%; "

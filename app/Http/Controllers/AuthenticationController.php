@@ -14,37 +14,31 @@ class AuthenticationController extends Controller
 
     public function doLogin(Request $request)
     {
-// dd($request->all());
-        // $credentials=$request->only(['email','password']);
-        // $credentials=['email'=>$request->user_email,'password'=>$request->user_password];
-        $credentials=$request->except("_token");
+        $credentials = $request->except("_token");
 
-        $check=Auth::attempt($credentials);
+        $check = Auth::attempt($credentials);
 
         // dd($request->all());
 
-        if($check)
-        {
+        if ($check) {
 
-            notify()->success("Login Successful");
+            notify()->success("Login Successfull");
+
             return redirect()->route('backend.dashboard');
-
-        }else{
+        } else {
 
             //2 number user
             return redirect()->back();
         }
-
-
-
-
     }
 
 
     public function logout()
     {
-          Auth::logout();
-          notify()->success("Logout Successful");
-          return redirect()->route('login');
+        Auth::logout();
+
+        notify()->success("Logout Successfull");
+
+        return redirect()->route('login');
     }
 }
