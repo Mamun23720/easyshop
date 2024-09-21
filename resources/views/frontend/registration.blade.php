@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: rgb(59 113 202);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,7 +17,7 @@
         }
 
         .container {
-            background: white;
+            background: rgb(255, 255, 255);
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -29,6 +29,7 @@
             margin-bottom: 1rem;
             font-size: 24px;
             color: #333;
+            text-align: center;
         }
 
         .form-group {

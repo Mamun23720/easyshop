@@ -22,10 +22,12 @@ Route::get('/show/product{productId}', [FrontendProductController::class, 'show_
 Route::get('/viewCart', [OrderController::class, 'viewCart'])->name('view.cart');
 Route::get('/addToCart{productId}', [OrderController::class, 'addToCart'])->name('add.to.cart');
 Route::get('/remove//single/cart{productId}', [OrderController::class, 'removeSingleCart'])->name('remove.single.cart');
-Route::get('/show/category{categoryId}', [FrontendProductController::class, 'show_category'])->name('show.category');
+Route::get('/show/category/{categoryId}', [FrontendProductController::class, 'show_category'])->name('show.category');
+Route::get('/becomeASeller', [FrontendHomeController::class, 'becomeASeller'])->name('becomeASeller');
+
 
 Route::group(['middleware' => 'customer_auth'], function () {
-    
+
     Route::get('/profile', [CustomerController::class, 'profile'])->name('view.profile');
     Route::get('/delete/{singleOrder}', [CustomerController::class, 'deleteSingleOrder'])->name('delete.single.order');
     Route::get('/buynow/{productID}', [OrderController::class, 'buynow'])->name('buy.now');

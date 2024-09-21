@@ -40,12 +40,11 @@ class ProductController extends Controller
 
     {
 
-        $products = Product::with('category')->find($id);
 
-        $allproducts = Product::where('category_id', $products->category_id)
+        $allproducts = Product::where('category_id', $id)
                             ->get();
 
-        return view('frontend.pages.category-item-show', compact('products', 'allproducts'));
+        return view('frontend.pages.category-item-show', compact('allproducts'));
     }
 
     public function search()

@@ -42,13 +42,13 @@
     </div>
 
 
-    <div class="container mt-5">
-        <div class="row">
+    <div class="container-fluid mt-5">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; " class="row">
 
             @foreach ($allCategory as $category)
-                <div class="col">
+                <div style="display: flex; justify-content: center; align-items: center; max-width: 11.5%" class="col">
                     <a href="{{ route('show.category', $category->id) }}">
-                        <div style="background: #4160ff; height: 200px; width: 200px; gap: 5px; "
+                        <div style="background: #4160ff; height: 200px; width: 200px; "
                             class="category-box d-flex align-items-center justify-content-center">
                             <img class="category-image" style="height: 190px; width: 190px; border-radius: 50%; "
                                 src="{{ url('/uploads/category/' . $category->image) }}" alt="{{ $category->name }}">
@@ -71,7 +71,7 @@
 
     <!-- Products -->
 
-    <div class="container mt-5">
+    <div class="container-fluid mt-5">
         <h1>Popular Products</h1>
         <div class="product-grid">
 
@@ -104,7 +104,7 @@
             {{-- <a style="margin-right: 0px; font-size:28px " class="button button3" href="#"><b><i class="bi bi-heart"></i></b></a> --}}
 
 
-            <a style="margin-left: 5px;" class="button button2 mt-0" href="{{ route('add.to.cart', $product->id) }}"><b><i class="bi bi-cart4 mr-2"></i>Add to Cart</b></a>
+            <a style="margin-left: 5px;" class="mt-0" href="{{ route('add.to.cart', $product->id) }}"><b><i class="bi bi-cart4 mr-2"></i>Add to Cart</b></a>
 
                             </div>
                         </div>

@@ -9,7 +9,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: url('https://source.unsplash.com/1600x900/?nature,water') no-repeat center center fixed;
+            background-color: rgb(59 113 202);
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -18,7 +18,7 @@
         }
 
         .login-container {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(45, 42, 78, 0.7);
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -95,7 +95,7 @@
 
 <body>
     <div class="login-container">
-        <h1>Sign in</h1>
+        <h1>Log in</h1>
         <form action="{{ route('frontend.login') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
@@ -110,7 +110,7 @@
                 <span class="error" id="passwordError"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Sign in">
+                <input type="submit" value="Log in">
             </div>
             <div class="forgot-password">
                 <a href="#">Forgot your password?</a>
