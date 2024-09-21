@@ -6,151 +6,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <style>
+        /* Basic CSS styling */
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: rgb(59 113 202);
-            background-size: cover;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #007bff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
 
         .login-container {
-            background: rgba(45, 42, 78, 0.7);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            max-width: 400px;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
             width: 100%;
-            color: #fff;
+            max-width: 260px;
+            border: solid black;
+        }
+
+        h2 {
             text-align: center;
-        }
-
-        .login-container h1 {
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 0.75rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .form-group input[type="text"],
-        .form-group input[type="password"] {
-            background: #fff;
+            margin-bottom: 30px;
+            font-size: 24px;
             color: #333;
         }
 
-        .form-group input[type="submit"] {
-            background: #007bff;
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: #00b5ff;
             color: white;
+            padding: 10px;
             border: none;
+            border-radius: 4px;
+            font-size: 18px;
             cursor: pointer;
-            font-size: 1.1rem;
-            padding: 0.75rem;
-            border-radius: 5px;
-            transition: background 0.3s;
+            margin-top: 10px;
         }
 
-        .form-group input[type="submit"]:hover {
-            background: #0056b3;
+        .btn-submit:hover {
+            background-color: #316cb9;
         }
 
-        .form-group .error {
-            color: #ff4d4d;
-            font-size: 0.875rem;
-        }
-
-        .forgot-password {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .forgot-password a {
-            color: #66b3ff;
+        .forgot-password,
+        .sign-up {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #007bff;
             text-decoration: none;
         }
 
-        .forgot-password a:hover {
+        .forgot-password:hover,
+        .sign-up:hover {
             text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 
 <body>
+
     <div class="login-container">
-        <h1>Log in</h1>
+        <h2>Login</h2>
+
+        <!-- Error Message (optional) -->
+        <div class="error-message" id="error-message" style="display:none;">
+            Invalid username or password
+        </div>
+
+        <!-- Login Form -->
         <form action="{{ route('frontend.login') }}" method="post" enctype="multipart/form-data">
             @csrf
-            <div class="form-group">
-                <label for="username">Email Address</label>
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp">
-                <span class="error" id="usernameError"></span>
+            <!-- Username/Email -->
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="text" id="username" name="email" placeholder="Enter Your Email Address" required>
             </div>
-            <div class="form-group">
+
+            <!-- Password -->
+            <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-                <span class="error" id="passwordError"></span>
+                <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Log in">
-            </div>
-            <div class="forgot-password">
-                <a href="#">Forgot your password?</a>
-            </div>
-            <div class="forgot-password">
-                <p>Are you New?</p><a href="{{ route('frontend.user.registration') }}">Register Here</a>
-            </div>
+
+            <!-- Remember Me -->
+            <!-- <div class="input-group">
+                <input type="checkbox" id="remember-me" name="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div> -->
+
+            <!-- Submit Button -->
+            <input type="submit" class="btn-submit" value="Log In">
+
+            <!-- Forgot Password -->
+            <a href="#" class="forgot-password">Forgot Password?</a>
+
+            <!-- Sign-up Link -->
+            <a href="{{ route('frontend.user.registration') }}" class="sign-up">Don't have an account? Register here</a>
         </form>
     </div>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Clear previous errors
-            document.querySelectorAll('.error').forEach(span => span.textContent = '');
-
-            let isValid = true;
-
-            // Validate username
-            const username = document.getElementById('username').value;
-            if (username.trim() === '') {
-                document.getElementById('usernameError').textContent = 'Username is required.';
-                isValid = false;
-            }
-
-            // Validate password
-            const password = document.getElementById('password').value;
-            if (password.trim() === '') {
-                document.getElementById('passwordError').textContent = 'Password is required.';
-                isValid = false;
-            }
-
-            // If form is valid, submit it
-            if (isValid) {
-                // Handle form submission, e.g., send data to server
-                alert('Login successful!');
-            }
-        });
-    </script>
 </body>
 
 </html>

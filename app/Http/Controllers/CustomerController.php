@@ -33,6 +33,19 @@ class CustomerController extends Controller
 
         // validation
 
+        $validation = Validator::make($request->all(), [
+            'name' => 'required | min:5',
+            'email' => 'required',
+            'phone' => 'required|min:11|max: 11',
+            'password' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'zip' => 'required',
+            'country' => 'required',
+            'image' => 'required|file',
+
+        ]);
+
         //for image
 
         $fileName = null;
@@ -52,6 +65,11 @@ class CustomerController extends Controller
         Customer::create([
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'city' => $request->city,
+            'zip' => $request->zip,
+            'country' => $request->country,
             'password' => bcrypt($request->password),
             'image' => $fileName
         ]);
@@ -61,40 +79,6 @@ class CustomerController extends Controller
         return redirect()->route('home');
     }
 
-
-
-    public function store(Request $request)
-    {
-        // dd($request);
-        $validation = Validator::make($request->all(), [
-            'customer_name' => 'required',
-            'customer_email' => 'required',
-            'customer_image' => 'required|file',
-        ]);
-
-        // $fileNameC=null;
-
-        //check file exist
-        if ($request->hasFile('customer_image')) {
-
-            $file = $request->file('customer_image');
-
-            //file name generate
-            $fileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
-
-            //file store where i want to
-            $file->storeAs('customer', $fileName);
-        }
-        Customer::create([
-            'name' => $request->customer_name,
-            'email' => $request->customer_email,
-            // 'date'=>$request->customer_dob,
-            // 'mobile'=>$request->customer_number,
-            'image' => $fileName
-        ]);
-        // dd($fileNames);
-        return redirect()->back();
-    }
 
     public function userLogin()
     {

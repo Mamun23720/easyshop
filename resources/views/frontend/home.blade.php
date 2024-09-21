@@ -29,28 +29,28 @@
         </div>
     </div>
 
-    <br>
+
 
     <!-- Banner -->
 
 
     <!-- Categories -->
 
-
+<div style="padding-left: 50px; padding-right: 50px;" class="container-fluid mt-2" >
     <div>
-        <h1 style="text-align: center; color:#206bbb;"><b>Categories ({{ $allCategory ? count($allCategory) : 0 }})</b></h1>
+        <h2><b>Categories ({{ $allCategory ? count($allCategory) : 0 }})</b></h2>
     </div>
 
 
-    <div class="container-fluid mt-5">
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; " class="row">
+    <div class="container-fluid mt-2">
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;" class="row">
 
             @foreach ($allCategory as $category)
-                <div style="display: flex; justify-content: center; align-items: center; max-width: 11.5%" class="col">
+                <div style="display: flex; justify-content: center; align-items: center; max-width: 8.5%" class="col">
                     <a href="{{ route('show.category', $category->id) }}">
-                        <div style="background: #4160ff; height: 200px; width: 200px; "
+                        <div style="background: #4160ff; height: 130px; width: 130px; "
                             class="category-box d-flex align-items-center justify-content-center">
-                            <img class="category-image" style="height: 190px; width: 190px; border-radius: 50%; "
+                            <img class="category-image" style="height: 128px; width: 128px;"
                                 src="{{ url('/uploads/category/' . $category->image) }}" alt="{{ $category->name }}">
                             <div class="category-name-overlay">
                                 <h5><b>{{ $category->name }}</b></h5>
@@ -62,8 +62,8 @@
 
         </div>
     </div>
-
-    <br><br>
+</div>
+    <br>
 
 
     <!-- Categories -->

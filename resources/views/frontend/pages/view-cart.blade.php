@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <body>
+
         <div class="container">
 
             <h1>Shopping Cart</h1>
@@ -46,9 +46,10 @@
                     </tbody>
                 </table>
                 <div class="total-section">
+                <a class="btn btn-info btn-lg" style="color:white ;background-color: #007bff ;" href="{{ route('frontend.product') }}"><b>Continue Shopping</b></a>
                     <h2><b>Total: {{ number_format(array_sum(array_column(session()->get('basket'), 'subtotal')), 2) }} BDT
                         </b></h2>
-                    <a class="btn btn-success btn-lg" href="{{ route('checkout') }}"><b>Checkout</b></a>
+                    <a class="btn btn-success btn-lg" href="{{ route('checkout') }}"><b>Proceed to Checkout</b></a>
                 </div>
             @else
                 <table>
@@ -67,12 +68,12 @@
                     </tbody>
                 </table>
                 <br><br><br>
-                <br><br><br>
-                <br><br><br>
+                <br>
+
 
                 <h3 style="text-align: center;">Your cart is currently empty!!</h3>
                 <div style="text-align: center;" class="mt-5">
-                    <a style="color:white ;background-color: rgb(91, 120, 248) ;" href="{{ route('frontend.product') }}"
+                    <a style="color:white ;background-color: #007bff ;" href="{{ route('frontend.product') }}"
                         class="btn btn-lg"><b>Continue Shopping...</b></a>
                 </div>
                 <br><br><br>
@@ -82,7 +83,5 @@
                 <br><br><br>
             @endif
         </div>
-    </body>
 
-    </html>
 @endsection

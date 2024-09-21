@@ -1,9 +1,9 @@
-<header style="background: rgb(77 106 215); font-family:'Times New Roman', Times, serif">
+<header style="background: #007bff; font-family:'Times New Roman', Times, serif">
 
 
     <!-- Top Bar -->
 
-    <div  style="background: rgb(77 106 215)" class="top_bar">
+    <div  style="background: #007bff" class="top_bar">
         <div style="padding: 0px;" class="flex-container">
             <div class="row">
                 <div style="color: rgb(255, 255, 255)" class="col d-flex flex-row">
@@ -81,7 +81,7 @@
                     <div style=" height: 100px; margin-left:45px" class="wishlist_cart d-flex flex-row align-items-center justify-content-center">
                         <div style="margin-right: 25px;" class="wishlist d-flex flex-row align-items-center justify-content-center">
                             <div class="wishlist_icon">
-                                <a style="color: white" href=""><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                <a style="color: white" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
                                         fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
                                         <path
                                             d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
@@ -105,7 +105,7 @@
                                                 d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
                                         </svg></a>
                                     <div class="cart_count"><a
-                                        style="color: white" href=""><span>{{ session()->has('basket') ? count(session()->get('basket')) : 0 }}</span></a>
+                                        style="color: white" href="{{ route('view.cart') }}"><span>{{ session()->has('basket') ? count(session()->get('basket')) : 0 }}</span></a>
                                     </div>
                                 </div>
                                 <div class="cart_content">
@@ -221,7 +221,7 @@
 
 
 
-    <nav style="background: rgb(59 113 202);" class="main_nav">
+    <nav style="background: #007bff;" class="main_nav">
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
@@ -253,4 +253,3 @@
     <!-- Nav Bar -->
 
 </header>
-<br><br>

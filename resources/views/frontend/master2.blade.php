@@ -203,7 +203,6 @@
     }
 
     .total-section {
-        margin-left: 750px;
         margin-top: 2rem;
         display: flex;
         justify-content: space-between;
@@ -233,6 +232,9 @@
         position: relative;
         max-height: 100%;
         overflow: hidden;
+        padding-left: 250px;
+        padding-right: 250px;
+        background: #dcdcff;
     }
 
     /* Slides */
@@ -319,7 +321,6 @@
         background-color: #4160ff;
         height: 200px;
         width: 200px;
-        border-radius: 50%;
         position: relative;
         overflow: hidden;
     }
@@ -328,7 +329,6 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
-        border-radius: 10px;
     }
 
     /* Overlay text */
@@ -343,7 +343,6 @@
         align-items: center;
         background-color: rgba(0, 0, 0, 0.5);
         /* Transparent black overlay */
-        border-radius: 10px;
         opacity: 0;
         transition: opacity 0.3s ease;
     }

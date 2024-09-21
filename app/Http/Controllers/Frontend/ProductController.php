@@ -46,7 +46,7 @@ class ProductController extends Controller
         $allproducts = Product::where('category_id', $id)
                             ->get();
 
-        return view('frontend.pages.category-item-show', compact('products', 'allproducts'));
+        return view('frontend.pages.category-item-show', compact( 'allproducts'));
 
     }
 
