@@ -140,7 +140,7 @@
                                         </div>
                                     </div>
                                     <ul style="height: 120px; width:180px; background: rgb(84 136 223); "><hr>
-                                        <li style=""><a style="text-align:center;
+                                        <li ><a style="text-align:center;
                                             font-size:18px;
                                             color: white;
                                             background-color: transparent;
@@ -148,7 +148,7 @@
                                             transition: background-color 0.3s, color 0.3s;" href="{{ route('frontend.user.registration') }}"
                                              onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#000000';"
                                              onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ffffff';"><b>Register</b></a></li><hr>
-                                        <li style=""><a style="text-align:center;
+                                        <li><a style="text-align:center;
                                             font-size:18px;
                                             color: white;
                                             background-color: transparent;
