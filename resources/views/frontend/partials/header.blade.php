@@ -190,7 +190,7 @@
                                      <b>Profile</b>
                                   </a>
                                   <hr></li>
-                                        <li style=""><a style="text-align:center;
+                                        <li><a style="text-align:center;
                                             font-size:18px;
                                             color: white;
                                             background-color: transparent;
