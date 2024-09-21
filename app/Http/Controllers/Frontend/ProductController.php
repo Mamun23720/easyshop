@@ -18,6 +18,7 @@ class ProductController extends Controller
         $allProduct = Product::all();
 
         return view('frontend.product', compact('allProduct'));
+
     }
 
     public function show_product($id)
@@ -32,6 +33,7 @@ class ProductController extends Controller
             ->get();
 
         return view('frontend.pages.single-product-show', compact('singleProduct', 'multipleProduct'));
+
     }
 
 
@@ -42,10 +44,11 @@ class ProductController extends Controller
 
         $products = Product::with('category')->find($id);
 
-        $allproducts = Product::where('category_id', $products->category_id)
+        $allproducts = Product::where('category_id', $id)
                             ->get();
 
         return view('frontend.pages.category-item-show', compact('products', 'allproducts'));
+
     }
 
     public function search()
@@ -58,5 +61,6 @@ class ProductController extends Controller
         $allCategory = Category::all();
 
         return view('frontend.pages.search', compact('products', 'allCategory'));
+        
     }
 }

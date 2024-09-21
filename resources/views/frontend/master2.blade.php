@@ -47,7 +47,7 @@
     .product-grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 1.5rem;
+        gap: 1.45rem;
     }
 
     .product-card {
@@ -55,9 +55,10 @@
         margin-top: 2px;
         margin-bottom: 10px;
         margin-left: 2px;
-        margin-right: 10px;
+        margin-right: 15px;
         height: 250px;
         width: 150px;
+        border-radius: 6%;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         width: calc(33.333% - 1.5rem);

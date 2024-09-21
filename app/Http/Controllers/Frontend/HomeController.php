@@ -15,7 +15,7 @@ class HomeController extends Controller
 
     {
 
-        $allProduct = Product::all();
+        $allProduct = Product::limit(12)->latest()->get();
 
         $allBanner = Banner::all();
 
