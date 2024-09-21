@@ -47,7 +47,10 @@
     .product-grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 1.45rem;
+        gap: 1.5rem;
+        /* justify-content: center; Center horizontally */
+        /* align-items: center; Center vertically */
+        /* padding: 20px; Optional: Padding around the container */
     }
 
     .product-card {
@@ -76,14 +79,12 @@
         position: relative;
         height: 230px;
         width: 100%;
-        border-radius: 6%
     }
 
     .image-container img {
         height: 230px;
         width: 100%;
         object-fit: cover;
-        border-radius: 6%;
     }
 
     .overlay {
@@ -229,11 +230,6 @@
 
     /* Slider Container */
     .slider-container {
-        margin-bottom: 10px;
-        margin-top: 10px;
-        margin-left: 50px;
-        margin-right: 50px;
-        border-radius: 20px;
         position: relative;
         max-height: 100%;
         overflow: hidden;
@@ -256,7 +252,7 @@
         opacity: 0;
         opacity: 50;
         visibility: visible;
-        animation: fadeInUp 1s forwards;
+        animation: fadeInRight 1s forwards;
     }
 
     @keyframes fadeInUp {
@@ -377,7 +373,9 @@
 
     @include('notify::components.notify')
 
-    <div class="container-fluid"> @yield('content') </div>
+    <div>
+        @yield('content') 
+    </div>
 
     @include('frontend.partials.footer')
 
@@ -410,7 +408,7 @@
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
 
-            setTimeout(showSlidesAuto, 5000); // Auto-slide every 2 seconds
+            setTimeout(showSlidesAuto, 10000); // Auto-slide every 10 seconds
         }
 
         function currentSlide(n) {

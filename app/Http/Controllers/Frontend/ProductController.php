@@ -42,8 +42,8 @@ class ProductController extends Controller
 
     {
 
-        $products = Product::with('category')->find($id);
 
+        $allproducts = Product::where('category_id', $id)
         $allproducts = Product::where('category_id', $id)
                             ->get();
 

@@ -28,4 +28,9 @@ class HomeController extends Controller
     // {
     //     return view('frontend.product');
     // }
+
+    public function becomeASeller()
+    {
+        return view('frontend.pages.become-a-seller');
+    }
 }
