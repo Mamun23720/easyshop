@@ -43,10 +43,10 @@ class ProductController extends Controller
     {
 
 
-        $allproducts = Product::where('category_id', $id)
+        $allProduct = Product::where('category_id', $id)
                             ->get();
 
-        return view('frontend.pages.category-item-show', compact( 'allproducts'));
+        return view('frontend.pages.category-item-show', compact( 'allProduct'));
 
     }
 
@@ -54,12 +54,12 @@ class ProductController extends Controller
 
     {
 
-        $products = Product::where('name', 'LIKE', '%' . request()->search_key . '%')
+        $allProduct = Product::where('name', 'LIKE', '%' . request()->search_key . '%')
             ->get();
 
         $allCategory = Category::all();
 
-        return view('frontend.pages.search', compact('products', 'allCategory'));
+        return view('frontend.pages.search', compact('allProduct', 'allCategory'));
         
     }
 }

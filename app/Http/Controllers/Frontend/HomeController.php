@@ -15,13 +15,15 @@ class HomeController extends Controller
 
     {
 
-        $allProduct = Product::limit(12)->latest()->get();
+        $allProduct = Product::all();
 
         $allBanner = Banner::all();
 
         $allCategory=Category::all();
 
-        return view('frontend.home', compact('allProduct', 'allBanner', 'allCategory'));
+        $flashSale = Product::limit(6)->get();
+
+        return view('frontend.home', compact('allProduct', 'allBanner', 'allCategory', 'flashSale'));
     }
 
     // public function home()

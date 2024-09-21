@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-
+<hr>
     <!-- Top Bar -->
 
 
@@ -62,7 +62,7 @@
                 <div style=" height: 100px;" class="col">
                     <div style=" height: 100px;" class="header_search">
                         <div style="width: 700px;" class="header_search_content">
-                            <div style="margin-left: 30px" class="header_search_form_container">
+                            <div class="header_search_form_container">
                                 <form action="{{ route('search') }}" class="header_search_form clearfix">
                                     <input name="search_key" style="width: 100%; height: 100%"
                                         value="{{ request()->search_key }}" type="text" class="header_search_input"

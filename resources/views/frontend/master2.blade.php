@@ -39,15 +39,14 @@
 
     h1 {
         text-align: start;
-        margin-bottom: 2rem;
-        margin-top: 2rem;
+
         color: #333;
     }
 
     .product-grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 1.5rem;
+        gap: 0.5px;
         /* justify-content: center; Center horizontally */
         /* align-items: center; Center vertically */
         /* padding: 20px; Optional: Padding around the container */
@@ -58,15 +57,15 @@
         margin-top: 2px;
         margin-bottom: 10px;
         margin-left: 2px;
-        margin-right: 15px;
+        margin-right: 2px;
         height: 250px;
         width: 150px;
-        border-radius: 6%;
+        border-radius: 5px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         width: calc(33.333% - 1.5rem);
         box-sizing: border-box;
-        border: solid #4160ff;
+        border: 1px solid #4160ff;
         transition: transform 0.3s, box-shadow 0.3s;
     }
 
@@ -77,12 +76,12 @@
 
     .image-container {
         position: relative;
-        height: 230px;
+        height: 200px;
         width: 100%;
     }
 
     .image-container img {
-        height: 230px;
+        height: 200px;
         width: 100%;
         object-fit: cover;
     }
@@ -111,13 +110,13 @@
     }
 
     .button {
-        border: none;
+        border: 1px solid #002affe3;
         color: white;
         padding: 10px 10px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
+        font-size: 15px;
         transition-duration: 0.4s;
         cursor: pointer;
     }
@@ -125,7 +124,7 @@
     .button2 {
         background-color: #1733c32e;
         color: black;
-        border: 2px yellow;
+        border: 2px blue;
     }
 
     .button2:hover {
@@ -148,29 +147,9 @@
         width: 100%;
         height: 180px;
         object-fit: cover;
-        border-radius: 6%;
-        margin-bottom: 5px;
+        margin-bottom: 1px;
     }
 
-    .product-card h2 {
-        text-align: center;
-        font-size: 20px;
-        color: black;
-        margin-top: 5px;
-        font-weight: bold;
-
-    }
-
-    .product-card p {
-        text-align: center;
-        color: black;
-        font-size: larger;
-    }
-
-    .product-card .price {
-        color: red;
-        font-weight: bold;
-    }
 
     table {
         width: 100%;
@@ -232,8 +211,8 @@
         position: relative;
         max-height: 100%;
         overflow: hidden;
-        padding-left: 250px;
-        padding-right: 250px;
+        padding-left: 100px;
+        padding-right: 100px;
         background: #dcdcff;
     }
 
@@ -278,6 +257,14 @@
     .slider-content {
         position: absolute;
         top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+    }
+    .image-content {
+        position: absolute;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
