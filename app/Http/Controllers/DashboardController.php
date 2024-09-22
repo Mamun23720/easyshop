@@ -74,4 +74,25 @@ class DashboardController extends Controller
 
     }
     
+    public function markettingSeo()
+    {
+
+        return view ('backend.pages.markettingSeo');
+
+    }
+
+    public function markettingEmail()
+    {
+
+        return view ('backend.pages.markettingEmail');
+
+    }
+
+    public function markettingSocialMedia()
+    {
+
+        return view ('backend.pages.markettingSocialMedia');
+
+    }
+
 }

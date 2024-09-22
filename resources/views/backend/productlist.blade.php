@@ -3,13 +3,13 @@
 @section('content')
 <br>
 <div>
-    <a href="{{ route('backend.productform') }}" class="btn btn-success btn-lg"><b style="font-size: xx-large;">Add New Product </b></a>
+    <a href="{{ route('backend.productform') }}" class="btn btn-success btn-lg"><b style="font-size: xx-large; font-family:'Times New Roman', Times, serif">Add New Product </b></a>
     <br>
 </div>
-<h1 style="text-align: center;">Total Products ({{ $allProduct ? count($allProduct) : 0 }})</h1>
+<h1 style="text-align: center; font-family: 'Times New Roman', Times, serif">Total Products ({{ $allProduct ? count($allProduct) : 0 }})</h1>
 <table class="table table-dark table-hover">
     <thead style="border: white">
-        <tr style="text-align: center;">
+        <tr style="text-align: center; font-family: 'Times New Roman', Times, serif">
             <th scope="col">Serial</th>
             <th scope="col" style="text-align: start;">Image</th>
             <th scope="col" style="text-align: start;">Product Name</th>
@@ -28,7 +28,7 @@
     <tbody>
 
         @foreach ($allProduct as $key => $product)
-        <tr style="text-align: center;">
+        <tr style="text-align: center; font-family: 'Times New Roman', Times, serif">
             <th scope="row">{{ $key + 1 }}</th>
             <td><img src="{{ url('/uploads/product/' . $product->image) }}" width="35px" height="35px"></td>
             <td style="text-align: start; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{ $product->name }}</td>

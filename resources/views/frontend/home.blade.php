@@ -65,7 +65,7 @@
                         <div class="col">
 
                             <p style="font-size: 18px; width: 140px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"><b> {{ $product->name }}</b></p>
-                            <p style="font-size: 16px; color: red; width: 140px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; " class="price">৳{{ number_format($product->price, 2) }} <span style="font-size: 12px; text-decoration:line-through;">৳2050</span></p>
+                            <p style="font-size: 16px; color: red; width: 140px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; " class="price">৳{{ number_format($product->price, 2) }} <span style="font-size: 12px; color:black;">-{{ $product->discount }}%</span></p>
 
                         </div>
 
@@ -156,7 +156,7 @@
 
                 <img style="height: 280px; width: 600px; border: 5px solid white; filter: brightness(30%); " src="{{url('/uploads/important/image.png')}}" alt="">
                 <div class="image-content">
-                    <h3>Top Offer</h3><br>
+                    <h3>New Offer</h3><br>
                     <a style="color: white; background-color: #0e8ce4; height:42px;" class="button button3 btn-lg mt-0" href="{{ route('frontend.product') }}"><b>Shop Now</b></a>
                 </div>
             </div>
@@ -182,7 +182,7 @@
 
                 <img style="height: 280px; width: 600px; border: 5px solid white; filter: brightness(30%); " src="{{url('/uploads/important/image.png')}}" alt="">
                 <div class="image-content">
-                    <h3>Biggest Offer</h3><br>
+                    <h3>Top Offer</h3><br>
                     <a style="color: white; background-color: #0e8ce4; height:42px;" class="button button3 btn-lg mt-0" href="{{ route('frontend.product') }}"><b>Shop Now</b></a>
                 </div>
             </div>
@@ -228,7 +228,7 @@
                         <div class="col">
 
                             <p style="font-size: 18px; width: 140px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"><b> {{ $product->name }}</b></p>
-                            <p style="font-size: 16px; color: red; width: 140px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; " class="price">৳{{ number_format($product->price, 2) }} <span style="font-size: 12px; text-decoration:line-through;">৳2050</span></p>
+                            <p style="font-size: 16px; color: red; width: 140px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; " class="price">৳{{ number_format($product->price, 2) }} <span style="color:black; font-size: 12px;">-{{ $product->discount }}%</span></p>
 
                         </div>
 

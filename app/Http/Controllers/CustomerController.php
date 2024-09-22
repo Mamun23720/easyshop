@@ -134,4 +134,11 @@ class CustomerController extends Controller
         notify()->success("Order Deleted successfully");
         return redirect()->back();
     }
+
+    
+    public function customerComplaint()
+    {
+        return view('backend.pages.customerComplaint');
+    }
+
 }

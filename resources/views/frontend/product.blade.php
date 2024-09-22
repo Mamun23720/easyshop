@@ -31,7 +31,7 @@
                         <div class="col" >
 
                             <p style="font-size: 20px; color: black; width: 140px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" ><b>{{ $product->name }}</b></p>
-                            <p style="font-size: 18px; color: red; width: 100px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; " class="price">{{ number_format($product->price, 2) }} BDT</p>
+                            <p style="font-size: 18px; color: red; width: 100px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; " class="price">৳{{ number_format($product->price, 2) }}</p>
 
                         </div>
 

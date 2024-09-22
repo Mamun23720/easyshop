@@ -13,7 +13,7 @@
                 <div class="col-md-12 grid-margin">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h4 class="font-weight-bold mb-0">My Dashboard</h4>
+                            <h4 style="font-family: 'Times New Roman', Times, serif;" class="font-weight-bold mb-0">My Dashboard</h4>
                         </div>
                         <div>
                             <a href="" class="btn btn-success">

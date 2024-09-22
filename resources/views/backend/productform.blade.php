@@ -4,9 +4,9 @@
     <br>
     <div style=" padding-left: 400px; padding-right: 300px;" class="container" >
 
-    <p style="text-align: center; color:green; font-size: 50px;;" ><b>Add Product</b></p>
+    <p style="text-align: center; color:green; font-size: 50px;; font-family:'Times New Roman', Times, serif" ><b>Add Product</b></p>
     
-    <form style="height: auto; width: 600px;" action="{{ route('backend.storeproduct') }}" method="post" enctype="multipart/form-data">
+    <form style="height: auto; width: 600px; font-family:'Times New Roman', Times, serif" action="{{ route('backend.storeproduct') }}" method="post" enctype="multipart/form-data">
 
 
         @csrf
@@ -52,7 +52,8 @@
         <div class="mb-3">
         <label for="text" class="form-label"><b style="font-size: larger;" >Size</b></label>
             <select  style="border: solid black;"  class="form-select" aria-label="Default select example" name="product_size" placeholder="Enter Your Product Size">
-                <option selected>Small</option>
+                <option selected>All</option>
+                <option value="Medium">Small</option>
                     <option value="Medium">Medium</option>
                     <option value="Large">Large</option>
             </select>

@@ -27,30 +27,30 @@ Route::get('/viewCart', [OrderController::class, 'viewCart'])->name('view.cart')
 Route::get('/addToCart{productId}', [OrderController::class, 'addToCart'])->name('add.to.cart');
 Route::get('/remove//single/cart{productId}', [OrderController::class, 'removeSingleCart'])->name('remove.single.cart');
 Route::get('/show/category/{categoryId}', [FrontendProductController::class, 'show_category'])->name('show.category');
-
 Route::get('/becomeASeller', [FrontendHomeController::class, 'becomeASeller'])->name('becomeASeller');
 
 
-Route::group(['middleware' => 'customer_auth'], function () {
+    Route::group(['middleware' => 'customer_auth'], function () {
 
-    Route::get('/profile', [CustomerController::class, 'profile'])->name('view.profile');
-    Route::get('/delete/{singleOrder}', [CustomerController::class, 'deleteSingleOrder'])->name('delete.single.order');
-    Route::get('/buynow/{productID}', [OrderController::class, 'buynow'])->name('buy.now');
-    Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
-    Route::post('/place-order', [OrderController::class, 'placeOrder'])->name('order.place');
-    Route::get('/view-invoice/{productId}', [OrderController::class, 'viewInvoice'])->name('view.invoice');
-    //for payment gateway
-    Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
-    Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
-    Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
-    Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
-    Route::post('/success', [SslCommerzPaymentController::class, 'success']);
-    Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
-    Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
-    Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
-    //logout
-    Route::get('/customer/logout', [CustomerController::class, 'customerLogout'])->name('frontend.logout');
-});
+        Route::get('/profile', [CustomerController::class, 'profile'])->name('view.profile');
+        Route::get('/delete/{singleOrder}', [CustomerController::class, 'deleteSingleOrder'])->name('delete.single.order');
+        Route::get('/buynow/{productID}', [OrderController::class, 'buynow'])->name('buy.now');
+        Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
+        Route::post('/place-order', [OrderController::class, 'placeOrder'])->name('order.place');
+        Route::get('/view-invoice/{productId}', [OrderController::class, 'viewInvoice'])->name('view.invoice');
+        //for payment gateway
+        Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+        Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+        Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+        Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+        Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+        Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+        Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+        Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+        //logout
+        Route::get('/customer/logout', [CustomerController::class, 'customerLogout'])->name('frontend.logout');
+
+    });
 
 // For Backend
 Route::group(['prefix' => 'admin'], function () {
@@ -100,5 +100,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/b/setting/blog', [BusinessSettingController::class, 'bSettingBlog'])->name('backend.bSettingBlog');
         Route::get('/b/setting/faq', [BusinessSettingController::class, 'bSettingFAQ'])->name('backend.bSettingFAQ');
         Route::get('/logout', [AuthenticationController::class, 'logout'])->name('logout');
+
     });
+
 });

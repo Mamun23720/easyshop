@@ -177,7 +177,7 @@ class ProductController extends Controller
         $validation = Validator::make($request->all(), [
 
             'category_name' => 'required',
-            'category_description' => 'min:2',
+            // 'category_description' => 'min:2',
             'category_image' => 'required',
         ]);
 
@@ -195,7 +195,7 @@ class ProductController extends Controller
         Category::create([
 
             'name' => $request->category_name,
-            'description' => $request->category_description,
+            // 'description' => $request->category_description,
             'image' => $fileName,
 
         ]);
@@ -204,4 +204,11 @@ class ProductController extends Controller
 
         return redirect()->route('backend.categorylist');
     }
+
+    public function productReview()
+
+    {
+        return view('backend.pages.productReview');
+    }
+
 }
