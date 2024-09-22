@@ -12,7 +12,6 @@ use App\Http\Controllers\Frontend\ProductController as FrontendProductController
 use App\Http\Controllers\Frontend\SslCommerzPaymentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
-use Faker\Provider\ar_EG\Payment;
 
 //For Frontend
 Route::get('/', [FrontendHomeController::class, 'home'])->name('home');
@@ -75,11 +74,13 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/banner/list', [DashboardController::class, 'bannerlist'])->name('backend.bannerlist');
         Route::get('/banner/form', [DashboardController::class, 'bannerform'])->name('backend.bannerform');
         Route::post('/submit/banner/form', [DashboardController::class, 'bannerstore'])->name('backend.storebanner');
-        Route::get('/banner/delete{product}', [DashboardController::class, 'deletebanner'])->name('backend.deleteBanner');
+        Route::get('/banner/delete/{product}', [DashboardController::class, 'deletebanner'])->name('backend.deleteBanner');
         Route::get('/marketting/seo', [DashboardController::class, 'markettingSeo'])->name('backend.markettingSeo');
         Route::get('/marketting/email', [DashboardController::class, 'markettingEmail'])->name('backend.markettingEmail');
         Route::get('/marketting/social/media', [DashboardController::class, 'markettingSocialMedia'])->name('backend.markettingSocialMedia');
         Route::get('/customer/list', [CustomerController::class, 'list'])->name('backend.customerlist');
+        Route::get('/customer/view/{customer}', [CustomerController::class, 'viewCustomer'])->name('backend.viewCustomer');
+        Route::get('/customer/delete/{customer}', [CustomerController::class, 'deleteCustomer'])->name('backend.deleteCustomer');
         Route::get('/customer/complaint', [CustomerController::class, 'customerComplaint'])->name('backend.customerComplaint');
         Route::get('/product/review', [ProductController::class, 'productReview'])->name('backend.productReview');
         Route::get('/product/list', [ProductController::class, 'productlist'])->name('backend.productlist');
@@ -88,11 +89,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/category/list', [ProductController::class, 'categorylist'])->name('backend.categorylist');
         Route::get('/category/form', [ProductController::class, 'categoryform'])->name('backend.categoryform');
         Route::post('/submit/category/form', [ProductController::class, 'categorystore'])->name('backend.storecategory');
-        Route::get('/category/delete{product}', [ProductController::class, 'deleteCategory'])->name('backend.deleteCategory');
-        Route::get('/product/view{product}', [ProductController::class, 'viewProduct'])->name('backend.viewProduct');
-        Route::get('/product/delete{product}', [ProductController::class, 'deleteProduct'])->name('backend.deleteProduct');
-        Route::get('/product/edit{product}', [ProductController::class, 'editProduct'])->name('backend.editProduct');
-        Route::post('/product/update{product}', [ProductController::class, 'updateProduct'])->name('backend.updateProduct');
+        Route::get('/category/delete/{product}', [ProductController::class, 'deleteCategory'])->name('backend.deleteCategory');
+        Route::get('/product/view/{product}', [ProductController::class, 'viewProduct'])->name('backend.viewProduct');
+        Route::get('/product/delete/{product}', [ProductController::class, 'deleteProduct'])->name('backend.deleteProduct');
+        Route::get('/product/edit/{product}', [ProductController::class, 'editProduct'])->name('backend.editProduct');
+        Route::post('/product/update/{product}', [ProductController::class, 'updateProduct'])->name('backend.updateProduct');
         Route::get('/b/setting/website', [BusinessSettingController::class, 'bSettingWebsite'])->name('backend.bSettingWebsite');
         Route::get('/b/setting/payment', [BusinessSettingController::class, 'bSettingPayment'])->name('backend.bSettingPayment');
         Route::get('/b/setting/currency', [BusinessSettingController::class, 'bSettingCurrency'])->name('backend.bSettingCurrency');

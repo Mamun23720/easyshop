@@ -85,6 +85,7 @@ class ProductController extends Controller
         $viewProduct = Product::find($id);
 
         return view('backend.pages.view-product', compact('viewProduct'));
+        
     }
 
     public function deleteProduct($id)

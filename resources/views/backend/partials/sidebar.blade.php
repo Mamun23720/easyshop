@@ -36,9 +36,9 @@
                 <strong>Product Management</strong>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                <li><a class="dropdown-item" href="{{ route('backend.productlist') }}">Product List's</a></li>
-                <li><a class="dropdown-item" href="{{ route('backend.categorylist') }}">Product Categories</a></li>
-                <li><a class="dropdown-item" href="{{ route('backend.productReview') }}">Product Review's</a></li>
+                <li><a class="dropdown-item" href="{{ route('backend.categorylist') }}">Categories</a></li>
+                <li><a class="dropdown-item" href="{{ route('backend.productlist') }}">Product's</a></li>
+                <li><a class="dropdown-item" href="{{ route('backend.productReview') }}">Review's</a></li>
             </ul>
         </div>
         <hr>

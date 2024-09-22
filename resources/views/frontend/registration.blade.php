@@ -186,6 +186,7 @@ input[type="number"]::-webkit-inner-spin-button {
             </div>
             
             <!-- Email & Phone Row -->
+             
             <div class="form-group-column">
                 
                 <div class="form-group">
@@ -198,6 +199,20 @@ input[type="number"]::-webkit-inner-spin-button {
                     <input type="number" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
                 </div>
             </div>
+            
+            <div class="form-group-column">
+            <!-- User Name Field -->
+            <div class="form-group">
+                <label for="username">User Name *</label>
+                <input type="text" id="username" name="username" placeholder="Enter Your User Name" required>
+            </div>
+            <!-- Date of Birth Field -->
+            <div class="form-group">
+                <label for="dob">Date of Birth *</label>
+                <input style="height: 40px; width: 240px;" type="date" id="dob" name="dob" placeholder="Enter Your Date of Birth" required >            
+            </div>
+            </div>
+
 
             <!-- Password Row -->
             <div class="form-group-column">

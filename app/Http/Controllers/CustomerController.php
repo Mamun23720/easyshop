@@ -22,6 +22,30 @@ class CustomerController extends Controller
         return view('backend.customerlist', compact('allCustomer'));
     }
 
+    public function viewCustomer($id)
+    {
+
+        $customer = Customer::find($id);
+
+        return view('backend.pages.viewCustomer', compact('customer'));
+
+    }
+
+    
+    public function deleteCustomer($id)
+    {
+
+        $customer = Customer::find($id);
+
+        $customer->delete();
+
+        notify()->success("Customer Removed Successfully");
+
+        return redirect()->back();
+
+    }
+
+
     public function userRegistration()
     {
 
@@ -34,17 +58,26 @@ class CustomerController extends Controller
         // validation
 
         $validation = Validator::make($request->all(), [
-            'name' => 'required | min:5',
-            'email' => 'required',
-            'phone' => 'required|min:11|max: 11',
+            'name' => 'required',
+            'email' => 'required | email',
+            'phone' => 'required|min:11|max:11',
             'password' => 'required',
+            'username' => 'required|alpha_num',
+            'dob' => 'required',
             'address' => 'required',
             'city' => 'required',
-            'zip' => 'required',
+            'zip' => 'required|numeric',
             'country' => 'required',
-            'image' => 'required|file',
+            'image' => 'file',
 
         ]);
+
+        if($validation->fails())
+        {
+            notify()->error($validation->getMessageBag());
+
+            return redirect()->route('home');
+        }
 
         //for image
 
@@ -66,6 +99,8 @@ class CustomerController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
+            'username' => $request->username,
+            'dob' => $request->dob,
             'address' => $request->address,
             'city' => $request->city,
             'zip' => $request->zip,
