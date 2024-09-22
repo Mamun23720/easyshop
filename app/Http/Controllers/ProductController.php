@@ -34,11 +34,17 @@ class ProductController extends Controller
 
         $validation = Validator::make($request->all(), [
 
-            'product_name' => 'required',
-            'product_price' => 'required|numeric|min:5',
             'product_image' => 'required|file',
+            'product_name' => 'required',
+            'product_category' => 'required',
+            // 'product_brand' => 'required',
+            // 'product_model' => 'required',
+            // 'product_color' => 'required',
+            // 'product_size' => 'required',
+            'product_price' => 'required|numeric|min:5',
+            // 'product_discount' => 'required',
+            'product_stock' => 'required',
             'product_description' => 'min:5',
-            'product_category' => 'required|min:2'
 
         ]);
 
@@ -53,12 +59,17 @@ class ProductController extends Controller
 
         Product::create([
 
-            'name' => $request->product_name,
-            'price' => $request->product_price,
-            'description' => $request->product_description,
-            // 'mobile'=>$request->customer_number,
             'image' => $fileName,
-            'category_id' => $request->product_category
+            'name' => $request->product_name,
+            'category_id' => $request->product_category,
+            'brand' => $request->product_brand,
+            'model' => $request->product_model,
+            'color' => $request->product_color,
+            'size' => $request->product_size,
+            'price' => $request->product_price,
+            'discount' => $request->product_discount,
+            'stock' => $request->product_stock,
+            'description' => $request->product_description,
 
         ]);
 

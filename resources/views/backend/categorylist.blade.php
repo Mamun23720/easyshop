@@ -4,7 +4,7 @@
     <br>
     <h2><b style=" font-family:'Times New Roman', Times, serif" >Categories ({{ $allCategory ? count($allCategory) : 0 }})</b></h2>
     <div>
-        <a href="{{ route('backend.categoryform') }}" class="btn btn-info btn-lg">Add Category</a>
+        <a href="{{ route('backend.categoryform') }}" class="btn btn-info btn-lg"><b style="font-size: xx-large;">Add Category</b></a>
         <br>
         <br>
     </div>

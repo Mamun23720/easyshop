@@ -103,7 +103,7 @@
 
 <!-- Categories -->
 
-<div style="padding-left: 100px; padding-right: 100px;" class="container-fluid mt-3">
+<div style="padding-left: 100px; padding-right: 100px;" class="container-fluid mt-1">
     <div style="text-align: center;">
         <hr>
         <h3><b style=" font-family:'Times New Roman', Times, serif">Categories</b></h3>
@@ -140,7 +140,7 @@
 
 <!-- Banner -->
 
-<div style="padding-left: 100px; padding-right: 100px;" class="container-fluid mt-5">
+<div style="padding-left: 100px; padding-right: 100px;" class="container-fluid mt-1">
 
     <div style="text-align: center;">
         <hr>
@@ -200,7 +200,7 @@
 
 <!-- Products -->
 
-<div style="padding-left: 100px; padding-right: 100px;" class="container-fluid mt-5">
+<div style="padding-left: 100px; padding-right: 100px;" class="container-fluid mt-1">
     <div style="text-align: center;">
         <hr>
         <h3><b style=" font-family:'Times New Roman', Times, serif">Just For You</b></h3>
@@ -268,7 +268,7 @@
 
 
 <div class="newsletter">
-<div style="padding-left: 100px; padding-right: 100px;" class="container mt-5">
+<div style="padding-left: 100px; padding-right: 100px;" class="container mt-1">
 			<div class="row">
 				<div class="col">
 					<div class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">

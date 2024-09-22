@@ -1,7 +1,7 @@
 <footer class="">
 
 
-    <div class="container mt-5">
+<div style="padding-left: 100px; padding-right: 100px;" class="container-fluid mt-1">
         <hr>
         <div class="row mt-5">
             <div class="col">
