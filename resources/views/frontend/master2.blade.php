@@ -349,20 +349,17 @@
     }
 </style>
 
-<!-- For View-Cart Page  -->
-
 </head>
 
-<body>
-
-    @include('frontend.partials.header')
+<body class="container-fluid">
 
     @include('notify::components.notify')
 
-    <div>
-        @yield('content') 
-    </div>
+    @include('frontend.partials.header')
 
+    <main>
+    @yield('content')
+    </main>
     @include('frontend.partials.footer')
 
 

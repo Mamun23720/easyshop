@@ -1,4 +1,4 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 250px;">
+<div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 110%;">
     <hr>
     <ul class="nav nav-pills flex-column ">
         <li>

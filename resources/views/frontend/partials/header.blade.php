@@ -1,13 +1,12 @@
-<header style="background: #007bff; font-family:'Times New Roman', Times, serif">
+<header class="container-fluid" style="background: #007bff; font-family:'Times New Roman', Times, serif">
 
 
     <!-- Top Bar -->
 
-    <div  style="background: #007bff" class="top_bar">
-        <div style="padding: 0px;" class="flex-container">
-            <div class="row">
+    <div  style="background: #007bff" class="row">
+        <div class="flex-container">
                 <div style="color: rgb(255, 255, 255)" class="col d-flex flex-row">
-                    <div style="font-size:20px; color:rgb(255, 255, 255); margin-right:0px" class="top_bar_contact_item ml-5">
+                    <div style="font-size:20px; color:rgb(255, 255, 255); margin-right:0px" class="top_bar_contact_item">
                         <div class="top_bar_icon"></div><i class="bi bi-telephone"></i>
                     </div>
                     <div class="top_bar_contact_item mr-0">
@@ -15,28 +14,26 @@
                     </div>
 
                     <div class="top_bar_content ml-auto">
-                            <div class="top_bar_user mr-5">
+                            <div class="top_bar_user">
                                 <div class="user_icon"></div>
                                 <div><a style="font-size:20px; color:rgb(255, 255, 255);" href="{{route('becomeASeller')}}"><b>Become a seller</b></a></div>
                             </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 <hr>
+
     <!-- Top Bar -->
 
 
     <!-- Middle Bar -->
 
-    <div class="header_main">
-        <div style=" height: 100px;">
             <div style="height: 100px;"  class="row">
 
-                <div style="height: 100px; max-width:150px;" class="col">
+                <div style="height: 100px; max-width:10%;" class="col">
                     <div  style="height: 100px; " class="logo_container">
-                        <div style="max-width:100px; margin-left:20px" class="logo">
+                        <div class="logo">
                             <a href="/">
                                 <img style="height: 80px; width: 200px; border-radius: 10%; border: solid white"
                                     src="{{ url('/uploads/important/Logo.JPG') }}" alt="S-Shop">
@@ -46,7 +43,7 @@
                 </div>
 
 
-                <div style="height: 100px; max-width:200px;" class="col">
+                <div style="height: 100px; max-width:10%;" class="col">
                     <div  style="height: 100px; width:110px; " class="logo_container">
                         <div class="logo">
                             <a href="/">
@@ -59,9 +56,9 @@
 
 
 
-                <div style=" height: 100px;" class="col">
+                <div style=" height: 100px; max-width:50%;" class="col">
                     <div style=" height: 100px;" class="header_search">
-                        <div style="width: 700px;" class="header_search_content">
+                        <div style="width: 500px;" class="header_search_content">
                             <div class="header_search_form_container">
                                 <form action="{{ route('search') }}" class="header_search_form clearfix">
                                     <input name="search_key" style="width: 100%; height: 100%"
@@ -78,7 +75,7 @@
                 </div>
 
                 <div style=" height: 100px;" class="col">
-                    <div style=" height: 100px; margin-left:45px" class="wishlist_cart d-flex flex-row align-items-center justify-content-center">
+                    <div style=" height: 100px;" class="wishlist_cart d-flex flex-row align-items-center justify-content-center">
                         <div style="margin-right: 25px;" class="wishlist d-flex flex-row align-items-center justify-content-center">
                             <div class="wishlist_icon">
                                 <a style="color: white" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
@@ -211,8 +208,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+<hr>
 
     <!-- Middle Bar -->
 
@@ -221,7 +217,7 @@
 
 
 
-    <nav style="background: #007bff;" class="main_nav">
+    <nav style="background: #007bff;" class="row">
         <div class="container-fluid">
             <div class="row">
                 <div class="col">

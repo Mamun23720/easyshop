@@ -2,12 +2,11 @@
 
 @section('content')
     <br>
-    <h2><b style="font-size: xx-large; font-family:'Times New Roman', Times, serif">Categories ({{ $allCategory ? count($allCategory) : 0 }})</b></h2>
     <div>
         <a href="{{ route('backend.categoryform') }}" class="btn btn-info btn-lg"><b style="font-size: xx-large; font-family:'Times New Roman', Times, serif">Add Category</b></a>
         <br>
-        <br>
     </div>
+    <h2 style="text-align:center"><b style=" font-size: xx-large; font-family:'Times New Roman', Times, serif">Categories ({{ $allCategory ? count($allCategory) : 0 }})</b></h2>
     <table class="table table-dark table-hover">
         <thead style="border: white">
             <tr style=" font-family:'Times New Roman', Times, serif" >

@@ -38,16 +38,17 @@
         }
         .login-box .btn {
             width: 100%;
-            background-color: #3300ff;
-            color: #ffffff;
-            border: none;
+            background-color: #d1c5ff;
+            color: #000000;
+            border: solid black;
             padding: 10px;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
         }
         .login-box .btn:hover {
-            background-color: #e04e00;
+            background-color: #3300ff;
+            color: #ffffff
         }
         .login-box .link {
             margin-top: 10px;
@@ -84,7 +85,7 @@
         <div class="content-box">
             <h1>Become A S-Shop Seller!!!</h1>
             <p>Create a S-Shop seller account now and reach millions of customers!</p>
-            <img style="height: 70%; width:100%; border: solid black; border-radius:10%" src="{{url('/uploads/important/Logo.JPG/')}}" alt="Shopping Cart"> <!-- Placeholder for cart image -->
+            <img style="height: 50%; width:50%; border: solid black; border-radius:10%" src="{{url('/uploads/important/Logo.JPG/')}}" alt="Shopping Cart"> <!-- Placeholder for cart image -->
         </div>
 
         <!-- Right Login Box -->
@@ -99,7 +100,7 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" class="form-control" placeholder="Enter Password" required>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn"><b>Login</b></button>
             </form>
             <div class="d-flex justify-content-between mt-3">
                 <a href="#" class="link">Reset password</a>

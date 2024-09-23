@@ -11,7 +11,7 @@
         body {
     font-family: 'Times New Roman', Times, serif;
     background-color: #007bff; /* Background color */
-    margin: 0;
+    margin: 10%;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -184,11 +184,11 @@ input[type="number"]::-webkit-inner-spin-button {
                     <input type="text" id="full-name" name="name" placeholder="Enter Your Full Name" required>
                 </div>
             </div>
-            
+
             <!-- Email & Phone Row -->
-             
+
             <div class="form-group-column">
-                
+
                 <div class="form-group">
                     <label for="email">Email Address *</label>
                     <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
@@ -199,7 +199,7 @@ input[type="number"]::-webkit-inner-spin-button {
                     <input type="number" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
                 </div>
             </div>
-            
+
             <div class="form-group-column">
             <!-- User Name Field -->
             <div class="form-group">
@@ -209,7 +209,7 @@ input[type="number"]::-webkit-inner-spin-button {
             <!-- Date of Birth Field -->
             <div class="form-group">
                 <label for="dob">Date of Birth *</label>
-                <input style="height: 40px; width: 240px;" type="date" id="dob" name="dob" placeholder="Enter Your Date of Birth" required >            
+                <input style="height: 40px; width: 240px;" type="date" id="dob" name="dob" placeholder="Enter Your Date of Birth" required >
             </div>
             </div>
 
@@ -272,7 +272,7 @@ input[type="number"]::-webkit-inner-spin-button {
             <div class="form-group full-width">
                 <button type="submit">Create Account</button>
             </div>
-            
+
             <!-- Login Link -->
             <div class="form-group full-width">
                 <p>Already have an account? <a href="#">Login here</a>.</p>

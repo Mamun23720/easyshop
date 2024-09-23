@@ -3,7 +3,7 @@
 @section('content')
 <br>
 <div>
-    <a href="{{ route('backend.productform') }}" class="btn btn-success btn-lg"><b style="font-size: xx-large; font-family:'Times New Roman', Times, serif">Add New Product </b></a>
+    <a href="{{ route('backend.productform') }}" class="btn btn-success"><b style="font-size: xx-large; font-family:'Times New Roman', Times, serif">Add New Product </b></a>
     <br>
 </div>
 <h1 style="text-align: center; font-family: 'Times New Roman', Times, serif">Total Products ({{ $allProduct ? count($allProduct) : 0 }})</h1>
@@ -40,7 +40,7 @@
             <td style="color: red; font-size: larger;"><b>{{ $product->price }}</b></td>
             <td>{{ $product->discount }}%</td>
             <td>{{ $product->stock }}</td>
-            <td style="text-align: justify;"><div style="white-space: nowrap; width: 200px; overflow: hidden; text-overflow: ellipsis;">{{ $product->description }}</div></td>
+            <td style="text-align: justify;"><div style="white-space: nowrap; width: 100px; overflow: hidden; text-overflow: ellipsis;">{{ $product->description }}</div></td>
             <td>
                 <a class="btn btn-success" href="{{ route('backend.viewProduct', $product->id) }}">View</a>
                 <a class="btn btn-info" href="{{ route('backend.editProduct', $product->id) }}">Edit</a>

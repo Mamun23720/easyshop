@@ -2,11 +2,11 @@
 
 @section('content')
     <br>
-    <div style=" padding-left: 400px; padding-right: 300px;" class="container" >
+    <div style="" class="container" >
 
     <p style="text-align: center; color:green; font-size: 50px;; font-family:'Times New Roman', Times, serif" ><b>Add Product</b></p>
-    
-    <form style="height: auto; width: 600px; font-family:'Times New Roman', Times, serif" action="{{ route('backend.storeproduct') }}" method="post" enctype="multipart/form-data">
+
+    <form style=" height: auto; width: 100%; font-family:'Times New Roman', Times, serif" action="{{ route('backend.storeproduct') }}" method="post" enctype="multipart/form-data">
 
 
         @csrf
@@ -48,7 +48,7 @@
             <label for="text" class="form-label"><b style="font-size: larger;" >Color</b></label>
             <input  style="border: solid black;" type="text" class="form-control" id="date" name="product_color" placeholder="Enter Your Product Color">
         </div>
-        
+
         <div class="mb-3">
         <label for="text" class="form-label"><b style="font-size: larger;" >Size</b></label>
             <select  style="border: solid black;"  class="form-select" aria-label="Default select example" name="product_size" placeholder="Enter Your Product Size">
@@ -78,8 +78,8 @@
             <label for="text" class="form-label"><b style="font-size: larger;" >Description</b></label>
             <input  style="border: solid black;" type="text" class="form-control" id="date" name="product_description" placeholder="Enter Your Product Description">
         </div>
-        
-        
+
+
         <div style="text-align:center;" class="mt-3 mb-3">
             <button type="submit" class="btn btn-success btn-lg"><b style="font-size: xx-large ;" >Submit</b></button>
         </div>

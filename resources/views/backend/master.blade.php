@@ -124,12 +124,13 @@
 
 
 
+            <div class="col-md-2">
 
-            @include('backend.partials.sidebar')
+                @include('backend.partials.sidebar')
 
+            </div>
 
-
-            <main class=" col-lg-10 px-md-4">
+            <main class="col-md-10">
 
 
 
@@ -138,6 +139,8 @@
 
 
             </main>
+
+
         </div>
     </div>
 
