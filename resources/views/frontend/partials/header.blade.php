@@ -12,10 +12,76 @@
                     <div class="top_bar_contact_item mr-0">
                         <div class="top_bar_icon"></div><a style="font-size:20px; color:rgb(255, 255, 255);" href="#"><b style="color: rgb(200, 0, 0)">+8801627736636 </b></a>(Any Help?)
                     </div>
-
                     <div class="top_bar_content ml-auto">
                             <div class="top_bar_user">
-                                <div class="user_icon"></div>
+                                <div class="account_bar_menu">
+                                    <ul class="standard_dropdown account_bar_dropdown">
+                                        <li>
+                                            <div style="margin-right: 25px;" class="wishlist d-flex flex-row align-items-center justify-content-center">
+                                                {{-- <div class="wishlist_icon">
+                                                    <a style="color: white" href=""><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                                                      </svg></a>
+                                                </div> --}}
+                                                <div class="wishlist_content">
+                                                    <div class="wishlist_text">
+                                                        @if (session()->has('locale'))
+
+                                                        @if(session()->get('locale')=='en')
+                                                        <a href="{{route('change.lang', 'en')}}"><b style="font-size: 20px; color:white">English</b>
+                                                        </a>
+                                                        @endif
+
+                                                        @if(session()->get('locale')=='bn')
+                                                        <a href="{{route('change.lang', 'bn')}}"><b style="font-size: 20px; color:white">Bangla</b>
+                                                        </a>
+                                                        @endif
+
+                                                        @if(session()->get('locale')=='ar')
+                                                        <a href="{{route('change.lang', 'ar')}}"><b style="font-size: 20px; color:white">Arabic</b>
+                                                        </a>
+                                                        @endif
+
+                                                        @else
+                                                        <a href="{{route('change.lang', 'en')}}"><b style="font-size: 20px; color:white">English</b>
+                                                        </a>
+                                                        @endif
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul style="height: 177px; width:80px; background: rgb(84 136 223); "><hr>
+                                                <li ><a style="text-align:center;
+                                                    font-size:20px;
+                                                    color: white;
+                                                    background-color: transparent;
+                                                    text-decoration: none;
+                                                    transition: background-color 0.3s, color 0.3s;" href="{{route('change.lang', 'bn')}}"
+                                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#000000';"
+                                                     onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ffffff';"><b>Bangla</b></a></li><hr>
+                                                <li><a style="text-align:center;
+                                                    font-size:20px;
+                                                    color: white;
+                                                    background-color: transparent;
+                                                    text-decoration: none;
+                                                    transition: background-color 0.3s, color 0.3s;" href="{{route('change.lang', 'ar')}}"
+                                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#000000';"
+                                                     onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ffffff';"><b>Arabic</b></a></li><hr>
+
+                                                     <li><a style="text-align:center;
+                                                        font-size:20px;
+                                                        color: white;
+                                                        background-color: transparent;
+                                                        text-decoration: none;
+                                                        transition: background-color 0.3s, color 0.3s;" href="{{route('change.lang', 'en')}}"
+                                                         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#000000';"
+                                                         onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ffffff';"><b>English</b></a></li>
+                                                         <hr>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
                                 <div><a style="font-size:20px; color:rgb(255, 255, 255);" href="{{route('becomeASeller')}}"><b>Become a seller</b></a></div>
                             </div>
                     </div>
@@ -47,7 +113,7 @@
                     <div  style="height: 100px; width:110px; " class="logo_container">
                         <div class="logo">
                             <a href="/">
-                                <h3 style="color: white; font-family:'Times New Roman', Times, serif ">For Better Experience</h3>
+                                <h3 style="color: white; font-family:'Times New Roman', Times, serif ">{{__('For Better Experience')}}</h3>
                             </a>
                         </div>
                     </div>

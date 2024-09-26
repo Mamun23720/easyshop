@@ -1,36 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <title>S-Shop</title>
-    <meta charset="utf-8">
+<title>S-Shop</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="OneTech shop project">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="font.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="/static/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-</head>
+
+
+
 <link rel="stylesheet" type="text/css"
-    href="https://preview.colorlib.com/theme/onetech/styles/bootstrap4/bootstrap.min.css">
+href="https://preview.colorlib.com/theme/onetech/styles/bootstrap4/bootstrap.min.css">
 <link href="https://preview.colorlib.com/theme/onetech/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css"
-    rel="stylesheet" type="text/css">
+rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css"
-    href="https://preview.colorlib.com/theme/onetech/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+href="https://preview.colorlib.com/theme/onetech/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css"
-    href="https://preview.colorlib.com/theme/onetech/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+href="https://preview.colorlib.com/theme/onetech/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css"
-    href="https://preview.colorlib.com/theme/onetech/plugins/OwlCarousel2-2.2.1/animate.css">
+href="https://preview.colorlib.com/theme/onetech/plugins/OwlCarousel2-2.2.1/animate.css">
 @notifyCss
 <link rel="stylesheet" type="text/css" href="https://preview.colorlib.com/theme/onetech/plugins/slick-1.8.0/slick.css">
 <link rel="stylesheet" type="text/css" href="https://preview.colorlib.com/theme/onetech/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="https://preview.colorlib.com/theme/onetech/styles/responsive.css">
 
 
+
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+</style>
 <!-- For product  -->
 <style>
     body {
@@ -211,8 +217,6 @@
         position: relative;
         max-height: 100%;
         overflow: hidden;
-        padding-left: 100px;
-        padding-right: 100px;
         background: #dcdcff;
     }
 
@@ -349,7 +353,12 @@
     }
 </style>
 
+
 </head>
+
+
+
+
 
 <body class="container-fluid">
 

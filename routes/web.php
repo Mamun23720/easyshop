@@ -14,6 +14,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 
 //For Frontend
+Route::group(['middleware' => 'changelang'], function () {
+
 Route::get('/', [FrontendHomeController::class, 'home'])->name('home');
 Route::get('/search', [FrontendProductController::class, 'search'])->name('search');
 Route::get('/user/registration', [CustomerController::class, 'userRegistration'])->name('frontend.user.registration');
@@ -26,6 +28,7 @@ Route::get('/viewCart', [OrderController::class, 'viewCart'])->name('view.cart')
 Route::get('/addToCart{productId}', [OrderController::class, 'addToCart'])->name('add.to.cart');
 Route::get('/remove//single/cart{productId}', [OrderController::class, 'removeSingleCart'])->name('remove.single.cart');
 Route::get('/show/category/{categoryId}', [FrontendProductController::class, 'show_category'])->name('show.category');
+Route::get('/change/lang/{lang_name}', [FrontendHomeController::class, 'changelang'])->name('change.lang');
 Route::get('/becomeASeller', [FrontendHomeController::class, 'becomeASeller'])->name('becomeASeller');
 
 
@@ -50,6 +53,8 @@ Route::get('/becomeASeller', [FrontendHomeController::class, 'becomeASeller'])->
         Route::get('/customer/logout', [CustomerController::class, 'customerLogout'])->name('frontend.logout');
 
     });
+
+});
 
 // For Backend
 Route::group(['prefix' => 'admin'], function () {

@@ -35,4 +35,12 @@ class HomeController extends Controller
     {
         return view('frontend.pages.become-a-seller');
     }
+
+
+
+    public function changelang($lange_name)
+    {
+        session()->put('locale', $lange_name);
+        return redirect()->back();
+    }
 }
